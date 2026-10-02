@@ -231,22 +231,72 @@ body {
 .cell { padding: 40px var(--pad-x); }
 .grid-lines > .cell + .cell { border-top: 1px solid var(--line); }
 
-/* 3 columns from sm (hero figures) */
-@media (min-width: 640px) {
-  dl.grid-lines > .cell + .cell { border-top: 0; border-left: 1px solid var(--line); }
-}
 /* 2 and 3 columns from md (case studies, credentials, skills) */
 @media (min-width: 768px) {
   .md\:grid-cols-2.grid-lines > .cell + .cell,
   .md\:grid-cols-3.grid-lines > .cell + .cell { border-top: 0; border-left: 1px solid var(--line); }
 }
-/* 2x2 from sm, 4 across from lg (expertise) */
-@media (min-width: 640px) {
-  .lg\:grid-cols-4.grid-lines > .cell:nth-child(even) { border-left: 1px solid var(--line); }
-  .lg\:grid-cols-4.grid-lines > .cell:nth-child(2) { border-top: 0; }
+
+/* ---------- 3D glass cards ----------
+   Base finish comes from the Tailwind classes on each card
+   (bg-white/40 backdrop-blur-md border-white/60 soft shadow).
+   These layers add the light-reflective depth.                 */
+.glass-stage { overflow: hidden; }
+
+/* Soft blue and seafoam light sources for the glass to catch */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
 }
-@media (min-width: 1024px) {
-  .lg\:grid-cols-4.grid-lines > .cell + .cell { border-top: 0; border-left: 1px solid var(--line); }
+.glow-orb-blue {
+  width: 46%; height: 140%;
+  top: -40%; left: 8%;
+  background: rgba(191, 219, 254, 0.55);   /* blue-200 */
+}
+.glow-orb-sea {
+  width: 40%; height: 130%;
+  bottom: -45%; right: 6%;
+  background: rgba(167, 243, 208, 0.40);   /* emerald-200 */
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(160%);
+  box-shadow:
+    0 8px 32px 0 rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(148, 163, 184, 0.12);
+  transition: background-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+/* Diagonal light sheen across the top of the glass */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.12) 38%, transparent 60%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+/* Faint edge refraction along the bottom right */
+.glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(120% 80% at 100% 100%, rgba(186, 230, 253, 0.22), transparent 55%);
+  pointer-events: none;
+}
+.glass-card > * { position: relative; z-index: 1; }
+.glass-card:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 14px 40px 0 rgba(15, 23, 42, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(148, 163, 184, 0.14);
 }
 
 /* ---------- By the numbers ---------- */
@@ -273,7 +323,6 @@ body {
   align-items: flex-start;
   transition: background 0.4s var(--ease);
 }
-.card:hover { background: #fff; }
 
 .pill {
   display: inline-flex;

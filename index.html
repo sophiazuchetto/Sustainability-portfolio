@@ -38,7 +38,8 @@
   <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- The whole page sits in one framed "sheet", like a magazine spread -->
-  <div class="sheet mx-auto max-w-6xl border-x border-slate-200 bg-slate-50">
+  <div class="mx-auto max-w-7xl px-6 py-12 md:px-12">
+  <div class="sheet border border-slate-200 bg-slate-50">
 
     <!-- ================= NAV ================= -->
     <header class="site-header sticky top-0 z-50 border-b border-slate-200">
@@ -99,20 +100,26 @@
         </div>
 
         <!-- By the numbers -->
-        <dl class="grid-lines grid grid-cols-1 border-t border-slate-200 sm:grid-cols-3">
-          <div class="cell" data-aos="fade-up" data-aos-delay="0">
+        <div class="glass-stage relative isolate border-t border-slate-200 px-[var(--pad-x)] py-12">
+          <div class="glass-glow pointer-events-none absolute inset-0 -z-10 bg-gradient-to-tr from-slate-200/50 via-blue-50/30 to-emerald-50/20" aria-hidden="true">
+            <span class="glow-orb glow-orb-blue"></span>
+            <span class="glow-orb glow-orb-sea"></span>
+          </div>
+          <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
+          <div class="glass-card bg-white/40 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(15,23,42,0.04)] rounded-2xl p-7" data-aos="fade-up" data-aos-delay="0">
             <dd class="figure">4</dd>
             <dt class="figure-label">State regulatory regimes analyzed across EPR and organics law</dt>
           </div>
-          <div class="cell" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass-card bg-white/40 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(15,23,42,0.04)] rounded-2xl p-7" data-aos="fade-up" data-aos-delay="100">
             <dd class="figure">20+</dd>
             <dt class="figure-label">Global supply chain actors assessed for emissions and lifecycle impact</dt>
           </div>
-          <div class="cell" data-aos="fade-up" data-aos-delay="200">
+          <div class="glass-card bg-white/40 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(15,23,42,0.04)] rounded-2xl p-7" data-aos="fade-up" data-aos-delay="200">
             <dd class="figure">4</dd>
             <dt class="figure-label">AI-Automated Workflows engineered for repeatable analyst tasks</dt>
           </div>
         </dl>
+        </div>
       </section>
 
       <!-- ================= EXPERTISE GRID ================= -->
@@ -124,31 +131,37 @@
           </h2>
         </div>
 
-        <div class="grid-lines grid grid-cols-1 border-t border-slate-200 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="cell card" data-aos="fade-up" data-aos-delay="0">
+        <div class="glass-stage relative isolate border-t border-slate-200 px-[var(--pad-x)] py-12">
+          <div class="glass-glow pointer-events-none absolute inset-0 -z-10 bg-gradient-to-tr from-slate-200/50 via-blue-50/30 to-emerald-50/20" aria-hidden="true">
+            <span class="glow-orb glow-orb-blue"></span>
+            <span class="glow-orb glow-orb-sea"></span>
+          </div>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+          <article class="card glass-card bg-white/40 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(15,23,42,0.04)] rounded-2xl p-7" data-aos="fade-up" data-aos-delay="0">
             <span class="pill pill-accent">Certified</span>
             <h3 class="card-title">CSRD Fundamentals</h3>
             <p class="card-body">Double materiality, ESRS structure and value-chain disclosure under the EU Corporate Sustainability Reporting Directive.</p>
             <p class="card-meta">CSRD Institute · 2025</p>
           </article>
-          <article class="cell card" data-aos="fade-up" data-aos-delay="100">
+          <article class="card glass-card bg-white/40 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(15,23,42,0.04)] rounded-2xl p-7" data-aos="fade-up" data-aos-delay="100">
             <span class="pill">Applied</span>
             <h3 class="card-title">SBTN Boundaries</h3>
             <p class="card-body">An impact methodology grounded in SBTN planetary boundaries, translated into investment-grade metrics tied to ROI.</p>
             <p class="card-meta">Circular Economy Venture</p>
           </article>
-          <article class="cell card" data-aos="fade-up" data-aos-delay="200">
+          <article class="card glass-card bg-white/40 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(15,23,42,0.04)] rounded-2xl p-7" data-aos="fade-up" data-aos-delay="200">
             <span class="pill">Applied</span>
             <h3 class="card-title">GHG &amp; Lifecycle Analysis</h3>
             <p class="card-body">Emissions and lifecycle data synthesized across global textile supply chains into a framework linking impact to financial viability.</p>
             <p class="card-meta">20+ supply chain actors</p>
           </article>
-          <article class="cell card" data-aos="fade-up" data-aos-delay="300">
+          <article class="card glass-card bg-white/40 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(15,23,42,0.04)] rounded-2xl p-7" data-aos="fade-up" data-aos-delay="300">
             <span class="pill">Applied</span>
             <h3 class="card-title">EPR &amp; Material Compliance</h3>
             <p class="card-body">Statutory obligations, ecomodulation structures and covered materials mapped across states with pinpoint citations.</p>
             <p class="card-meta">Circular Action Alliance</p>
           </article>
+          </div>
         </div>
       </section>
 
@@ -370,6 +383,7 @@
         <span>Santa Clara, California</span>
       </div>
     </footer>
+  </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -624,12 +638,6 @@ SOURCES
       clearTimeout(copyTimer);
       copyTimer = setTimeout(resetCopy, 2200);
     });
-
-    /* ---------- Header on scroll ---------- */
-    const header = document.querySelector('.site-header');
-    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
