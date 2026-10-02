@@ -1,13 +1,13 @@
 /* =========================================================
-   Sustainability & Corporate ROI: lush editorial theme
-   Linen-ivory canvas, borderless layered "cloud" surfaces,
-   matte forest green and deep slate blue accents.
+   Sustainability & Corporate ROI: borderless editorial theme
+   Frosted slate-50 canvas, layered "cloud" surfaces,
+   slate-950 type with slate-500 and blue-600 accents.
    Tailwind handles layout utilities; AOS handles scroll motion.
    ========================================================= */
 
 :root {
-  --canvas: #FAF9F5;          /* linen ivory */
-  --strip: #F3F0E8;           /* slightly deeper linen for layout strips */
+  --canvas: #f8fafc;          /* slate-50, frosted ice-white */
+  --strip: #f1f5f9;           /* slate-100 for layout strips */
   --cloud: #FFFFFF;
 
   --ink: #020617;             /* slate-950 */
@@ -16,8 +16,8 @@
   --slate-500: #64748b;
   --slate-400: #94a3b8;
 
-  --forest: #065f46;          /* emerald-800 */
-  --forest-soft: rgba(6, 95, 70, 0.08);
+  --blue: #2563eb;            /* blue-600 */
+  --blue-soft: rgba(37, 99, 235, 0.08);
 
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -41,11 +41,11 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: rgba(6, 95, 70, 0.14); color: var(--ink); }
+::selection { background: rgba(37, 99, 235, 0.14); color: var(--ink); }
 
 /* Keyboard focus ring (accessibility; not a decorative border) */
 :focus-visible {
-  outline: 2px solid var(--forest);
+  outline: 2px solid var(--blue);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -71,7 +71,7 @@ body {
 
 /* ---------- Header ---------- */
 .site-header {
-  background: rgba(250, 249, 245, 0.82);
+  background: rgba(248, 250, 252, 0.82);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
 }
@@ -91,22 +91,22 @@ body {
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--slate-700);
+  color: var(--ink);
   text-decoration: none;
   transition: color 0.3s;
 }
-.nav-link:hover { color: var(--forest); }
+.nav-link:hover { color: var(--blue); }
 
 /* ---------- Layout strips ----------
-   Alternate sections sit on a deeper linen band that fades in and
+   Alternate sections sit on a soft slate-100 band that fades in and
    out at its edges, so sections blend instead of being ruled off.  */
 .strip {
   background: linear-gradient(
     180deg,
-    rgba(243, 240, 232, 0) 0%,
+    rgba(241, 245, 249, 0) 0%,
     var(--strip) 14%,
     var(--strip) 86%,
-    rgba(243, 240, 232, 0) 100%
+    rgba(241, 245, 249, 0) 100%
   );
 }
 
@@ -116,7 +116,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--slate-700);
+  color: var(--slate-500);
 }
 
 .name-title {
@@ -146,11 +146,11 @@ body {
   color: var(--ink);
 }
 
-/* Sustainability accent: matte forest green */
+/* Accent phrases: soft steel blue */
 .accent {
   font-style: italic;
   font-weight: 600;
-  color: var(--forest);
+  color: var(--slate-500);
 }
 
 /* ---------- Buttons (filled, no outlines) ---------- */
@@ -169,13 +169,13 @@ body {
   transition: background 0.35s var(--ease), color 0.35s, box-shadow 0.35s var(--ease);
 }
 .btn-dark { background: var(--ink); color: #fff; }
-.btn-dark:hover { background: var(--forest); box-shadow: 0 14px 30px -14px rgba(6, 95, 70, 0.5); }
+.btn-dark:hover { background: var(--blue); box-shadow: 0 14px 30px -14px rgba(37, 99, 235, 0.5); }
 .btn-soft {
   background: #fff;
   color: var(--ink);
   box-shadow: 0 10px 30px -14px rgba(15, 23, 42, 0.12);
 }
-.btn-soft:hover { color: var(--forest); }
+.btn-soft:hover { color: var(--blue); }
 .btn-sm { padding: 10px 20px; font-size: 11px; }
 
 .text-link {
@@ -183,13 +183,13 @@ body {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--slate-700);
+  color: var(--ink);
   text-decoration: underline;
   text-decoration-color: rgba(51, 65, 85, 0.3);
   text-underline-offset: 6px;
   transition: color 0.3s, text-decoration-color 0.3s;
 }
-.text-link:hover { color: var(--forest); text-decoration-color: var(--forest); }
+.text-link:hover { color: var(--blue); text-decoration-color: var(--blue); }
 
 /* ---------- Hero portrait ---------- */
 .portrait-wrap { position: relative; }
@@ -199,7 +199,7 @@ body {
   inset: 8% -10% -8% 12%;
   border-radius: 45% 55% 50% 50% / 50% 45% 55% 50%;
   background:
-    radial-gradient(60% 60% at 30% 30%, rgba(6, 95, 70, 0.12), transparent 70%),
+    radial-gradient(60% 60% at 30% 30%, rgba(37, 99, 235, 0.12), transparent 70%),
     radial-gradient(60% 60% at 75% 70%, rgba(51, 65, 85, 0.12), transparent 70%);
   filter: blur(30px);
   pointer-events: none;
@@ -232,14 +232,14 @@ body {
   font-size: clamp(60px, 6.4vw, 84px);
   font-weight: 700;
   line-height: 1;
-  color: var(--forest);
+  color: var(--blue);
 }
 .figure-label {
   margin-top: 12px;
   max-width: 280px;
   font-size: 14px;
   line-height: 1.65;
-  color: var(--slate-700);
+  color: var(--slate-500);
 }
 
 /* ---------- Expertise ---------- */
@@ -257,9 +257,9 @@ body {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--slate-700);
+  color: var(--slate-500);
 }
-.pill-accent { background: var(--forest-soft); color: var(--forest); }
+.pill-accent { background: var(--blue-soft); color: var(--blue); }
 
 .card-title {
   margin-top: 24px;
@@ -273,7 +273,7 @@ body {
   margin-top: 12px;
   font-size: 14.5px;
   line-height: 1.7;
-  color: var(--slate-700);
+  color: var(--ink);
 }
 .card-meta {
   margin-top: auto;
@@ -282,7 +282,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--forest);
+  color: var(--slate-500);
 }
 
 /* ---------- CAA story ---------- */
@@ -295,7 +295,7 @@ body {
 .chapter p {
   font-size: 16.5px;
   line-height: 1.85;
-  color: var(--slate-700);
+  color: var(--ink);
 }
 .chapter p + p { margin-top: 16px; }
 p.chapter-label {
@@ -304,7 +304,7 @@ p.chapter-label {
   font-size: 23px;
   font-style: italic;
   font-weight: 600;
-  color: var(--forest);
+  color: var(--slate-500);
 }
 
 .feature { padding: 40px 36px; }
@@ -318,7 +318,7 @@ p.chapter-label {
 .feature figcaption {
   font-size: 16px;
   line-height: 1.85;
-  color: var(--slate-700);
+  color: var(--ink);
 }
 @media (max-width: 640px) { .feature { padding: 30px 24px; } }
 
@@ -330,7 +330,7 @@ p.chapter-label {
   line-height: 1.7;
   color: var(--slate-600);
 }
-.disclaimer-label { font-weight: 500; color: var(--slate-700); }
+.disclaimer-label { font-weight: 500; color: var(--ink); }
 
 /* ---------- Workflow viewer ---------- */
 .workflow { overflow: hidden; }
@@ -351,12 +351,12 @@ p.chapter-label {
   font: inherit;
   font-size: 12.5px;
   font-weight: 400;
-  color: var(--slate-700);
+  color: var(--slate-500);
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
 .wf-tab:hover { background: rgba(51, 65, 85, 0.1); }
-.wf-tab[aria-selected="true"] { background: var(--forest); color: #fff; }
+.wf-tab[aria-selected="true"] { background: var(--ink); color: #fff; }
 .wf-toolbar {
   display: flex;
   align-items: center;
@@ -380,7 +380,7 @@ p.chapter-label {
   transition: background 0.3s, color 0.3s;
 }
 .copy-btn:hover { background: rgba(51, 65, 85, 0.1); }
-.copy-btn.is-copied { background: var(--forest); color: #fff; }
+.copy-btn.is-copied { background: var(--ink); color: #fff; }
 .prompt {
   max-height: 420px;
   margin: 0;
@@ -418,7 +418,7 @@ p.chapter-label {
   font-style: italic;
   font-weight: 600;
   line-height: 1.15;
-  color: var(--forest);
+  color: var(--slate-500);
 }
 .principle h3 {
   font-family: var(--font-serif);
@@ -432,7 +432,7 @@ p.chapter-label {
   max-width: 680px;
   font-size: 16px;
   line-height: 1.85;
-  color: var(--slate-700);
+  color: var(--ink);
 }
 @media (max-width: 640px) {
   .principle { grid-template-columns: 1fr; gap: 6px; }
@@ -453,9 +453,9 @@ p.chapter-label {
   border-radius: 1.25rem;
   padding: 28px;
 }
-.case-media-1 { background: radial-gradient(120% 90% at 20% 0%, rgba(255,255,255,0.18), transparent 55%), linear-gradient(165deg, #4d6b62, #1f3b34); }  /* forest */
+.case-media-1 { background: radial-gradient(120% 90% at 20% 0%, rgba(255,255,255,0.18), transparent 55%), linear-gradient(165deg, #64748b, #1e293b); }  /* slate */
 .case-media-2 { background: radial-gradient(120% 90% at 80% 0%, rgba(255,255,255,0.22), transparent 55%), linear-gradient(165deg, #7d8ea3, #334155); }  /* slate blue */
-.case-media-3 { background: radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.16), transparent 55%), linear-gradient(165deg, #5b6f68, #2b3a46); }  /* forest-slate */
+.case-media-3 { background: radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.16), transparent 55%), linear-gradient(165deg, #3b5b8f, #1e293b); }  /* steel blue */
 
 .case-img {
   position: absolute;
@@ -492,7 +492,7 @@ p.chapter-label {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--forest);
+  color: var(--slate-500);
 }
 .role-title {
   margin-top: 8px;
@@ -506,7 +506,7 @@ p.chapter-label {
   margin-top: 12px;
   font-size: 14.5px;
   line-height: 1.75;
-  color: var(--slate-700);
+  color: var(--ink);
 }
 
 /* ---------- Core skills ---------- */
@@ -523,10 +523,10 @@ p.chapter-label {
   box-shadow: 0 8px 20px -12px rgba(15, 23, 42, 0.12);
   font-size: 13px;
   line-height: 1.4;
-  color: var(--slate-700);
+  color: var(--ink);
   transition: color 0.3s;
 }
-.skill-pill:hover { color: var(--forest); }
+.skill-pill:hover { color: var(--blue); }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
