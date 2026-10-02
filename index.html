@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-black">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sophia Zuchetto — supply chain ESG, material compliance and EPR regulatory analysis, backed by data analytics and validated AI workflows." />
-  <title>Sophia Zuchetto · Sustainability Portfolio</title>
+  <meta name="description" content="Sophia Zuchetto connects sustainability to ROI: ESG, EPR regulation and supply chain analysis turned into business decisions that grow the bottom line." />
+  <meta name="theme-color" content="#000000" />
+  <title>Sophia Zuchetto · Sustainability × ROI</title>
 
-  <!-- Fonts: Inter for text, JetBrains Mono for figures and citations -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -29,339 +28,309 @@
   <link rel="stylesheet" href="style.css" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-slate-50 text-slate-600 font-sans antialiased">
+<body class="bg-black font-sans text-zinc-400 antialiased">
 
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- ============ NAV ============ -->
-  <header class="site-header sticky top-0 z-40 border-b border-slate-200/70">
-    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6" aria-label="Primary">
-      <a href="#top" class="flex items-center gap-3 text-slate-900">
-        <span class="grid h-9 w-9 place-items-center rounded-md bg-slate-900 font-mono text-xs font-semibold tracking-wider text-white">SZ</span>
-        <span class="hidden text-sm font-semibold tracking-tight sm:inline">Sophia Zuchetto</span>
+  <!-- ================= NAV ================= -->
+  <header class="site-header fixed inset-x-0 top-0 z-50">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6" aria-label="Primary">
+      <a href="#top" class="font-mono text-sm font-medium text-white">
+        sophia<span class="text-emerald-400">.</span>zuchetto
       </a>
-      <ul class="hidden items-center gap-8 text-sm font-medium md:flex">
-        <li><a class="nav-link" href="#competencies">Competencies</a></li>
-        <li><a class="nav-link" href="#projects">Projects</a></li>
-        <li><a class="nav-link" href="#workflows">AI Workflows</a></li>
-        <li><a class="nav-link" href="#credentials">Credentials</a></li>
+      <ul class="hidden items-center gap-8 font-mono text-[13px] md:flex">
+        <li><a class="nav-link" href="#numbers">numbers</a></li>
+        <li><a class="nav-link" href="#featured">featured</a></li>
+        <li><a class="nav-link" href="#how-i-work">how i work</a></li>
+        <li><a class="nav-link" href="#experience">experience</a></li>
       </ul>
-      <a href="#contact" class="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-600 focus-visible:bg-emerald-600">Contact</a>
+      <a href="#contact" class="btn-outline">get in touch</a>
     </nav>
   </header>
 
   <main id="main">
 
-    <!-- ============ 1. EXECUTIVE HERO ============ -->
-    <section id="top" class="hero relative overflow-hidden border-b border-slate-200">
-      <div class="relative mx-auto max-w-6xl px-4 pb-20 pt-20 sm:px-6 sm:pt-28 lg:pb-24">
-        <p class="reveal eyebrow">Supply Chain ESG &nbsp;/&nbsp; Material Compliance &nbsp;/&nbsp; Data Analytics</p>
+    <!-- ================= HERO: CORE PHILOSOPHY ================= -->
+    <section id="top" class="hero relative flex min-h-[100svh] items-center overflow-hidden">
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="glow glow-b" aria-hidden="true"></div>
+      <div class="grid-fade" aria-hidden="true"></div>
 
-        <h1 class="reveal mt-6 max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-6xl">
-          Turning regulatory complexity into
-          <span class="whitespace-nowrap text-emerald-600">audit-ready</span> supply chain decisions.
-        </h1>
-
-        <p class="reveal mt-8 max-w-2xl text-lg leading-relaxed text-slate-600">
-          Economics &amp; sustainability analyst working across EPR regulation, supplier ESG and
-          material compliance. I consolidate large, multi-source datasets into traceable analysis, and
-          build validated AI workflows that make repeatable reporting faster and more reliable.
+      <div class="relative mx-auto w-full max-w-6xl px-4 pb-24 pt-36 sm:px-6">
+        <p class="reveal tag">
+          <span class="pulse" aria-hidden="true"></span>
+          guiding principle // sustainability × roi
         </p>
 
-        <div class="reveal mt-10 flex flex-wrap gap-3">
-          <a href="#projects" class="btn-primary">View project work</a>
-          <a href="#workflows" class="btn-secondary">Explore AI workflows</a>
-        </div>
+        <h1 class="reveal display mt-8 text-white">
+          Not just the right thing.<br />
+          <span class="text-glow">The profitable thing.</span>
+        </h1>
 
-        <!-- Key figures -->
-        <dl class="reveal mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-slate-200 bg-slate-200 lg:grid-cols-4">
-          <div class="stat">
-            <dt class="stat-label">State regulatory regimes analyzed</dt>
-            <dd class="stat-value">04</dd>
-            <dd class="stat-note">MD · MN · WA · ME</dd>
-          </div>
-          <div class="stat">
-            <dt class="stat-label">Textile supply chain actors assessed</dt>
-            <dd class="stat-value">20+</dd>
-            <dd class="stat-note">GHG &amp; LCA synthesis</dd>
-          </div>
-          <div class="stat">
-            <dt class="stat-label">Industry leader interviews</dt>
-            <dd class="stat-value">15+</dd>
-            <dd class="stat-note">Supply chain financing</dd>
-          </div>
-          <div class="stat">
-            <dt class="stat-label">Analyst workflows codified with AI</dt>
-            <dd class="stat-value">04</dd>
-            <dd class="stat-note">Source-verified</dd>
-          </div>
-        </dl>
+        <p class="reveal mt-10 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">
+          I connect sustainability to ROI. I turn ESG data, regulation and supply chain analysis into
+          business decisions that are worth making for their own sake, because they
+          <span class="text-white">directly increase a company's bottom line</span>.
+        </p>
+
+        <div class="reveal mt-12 flex flex-wrap items-center gap-4">
+          <a href="#featured" class="btn-primary">see the work <span aria-hidden="true">→</span></a>
+          <a href="#how-i-work" class="font-mono text-sm text-zinc-400 transition hover:text-emerald-400">/how-i-think</a>
+        </div>
       </div>
+
+      <a href="#numbers" class="scroll-cue" aria-label="Scroll to numbers">
+        <span></span>
+      </a>
     </section>
 
-    <!-- ============ 2. CORE COMPETENCY DASHBOARD ============ -->
-    <section id="competencies" class="section">
+    <!-- ================= BY THE NUMBERS ================= -->
+    <section id="numbers" class="section border-t border-white/5">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="reveal section-head">
-          <p class="eyebrow">01 — Core Competencies</p>
-          <h2 class="section-title">Corporate reporting frameworks</h2>
-          <p class="section-lede">The disclosure, target-setting and measurement standards I work within.</p>
-        </div>
+        <p class="reveal tag">by the numbers</p>
 
-        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="reveal card">
-            <div class="flex items-center justify-between">
-              <span class="status status-done">Certified</span>
-              <span class="ref">Directive (EU) 2022/2464</span>
-            </div>
-            <h3 class="card-title">CSRD Fundamentals</h3>
-            <p class="card-body">EU Corporate Sustainability Reporting Directive: double materiality, ESRS structure and value-chain disclosure scope.</p>
-            <p class="card-meta">CSRD Institute · Oct 2025</p>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="reveal number-card" style="--d: 0ms">
+            <p class="number" data-count="4" data-pad="2">04</p>
+            <h2 class="number-title">State regulatory regimes</h2>
+            <p class="number-body">Organics and EPR law mapped across Maryland, Minnesota, Washington and Maine, every claim backed by a pinpoint statutory citation.</p>
+            <p class="number-tag">md · mn · wa · me</p>
           </article>
 
-          <article class="reveal card">
-            <div class="flex items-center justify-between">
-              <span class="status status-pending">Pending</span>
-              <span class="ref">IFRS S1 · S2</span>
-            </div>
-            <h3 class="card-title">IFRS-FSA Credential</h3>
-            <p class="card-body">Fundamentals of Sustainability Accounting: linking sustainability performance to enterprise value for investor-grade disclosure.</p>
-            <p class="card-meta">IFRS Foundation · In progress</p>
+          <article class="reveal number-card" style="--d: 120ms">
+            <p class="number" data-count="20" data-suffix="+">20+</p>
+            <h2 class="number-title">Supply chain actors</h2>
+            <p class="number-body">GHG emissions and lifecycle data synthesized across global textile supply chains into a framework linking impact to financial viability.</p>
+            <p class="number-tag">ghg · lca · textiles</p>
           </article>
 
-          <article class="reveal card">
-            <div class="flex items-center justify-between">
-              <span class="status status-applied">Applied</span>
-              <span class="ref">SBTi</span>
-            </div>
-            <h3 class="card-title">SBTi Boundaries</h3>
-            <p class="card-body">Built an environmental impact methodology grounded in SBTi planetary boundaries, translating the science into investment-grade metrics.</p>
-            <p class="card-meta">Circular Economy Venture</p>
+          <article class="reveal number-card" style="--d: 240ms">
+            <p class="number" data-count="1" data-pad="2">01</p>
+            <h2 class="number-title">Leading AI framework</h2>
+            <p class="number-body">A reproducible prompt framework for regulatory extraction, validated against hand-built analysis and adopted by program teams.</p>
+            <p class="number-tag">source-verified · reusable</p>
           </article>
-
-          <article class="reveal card">
-            <div class="flex items-center justify-between">
-              <span class="status status-applied">Applied</span>
-              <span class="ref">GHG · LCA</span>
-            </div>
-            <h3 class="card-title">GHG Emissions Analysis</h3>
-            <p class="card-body">Synthesized emissions data and lifecycle assessments across 20+ global textile supply chain actors into a stakeholder-facing framework.</p>
-            <p class="card-meta">Circular Economy Venture</p>
-          </article>
-        </div>
-
-        <!-- Supporting capabilities -->
-        <div class="reveal mt-10 grid gap-6 rounded-xl border border-slate-200 bg-white p-6 sm:p-8 md:grid-cols-3">
-          <div>
-            <h3 class="skill-group">Policy &amp; Research</h3>
-            <ul class="chips">
-              <li>Regulatory landscape mapping</li><li>EPR &amp; ecomodulation</li><li>White paper writing</li><li>Stakeholder engagement</li><li>Lifecycle assessment</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="skill-group">Finance &amp; Economics</h3>
-            <ul class="chips">
-              <li>Financial modeling</li><li>ROI analysis</li><li>Cost-benefit analysis</li><li>Capital stacking</li><li>Environmental impact assessment</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="skill-group">Data &amp; Methods</h3>
-            <ul class="chips">
-              <li>Multi-source data consolidation</li><li>Data visualization</li><li>AI workflow validation</li><li>Market research</li><li>Cross-functional coordination</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 3. INTERACTIVE PROJECT HUB ============ -->
-    <section id="projects" class="section border-y border-slate-200 bg-white">
+    <!-- ================= FEATURED: CAA ================= -->
+    <section id="featured" class="section border-t border-white/5">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="reveal section-head">
-          <p class="eyebrow">02 — Project Hub</p>
-          <h2 class="section-title">Selected engagements</h2>
-          <p class="section-lede">Select an engagement to see scope, methods and deliverables.</p>
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <div class="max-w-3xl">
+            <p class="reveal tag">featured project // circular action alliance</p>
+            <h2 class="reveal heading mt-6 text-white">
+              Engineering AI that a regulator would <span class="text-glow">sign off on.</span>
+            </h2>
+          </div>
+          <p class="reveal font-mono text-xs text-zinc-500">epr regulatory analysis · may–aug 2026</p>
         </div>
 
-        <div class="reveal mt-10">
-          <div role="tablist" aria-label="Projects" class="tablist" data-tabs="projects">
-            <button role="tab" id="tab-caa" aria-controls="panel-caa" aria-selected="true" tabindex="0" class="tab">
-              <span class="tab-index">A</span> EPR Regulatory Analysis <span class="tab-org">CAA</span>
-            </button>
-            <button role="tab" id="tab-scu" aria-controls="panel-scu" aria-selected="false" tabindex="-1" class="tab">
-              <span class="tab-index">B</span> Policy Research Whitepaper <span class="tab-org">SCU</span>
-            </button>
-            <button role="tab" id="tab-venture" aria-controls="panel-venture" aria-selected="false" tabindex="-1" class="tab">
-              <span class="tab-index">C</span> Circular Economy Venture <span class="tab-org">Founder</span>
-            </button>
+        <p class="reveal mt-8 max-w-3xl text-lg leading-relaxed">
+          Regulatory extraction is slow, high-stakes and easy to get wrong. I took apart the analyst workflows I'd
+          done by hand, then engineered them into reproducible, high-performance AI prompts that return
+          the same traceable, citation-backed output every time. I then took the framework to leadership
+          and trained the people who would run it.
+        </p>
+
+        <!-- Two pillars: rigor + scale -->
+        <div class="mt-14 grid gap-5 lg:grid-cols-5">
+          <!-- Technical rigor -->
+          <div class="reveal panel lg:col-span-3">
+            <p class="panel-label">technical rigor</p>
+            <ol class="pipeline">
+              <li>
+                <span class="step">01</span>
+                <div>
+                  <h3>Dissect</h3>
+                  <p>Broke down my own hand-built analyses (statutory citation extraction, needs assessment synthesis, public comment analysis, stakeholder mapping) into discrete, repeatable reasoning steps.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step">02</span>
+                <div>
+                  <h3>Engineer</h3>
+                  <p>Rebuilt each step as a structured prompt with strict source-only rules, explicit "not specified" handling and verbatim excerpts, so every output is auditable.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step">03</span>
+                <div>
+                  <h3>Validate</h3>
+                  <p>Worked backward from finished manual work and error-checked every output against the source document before a prompt entered the library.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step">04</span>
+                <div>
+                  <h3>Deploy</h3>
+                  <p>Packaged the prompts into a vetted, reusable library that program teams can run on new jurisdictions without starting from zero.</p>
+                </div>
+              </li>
+            </ol>
           </div>
 
-          <!-- Panel A -->
-          <div role="tabpanel" id="panel-caa" aria-labelledby="tab-caa" tabindex="0" class="panel">
-            <div class="grid gap-10 lg:grid-cols-[1fr_300px]">
-              <div>
-                <p class="ref">May 2026 – Aug 2026 · Remote</p>
-                <h3 class="panel-title">EPR Regulatory Analysis Intern</h3>
-                <p class="panel-org">Circular Action Alliance (CAA)</p>
-                <p class="mt-5 leading-relaxed">Multi-state research on how organics mandates interact with Extended Producer Responsibility program design, built so that every claim traces back to its exact statutory source.</p>
-                <ul class="bullets">
-                  <li>Researched organics regulations in Maryland, Minnesota and Washington (diversion mandates, collection requirements, disposal bans, food service ware bans and education mandates), each documented with <span class="font-mono text-slate-900">pinpoint statutory citations</span>.</li>
-                  <li>Built a multi-state landscape scan comparing statutory obligations, ecomodulation structures and covered materials and entities, showing where mandates constrain, enable or complicate EPR contracting and facility operations.</li>
-                  <li>Authored a regulatory analysis on harmonization opportunities between organics legislation, EPR and climate action planning across MD, MN and ME to inform CAA program planning.</li>
-                  <li>Extracted quantitative findings from lengthy state needs assessments and public comment records, verifying every figure against the source before it entered the analysis.</li>
-                  <li>Designed a library of vetted, reusable AI prompts for core analyst workflows and trained program managers to adopt them. <a href="#workflows" class="inline-link">See the workflows →</a></li>
-                </ul>
-              </div>
-              <aside class="spec">
-                <p class="spec-head">Engagement spec</p>
-                <dl>
-                  <div><dt>Jurisdictions</dt><dd>MD · MN · WA · ME</dd></div>
-                  <div><dt>Domain</dt><dd>Organics · EPR · Climate planning</dd></div>
-                  <div><dt>Evidence standard</dt><dd>Pinpoint citation per claim</dd></div>
-                  <div><dt>Deliverables</dt><dd>Landscape scan · Regulatory analysis · Prompt library · Training</dd></div>
-                </dl>
-              </aside>
-            </div>
-          </div>
-
-          <!-- Panel B -->
-          <div role="tabpanel" id="panel-scu" aria-labelledby="tab-scu" tabindex="0" class="panel" hidden>
-            <div class="grid gap-10 lg:grid-cols-[1fr_300px]">
-              <div>
-                <p class="ref">Dec 2025 – Jun 2026 · Santa Clara, CA</p>
-                <h3 class="panel-title">EPR &amp; Sustainability Policy Research Scholar</h3>
-                <p class="panel-org">Sustainable Business Institute, Santa Clara University</p>
-                <p class="mt-5 leading-relaxed">An HBS-style policy white paper on where AI energy demand, infrastructure investment and corporate climate commitments collide.</p>
-                <ul class="bullets">
-                  <li>Co-authored the white paper, turning complex regulatory frameworks into actionable recommendations for utility leaders and policymakers.</li>
-                  <li>Led coordination across three research cohorts, developing standardized analytical frameworks for rigorous, consistent policy synthesis.</li>
-                  <li>Presented findings at the SCU LSB Symposium and developed educational tools to help future students navigate sustainability–technology policy tensions.</li>
-                </ul>
-              </div>
-              <aside class="spec">
-                <p class="spec-head">Engagement spec</p>
-                <dl>
-                  <div><dt>Format</dt><dd>HBS-style white paper</dd></div>
-                  <div><dt>Audience</dt><dd>Utility leaders · Policymakers</dd></div>
-                  <div><dt>Team</dt><dd>3 research cohorts</dd></div>
-                  <div><dt>Output</dt><dd>Recommendations · Symposium talk · Teaching tools</dd></div>
-                </dl>
-              </aside>
-            </div>
-          </div>
-
-          <!-- Panel C -->
-          <div role="tabpanel" id="panel-venture" aria-labelledby="tab-venture" tabindex="0" class="panel" hidden>
-            <div class="grid gap-10 lg:grid-cols-[1fr_300px]">
-              <div>
-                <p class="ref">Apr 2025 – Dec 2025 · Santa Clara, CA</p>
-                <h3 class="panel-title">Founder, Circular Economy Venture</h3>
-                <p class="panel-org">Bronco Venture Accelerator, Cohort 7 · Santa Clara University</p>
-                <p class="mt-5 leading-relaxed">A circular textile venture built on one premise: environmental performance has to be measured in terms investors can act on.</p>
-                <ul class="bullets">
-                  <li>Developed an environmental impact assessment methodology grounded in SBTi planetary boundaries, translating sustainability science into investment-grade metrics linked to ROI.</li>
-                  <li>Synthesized GHG emissions data and lifecycle assessments across <span class="font-mono text-slate-900">20+</span> global textile supply chain actors into a stakeholder-facing framework linking sustainability metrics to financial viability.</li>
-                  <li>Conducted <span class="font-mono text-slate-900">15+</span> interviews with industry leaders on market structure, supply chain financing and barriers to sustainable infrastructure investment.</li>
-                  <li>Mapped the competitor landscape with environmental finance and impact measurement frameworks, and built visualizations that explain systems dynamics to non-technical audiences.</li>
-                </ul>
-              </div>
-              <aside class="spec">
-                <p class="spec-head">Engagement spec</p>
-                <dl>
-                  <div><dt>Sector</dt><dd>Textiles · Circular fashion</dd></div>
-                  <div><dt>Frameworks</dt><dd>SBTi · GHG · LCA</dd></div>
-                  <div><dt>Primary research</dt><dd>15+ leader interviews</dd></div>
-                  <div><dt>Output</dt><dd>Impact methodology · Investor framework</dd></div>
-                </dl>
-              </aside>
-            </div>
+          <!-- Leadership scale -->
+          <div class="reveal panel panel-accent flex flex-col lg:col-span-2" style="--d: 120ms">
+            <p class="panel-label">leadership scale</p>
+            <p class="number mt-6" data-count="20" data-suffix="+">20+</p>
+            <h3 class="mt-3 text-2xl font-bold tracking-tight text-white">senior leaders &amp; program managers trained</h3>
+            <p class="mt-4 leading-relaxed">
+              Designed and led an executive presentation and hands-on training that equipped senior company
+              leaders and program managers to adopt the framework in their own regulatory work.
+            </p>
+            <ul class="mt-auto space-y-3 pt-8 font-mono text-[13px] text-zinc-300">
+              <li class="check">executive-level presentation</li>
+              <li class="check">live workflow training</li>
+              <li class="check">organization-wide adoption path</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ 4. AI ANALYST WORKFLOWS ============ -->
-    <section id="workflows" class="section">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="reveal section-head">
-          <p class="eyebrow">03 — AI Analyst Workflows</p>
-          <h2 class="section-title">A library of vetted, reusable prompts</h2>
-          <p class="section-lede">Each workflow was validated by working backward from analysis I first produced by hand, then error-checking every output against the source document.</p>
-        </div>
-
-        <div class="reveal workflow-shell mt-12">
-          <div class="workflow-list" role="tablist" aria-label="AI workflows" aria-orientation="vertical" data-tabs="workflows">
-            <!-- Buttons are generated from the WORKFLOWS data below -->
-          </div>
-
+        <!-- Live workflow library -->
+        <div class="reveal mt-5 workflow-shell">
+          <div class="workflow-list" role="tablist" aria-label="AI workflows" aria-orientation="vertical" data-tabs="workflows"></div>
           <div class="workflow-view">
             <div class="workflow-toolbar">
-              <div class="flex items-center gap-2" aria-hidden="true">
-                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-              </div>
-              <span id="wf-filename" class="font-mono text-xs text-slate-400">prompt.md</span>
+              <span id="wf-filename" class="font-mono text-xs text-zinc-500">prompt.md</span>
               <button id="copy-btn" type="button" class="copy-btn">
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-                <span id="copy-label">Copy to Clipboard</span>
+                <span id="copy-label">copy prompt</span>
               </button>
             </div>
-            <div id="wf-panels"><!-- Panels generated below --></div>
+            <div id="wf-panels"></div>
             <p id="copy-status" class="sr-only" aria-live="polite"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CREDENTIALS ============ -->
-    <section id="credentials" class="section border-t border-slate-200 bg-white">
+    <!-- ================= HOW I THINK & WORK ================= -->
+    <section id="how-i-work" class="section border-t border-white/5">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="reveal section-head">
-          <p class="eyebrow">04 — Credentials</p>
-          <h2 class="section-title">Education &amp; certification</h2>
-        </div>
-        <div class="mt-10 grid gap-5 md:grid-cols-2">
-          <div class="reveal card">
-            <p class="ref">Sep 2024 – Present</p>
-            <h3 class="card-title">B.S. Economics, Minor in Sustainability Studies</h3>
-            <p class="card-body">Santa Clara University · GPA <span class="font-mono text-slate-900">3.65</span></p>
-            <p class="card-meta">Environmental Economics · Public Finance · Cost-Benefit Analysis · Business Strategy · Data Analysis &amp; Visualization</p>
+        <div class="grid gap-12 lg:grid-cols-[1fr_2fr]">
+          <div class="lg:sticky lg:top-32 lg:self-start">
+            <p class="reveal tag">how i think &amp; work</p>
+            <h2 class="reveal heading mt-6 text-white">Sustainability is a <span class="text-glow">business case</span>, not a donation.</h2>
           </div>
-          <div class="reveal card">
-            <p class="ref">Certifications</p>
-            <ul class="mt-3 divide-y divide-slate-100">
-              <li class="flex items-center justify-between py-3"><span class="font-semibold text-slate-900">CSRD Fundamentals</span><span class="status status-done">Oct 2025</span></li>
-              <li class="flex items-center justify-between py-3"><span class="font-semibold text-slate-900">IFRS-FSA Credential</span><span class="status status-pending">Pending</span></li>
-            </ul>
-            <p class="card-meta">Educated internationally: The American School in Switzerland (TASIS), Lugano</p>
+
+          <ol class="principles">
+            <li class="reveal principle">
+              <span class="principle-num">01</span>
+              <div>
+                <h3>Charity gets cut. Strategy gets funded.</h3>
+                <p>When sustainability is treated as goodwill, it lives in a cost center, survives on good intentions and is the first line to disappear in a tight quarter. Programs framed as "the right thing to do" are easy to praise and just as easy to defund.</p>
+              </div>
+            </li>
+            <li class="reveal principle">
+              <span class="principle-num">02</span>
+              <div>
+                <h3>Every impact has a price tag. Find it.</h3>
+                <p>Material waste is margin leakage. EPR fees and ecomodulation put a number on packaging choices. Supplier emissions show up as regulatory exposure and cost of capital. Once you price the impact, sustainability stops being a values debate and becomes a line item someone wants to improve.</p>
+              </div>
+            </li>
+            <li class="reveal principle">
+              <span class="principle-num">03</span>
+              <div>
+                <h3>If it can't be traced, it can't be trusted.</h3>
+                <p>An economic argument is only as strong as its weakest number. I trace every figure to its source, every requirement to its pinpoint citation, and every AI output back to a document I can open. Audit-ready isn't a finishing step; it's how the work is built.</p>
+              </div>
+            </li>
+            <li class="reveal principle">
+              <span class="principle-num">04</span>
+              <div>
+                <h3>Speak the language of the person who decides.</h3>
+                <p>The best analysis does nothing if it stays in the sustainability team. I translate science, statute and supply chain data into ROI, risk and timelines: the terms that CFOs, operators and program leaders already use to make choices.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section id="experience" class="section border-t border-white/5">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <p class="reveal tag">experience</p>
+        <h2 class="reveal heading mt-6 text-white">Where the thinking gets tested.</h2>
+
+        <div class="mt-14 divide-y divide-white/10 border-y border-white/10">
+          <article class="reveal role">
+            <p class="role-date">2026</p>
+            <div>
+              <h3 class="role-title">EPR Regulatory Analysis Intern</h3>
+              <p class="role-org">Circular Action Alliance</p>
+            </div>
+            <p class="role-body">Multi-state landscape scan of organics mandates, ecomodulation and covered entities; harmonization analysis across organics, EPR and climate planning to inform program design.</p>
+          </article>
+
+          <article class="reveal role">
+            <p class="role-date">2025–26</p>
+            <div>
+              <h3 class="role-title">EPR &amp; Sustainability Policy Research Scholar</h3>
+              <p class="role-org">Sustainable Business Institute, Santa Clara University</p>
+            </div>
+            <p class="role-body">Co-authored an HBS-style white paper on AI energy demand, infrastructure investment and climate commitments; coordinated three research cohorts; presented at the SCU LSB Symposium.</p>
+          </article>
+
+          <article class="reveal role">
+            <p class="role-date">2025</p>
+            <div>
+              <h3 class="role-title">Founder, Circular Economy Venture</h3>
+              <p class="role-org">Bronco Venture Accelerator, Cohort 7</p>
+            </div>
+            <p class="role-body">Built an impact methodology grounded in SBTi planetary boundaries that links environmental performance to ROI; ran 15+ industry interviews on supply chain financing.</p>
+          </article>
+        </div>
+
+        <!-- Credentials -->
+        <div class="mt-16 grid gap-5 md:grid-cols-2">
+          <div class="reveal panel">
+            <p class="panel-label">certification</p>
+            <p class="mt-5 text-2xl font-bold tracking-tight text-white">CSRD Fundamentals Certification</p>
+            <p class="mt-2 font-mono text-[13px] text-zinc-500">csrd institute · oct 2025</p>
+          </div>
+          <div class="reveal panel" style="--d: 120ms">
+            <p class="panel-label">education</p>
+            <p class="mt-5 text-2xl font-bold tracking-tight text-white">B.S. Economics, Minor in Sustainability Studies</p>
+            <p class="mt-2 font-mono text-[13px] text-zinc-500">santa clara university · gpa 3.65</p>
           </div>
         </div>
+
+        <ul class="reveal mt-8 flex flex-wrap gap-2" aria-label="Frameworks and methods">
+          <li class="chip">CSRD</li><li class="chip">SBTi</li><li class="chip">GHG emissions</li><li class="chip">Lifecycle assessment</li>
+          <li class="chip">EPR &amp; ecomodulation</li><li class="chip">ROI &amp; cost-benefit</li><li class="chip">Financial modeling</li><li class="chip">Data visualization</li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <!-- ============ CONTACT / FOOTER ============ -->
-  <footer id="contact" class="bg-slate-900 text-slate-300">
-    <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <p class="eyebrow eyebrow-dark">Contact</p>
-      <h2 class="mt-4 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">Open to supplier ESG, material compliance and EPR reporting roles.</h2>
-      <div class="mt-10 flex flex-wrap gap-3">
+  <!-- ================= CONTACT ================= -->
+  <footer id="contact" class="relative overflow-hidden border-t border-white/5">
+    <div class="glow glow-c" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-6xl px-4 py-28 sm:px-6">
+      <p class="reveal tag">let's talk</p>
+      <h2 class="reveal display-sm mt-6 text-white">Let's make the sustainable choice <span class="text-glow">the obvious one.</span></h2>
+      <p class="reveal mt-6 max-w-xl text-lg">Open to supplier ESG, material compliance and EPR reporting roles.</p>
+      <div class="reveal mt-10 flex flex-wrap gap-4">
         <a href="mailto:szuchetto@scu.edu" class="btn-primary">szuchetto@scu.edu</a>
-        <a href="https://www.linkedin.com/in/sophia-zuchetto" target="_blank" rel="noopener" class="btn-ghost">LinkedIn ↗</a>
+        <a href="https://www.linkedin.com/in/sophia-zuchetto" target="_blank" rel="noopener" class="btn-outline">linkedin ↗</a>
       </div>
-      <div class="mt-16 flex flex-col justify-between gap-2 border-t border-slate-800 pt-6 font-mono text-xs text-slate-500 sm:flex-row">
-        <span>© <span id="year">2026</span> Sophia Zuchetto</span>
-        <span>Santa Clara, CA</span>
+      <div class="mt-24 flex flex-col justify-between gap-2 border-t border-white/10 pt-6 font-mono text-xs text-zinc-600 sm:flex-row">
+        <span>© <span id="year">2026</span> sophia zuchetto</span>
+        <span>santa clara, ca</span>
       </div>
     </div>
   </footer>
 
   <script>
-    /* ---------- Workflow library data ---------- */
+    /* ---------- Workflow library ---------- */
     const WORKFLOWS = [
       {
         id: 'citation',
         title: 'Statutory Citation Extraction',
-        summary: 'Statute → requirement table with pinpoint citations',
+        summary: 'statute → requirement table with pinpoint citations',
         file: 'statutory-citation-extraction.md',
         prompt: `ROLE
 You are a regulatory research analyst supporting an Extended Producer
@@ -398,7 +367,7 @@ SOURCE TEXT
       {
         id: 'needs',
         title: 'Needs Assessment Synthesis',
-        summary: 'Long state reports → verified findings and figures',
+        summary: 'long state reports → verified findings and figures',
         file: 'needs-assessment-synthesis.md',
         prompt: `ROLE
 You are an analyst synthesizing a state needs assessment for a
@@ -434,7 +403,7 @@ DOCUMENT
       {
         id: 'comments',
         title: 'Public Comment Analysis',
-        summary: 'Comment records → themes, positions and evidence',
+        summary: 'comment records → themes, positions and evidence',
         file: 'public-comment-analysis.md',
         prompt: `ROLE
 You are a policy analyst reviewing the public comment record for a
@@ -471,7 +440,7 @@ COMMENT RECORD
       {
         id: 'stakeholders',
         title: 'Stakeholder Mapping',
-        summary: 'Sources → actors, roles, interests and influence',
+        summary: 'sources → actors, roles, interests and influence',
         file: 'stakeholder-mapping.md',
         prompt: `ROLE
 You are a sustainability analyst mapping stakeholders for a
@@ -508,12 +477,10 @@ SOURCES
       },
     ];
 
-    /* ---------- Build workflow UI ---------- */
     const wfList = document.querySelector('[data-tabs="workflows"]');
     const wfPanels = document.getElementById('wf-panels');
 
     WORKFLOWS.forEach((wf, i) => {
-      const n = String(i + 1).padStart(2, '0');
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'wf-btn';
@@ -522,7 +489,7 @@ SOURCES
       btn.setAttribute('aria-controls', `wf-panel-${wf.id}`);
       btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
       btn.tabIndex = i === 0 ? 0 : -1;
-      btn.innerHTML = `<span class="wf-num">${n}</span><span><span class="wf-title">${wf.title}</span><span class="wf-sub">${wf.summary}</span></span>`;
+      btn.innerHTML = `<span class="wf-num">${String(i + 1).padStart(2, '0')}</span><span><span class="wf-title">${wf.title}</span><span class="wf-sub">${wf.summary}</span></span>`;
       wfList.appendChild(btn);
 
       const panel = document.createElement('div');
@@ -540,46 +507,40 @@ SOURCES
       wfPanels.appendChild(panel);
     });
 
-    /* ---------- Accessible tabs (shared by projects + workflows) ---------- */
-    function initTabs(list, onChange) {
-      const tabs = [...list.querySelectorAll('[role="tab"]')];
-      const select = (tab) => {
-        tabs.forEach((t) => {
-          const on = t === tab;
-          t.setAttribute('aria-selected', on);
-          t.tabIndex = on ? 0 : -1;
-          const panel = document.getElementById(t.getAttribute('aria-controls'));
-          panel.hidden = !on;
-          if (on) {
-            panel.classList.remove('is-entering');
-            void panel.offsetWidth; // restart the reveal animation
-            panel.classList.add('is-entering');
-          }
-        });
-        if (onChange) onChange(tab);
-      };
-      tabs.forEach((tab, i) => {
-        tab.addEventListener('click', () => select(tab));
-        tab.addEventListener('keydown', (e) => {
-          const keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
-          let next = null;
-          if (e.key in keys) next = tabs[(i + keys[e.key] + tabs.length) % tabs.length];
-          if (e.key === 'Home') next = tabs[0];
-          if (e.key === 'End') next = tabs[tabs.length - 1];
-          if (next) { e.preventDefault(); next.focus(); select(next); }
-        });
+    /* ---------- Accessible tabs ---------- */
+    const filename = document.getElementById('wf-filename');
+    const activePanel = () => wfPanels.querySelector('.wf-panel:not([hidden])');
+    const tabs = [...wfList.querySelectorAll('[role="tab"]')];
+
+    function select(tab) {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute('aria-controls'));
+        panel.hidden = !on;
+        if (on) {
+          panel.classList.remove('is-entering');
+          void panel.offsetWidth; // restart the reveal animation
+          panel.classList.add('is-entering');
+        }
       });
+      filename.textContent = activePanel().dataset.file;
+      resetCopy();
     }
 
-    const filename = document.getElementById('wf-filename');
-    const activeWfPanel = () => wfPanels.querySelector('.wf-panel:not([hidden])');
-
-    initTabs(document.querySelector('[data-tabs="projects"]'));
-    initTabs(wfList, () => {
-      filename.textContent = activeWfPanel().dataset.file;
-      resetCopy();
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(tab));
+      tab.addEventListener('keydown', (e) => {
+        const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        let next = null;
+        if (step) next = tabs[(i + step + tabs.length) % tabs.length];
+        if (e.key === 'Home') next = tabs[0];
+        if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) { e.preventDefault(); next.focus(); select(next); }
+      });
     });
-    filename.textContent = activeWfPanel().dataset.file;
+    filename.textContent = activePanel().dataset.file;
 
     /* ---------- Copy to clipboard ---------- */
     const copyBtn = document.getElementById('copy-btn');
@@ -590,7 +551,7 @@ SOURCES
     function resetCopy() {
       clearTimeout(copyTimer);
       copyBtn.classList.remove('is-copied');
-      copyLabel.textContent = 'Copy to Clipboard';
+      copyLabel.textContent = 'copy prompt';
     }
 
     async function copyText(text) {
@@ -613,30 +574,54 @@ SOURCES
     }
 
     copyBtn.addEventListener('click', async () => {
-      const text = activeWfPanel().querySelector('.prompt').textContent;
-      const ok = await copyText(text);
+      const ok = await copyText(activePanel().querySelector('.prompt').textContent);
       copyBtn.classList.toggle('is-copied', ok);
-      copyLabel.textContent = ok ? 'Copied' : 'Copy failed';
+      copyLabel.textContent = ok ? 'copied ✓' : 'copy failed';
       copyStatus.textContent = ok ? 'Prompt copied to clipboard.' : 'Copy failed. Select the text to copy manually.';
       clearTimeout(copyTimer);
       copyTimer = setTimeout(resetCopy, 2200);
     });
 
-    /* ---------- Scroll reveal ---------- */
+    /* ---------- Scroll reveal + number count-up ---------- */
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function countUp(el) {
+      const target = Number(el.dataset.count);
+      const pad = Number(el.dataset.pad || 0);
+      const suffix = el.dataset.suffix || '';
+      const fmt = (n) => String(n).padStart(pad, '0') + suffix;
+      if (reduceMotion) { el.textContent = fmt(target); return; }
+      const duration = 1400;
+      const start = performance.now();
+      const tick = (now) => {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = fmt(Math.round(eased * target));
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+
     const reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if ('IntersectionObserver' in window && !reduceMotion) {
       const io = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            io.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          entry.target.querySelectorAll('[data-count]').forEach(countUp);
+          io.unobserve(entry.target);
         });
-      }, { rootMargin: '0px 0px -8% 0px' });
+      }, { rootMargin: '0px 0px -10% 0px' });
       reveals.forEach((el) => io.observe(el));
     } else {
       reveals.forEach((el) => el.classList.add('is-visible'));
     }
+
+    /* ---------- Header background on scroll ---------- */
+    const header = document.querySelector('.site-header');
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
