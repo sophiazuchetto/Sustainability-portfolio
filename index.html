@@ -52,11 +52,15 @@
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" class="overflow-x-clip">
 
     <!-- ================= HERO: magazine feature ================= -->
     <section id="top" class="relative">
-      <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-20 pt-10 md:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-20 lg:pb-28 lg:pt-16">
+      <div class="ambient" aria-hidden="true">
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[150px] glow-hero-a"></span>
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[120px] glow-hero-b"></span>
+      </div>
+      <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-20 pt-10 md:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-20 lg:pb-28 lg:pt-16">
         <!-- Text column -->
         <div class="min-w-0">
           <p class="eyebrow" data-aos="fade-up">Corporate ESG · Supply Chain · Regulatory Strategy</p>
@@ -95,17 +99,17 @@
       </div>
 
       <!-- By the numbers -->
-      <div class="mx-auto max-w-7xl px-6 pb-24 md:px-12">
+      <div class="relative z-10 mx-auto max-w-7xl px-6 pb-24 md:px-12">
         <dl class="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
-          <div class="cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="0">
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="0">
             <dd class="figure">4</dd>
             <dt class="figure-label">State regulatory regimes analyzed across EPR and organics law</dt>
           </div>
-          <div class="cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
             <dd class="figure">20+</dd>
             <dt class="figure-label">Global supply chain actors assessed for emissions and lifecycle impact</dt>
           </div>
-          <div class="cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
             <dd class="figure">12+</dd>
             <dt class="figure-label">AI-Automated Workflows engineered for repeatable analyst tasks</dt>
           </div>
@@ -114,33 +118,37 @@
     </section>
 
     <!-- ================= EXPERTISE GRID ================= -->
-    <section id="expertise" class="strip">
-      <div class="mx-auto max-w-7xl px-6 py-28 md:px-12">
+    <section id="expertise" class="strip relative">
+      <div class="ambient" aria-hidden="true">
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-[#bbf7d6] blur-[150px] glow-mint-a"></span>
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-[#bbf7d6] blur-[120px] glow-mint-b"></span>
+      </div>
+      <div class="relative z-10 mx-auto max-w-7xl px-6 py-28 md:px-12">
         <p class="eyebrow" data-aos="fade-up">Expertise</p>
         <h2 class="heading mt-5 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
           The frameworks behind <em class="accent">every recommendation.</em>
         </h2>
 
         <div class="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          <article class="card cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="0">
+          <article class="card cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="0">
             <span class="pill pill-accent">Certified</span>
             <h3 class="card-title">CSRD Fundamentals</h3>
             <p class="card-body">Double materiality, ESRS structure and value-chain disclosure under the EU Corporate Sustainability Reporting Directive.</p>
             <p class="card-meta">CSRD Institute · 2025</p>
           </article>
-          <article class="card cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+          <article class="card cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
             <span class="pill">Applied</span>
             <h3 class="card-title">SBTN Boundaries</h3>
             <p class="card-body">An impact methodology grounded in SBTN planetary boundaries, translated into investment-grade metrics tied to ROI.</p>
             <p class="card-meta">Circular Economy Venture</p>
           </article>
-          <article class="card cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
+          <article class="card cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
             <span class="pill">Applied</span>
             <h3 class="card-title">GHG &amp; Lifecycle Analysis</h3>
             <p class="card-body">Emissions and lifecycle data synthesized across global textile supply chains into a framework linking impact to financial viability.</p>
             <p class="card-meta">20+ supply chain actors</p>
           </article>
-          <article class="card cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="300">
+          <article class="card cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="300">
             <span class="pill">Applied</span>
             <h3 class="card-title">EPR &amp; Material Compliance</h3>
             <p class="card-body">Statutory obligations, ecomodulation structures and covered materials mapped across states with pinpoint citations.</p>
@@ -151,8 +159,11 @@
     </section>
 
     <!-- ================= FEATURED: CAA ================= -->
-    <section id="caa">
-      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-28 md:px-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
+    <section id="caa" class="relative">
+      <div class="ambient" aria-hidden="true">
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-[#bbf7d6] blur-[150px] glow-workflows"></span>
+      </div>
+      <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-28 md:px-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
         <div>
           <div class="lg:sticky lg:top-28">
             <p class="eyebrow" data-aos="fade-up">Featured · Circular Action Alliance</p>
@@ -176,7 +187,7 @@
           </div>
 
           <!-- Executive presentation highlight -->
-          <figure class="feature cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl" data-aos="fade-up" data-aos-delay="150">
+          <figure class="feature cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up" data-aos-delay="150">
             <p class="chapter-label">The presentation</p>
             <div class="mt-5 flex flex-wrap items-end gap-x-5 gap-y-1">
               <span class="feature-figure">20+</span>
@@ -197,7 +208,7 @@
             <span class="disclaimer-label">Note:</span> The following modules are generalized sample workflows demonstrating methodology. All proprietary internal documents, prompts, and strategic frameworks have been omitted for confidentiality.
           </p>
 
-          <div class="workflow cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl" data-aos="fade-up" data-aos-delay="150">
+          <div class="workflow cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up" data-aos-delay="150">
             <div class="wf-tabs" role="tablist" aria-label="Sample AI workflows" data-tabs="workflows"></div>
             <div class="wf-view">
               <div class="wf-toolbar">
@@ -257,13 +268,17 @@
     </section>
 
     <!-- ================= EXPERIENCE (CASE STUDIES) & CREDENTIALS ================= -->
-    <section id="experience">
-      <div class="mx-auto max-w-7xl px-6 py-28 md:px-12">
+    <section id="experience" class="relative">
+      <div class="ambient" aria-hidden="true">
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[150px] glow-exp-a"></span>
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[120px] glow-exp-b"></span>
+      </div>
+      <div class="relative z-10 mx-auto max-w-7xl px-6 py-28 md:px-12">
         <p class="eyebrow" data-aos="fade-up">Experience</p>
         <h2 class="heading mt-5" data-aos="fade-up" data-aos-delay="100">Selected roles.</h2>
 
         <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <article class="case cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl" data-aos="fade-up">
+          <article class="case cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up">
             <div class="case-media case-media-1">
               <!-- Optional: add assets/case-caa.jpg to show a photo here -->
               <img src="assets/case-caa.jpg" alt="" class="case-img" onerror="this.remove()" />
@@ -275,7 +290,7 @@
               <p class="role-body">Multi-state landscape scan of organics mandates, ecomodulation and covered entities, with a harmonization analysis across organics, EPR and climate planning to inform program design.</p>
             </div>
           </article>
-          <article class="case cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+          <article class="case cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up" data-aos-delay="100">
             <div class="case-media case-media-2">
               <!-- Optional: add assets/case-scu.jpg to show a photo here -->
               <img src="assets/case-scu.jpg" alt="" class="case-img" onerror="this.remove()" />
@@ -287,7 +302,7 @@
               <p class="role-body">Co-authored an HBS-style white paper on AI energy demand, infrastructure investment and climate commitments; coordinated three research cohorts and presented at the SCU LSB Symposium.</p>
             </div>
           </article>
-          <article class="case cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+          <article class="case cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up" data-aos-delay="200">
             <div class="case-media case-media-3">
               <!-- Optional: add assets/case-venture.jpg to show a photo here -->
               <img src="assets/case-venture.jpg" alt="" class="case-img" onerror="this.remove()" />
@@ -302,12 +317,12 @@
         </div>
 
         <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div class="cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8 sm:p-10" data-aos="fade-up">
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8 sm:p-10" data-aos="fade-up">
             <p class="eyebrow">Certification</p>
             <p class="mt-5 font-serif text-3xl font-bold text-slate-950">CSRD Fundamentals Certification</p>
             <p class="mt-3 text-sm text-slate-500">CSRD Institute · October 2025</p>
           </div>
-          <div class="cloud bg-white/90 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)] rounded-3xl p-8 sm:p-10" data-aos="fade-up" data-aos-delay="100">
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8 sm:p-10" data-aos="fade-up" data-aos-delay="100">
             <p class="eyebrow">Education</p>
             <p class="mt-5 font-serif text-3xl font-semibold text-slate-950">B.S. Economics, Minor in Sustainability Studies</p>
             <p class="mt-3 text-sm text-slate-500">Santa Clara University · GPA 3.65</p>

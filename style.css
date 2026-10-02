@@ -110,6 +110,37 @@ body {
   );
 }
 
+/* ---------- Ambient glows ----------
+   Large, very soft light shapes behind the content (blur and opacity
+   come from Tailwind classes on each shape). Each sits above its
+   section's background band but below the content (z-10).         */
+.ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.ambient > span { display: block; }
+
+/* Hero: steel blue behind the portrait and the headline */
+.glow-hero-a { width: 46rem; height: 40rem; top: -6rem; right: -12rem; }
+.glow-hero-b { width: 34rem; height: 28rem; top: 18rem; left: -14rem; }
+
+/* Core competency dashboard: mint radiating behind the cards */
+.glow-mint-a { width: 44rem; height: 30rem; top: 30%; left: 4%; }
+.glow-mint-b { width: 36rem; height: 26rem; top: 45%; right: -6rem; }
+
+/* Sample workflows (lower part of the featured section): mint */
+.glow-workflows { width: 44rem; height: 36rem; bottom: 2rem; right: -8rem; }
+
+/* Experience: steel blue behind the case study cards */
+.glow-exp-a { width: 48rem; height: 34rem; top: 18%; left: -10rem; }
+.glow-exp-b { width: 38rem; height: 30rem; bottom: 4rem; right: -10rem; }
+
+@media (max-width: 640px) {
+  .ambient > span { max-width: 120vw; }
+}
+
 /* ---------- Type ---------- */
 .eyebrow {
   font-size: 11.5px;
