@@ -63,7 +63,7 @@
     <!-- ================= HERO ================= -->
     <section id="top" class="flex min-h-[100svh] items-center">
       <div class="mx-auto w-full max-w-6xl px-4 pb-24 pt-36 sm:px-8">
-        <div class="grid grid-cols-1 items-center gap-14 lg:grid-cols-[7fr_5fr] lg:gap-16">
+        <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-20">
           <!-- Headline + intro -->
           <div>
             <p class="pill" data-aos="fade-up">Corporate ESG · Supply Chain · Regulatory Strategy</p>
@@ -83,13 +83,13 @@
           </div>
 
           <!-- Portrait -->
-          <div class="mx-auto w-full max-w-sm lg:max-w-none" data-aos="fade-up" data-aos-delay="300">
+          <div class="order-first w-full max-w-48 lg:order-none lg:max-w-56 lg:justify-self-end" data-aos="fade-up" data-aos-delay="300">
             <div class="portrait relative aspect-[4/5] overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950">
               <img
                 src="assets/profile.jpg"
                 alt="Portrait of Sophia Zuchetto"
-                class="h-full w-full object-cover"
-                width="800" height="1000"
+                class="h-full w-full object-cover object-[50%_30%]"
+                width="975" height="1366"
                 onerror="this.remove()"
               />
               <!-- Shown until assets/profile.jpg exists -->
@@ -101,7 +101,7 @@
         <!-- By the numbers -->
         <dl class="mt-24 grid gap-10 border-t border-white/10 pt-12 sm:grid-cols-3 sm:gap-6">
           <div data-aos="fade-up" data-aos-delay="100">
-            <dd class="figure">3</dd>
+            <dd class="figure">4</dd>
             <dt class="figure-label">State regulatory regimes analyzed across EPR and organics law</dt>
           </div>
           <div data-aos="fade-up" data-aos-delay="250">
@@ -135,8 +135,8 @@
           </article>
           <article class="card" data-aos="fade-up" data-aos-delay="100">
             <span class="pill">Applied</span>
-            <h3 class="card-title">SBTi Boundaries</h3>
-            <p class="card-body">An impact methodology grounded in SBTi planetary boundaries, translated into investment-grade metrics tied to ROI.</p>
+            <h3 class="card-title">SBTN Boundaries</h3>
+            <p class="card-body">An impact methodology grounded in SBTN planetary boundaries, translated into investment-grade metrics tied to ROI.</p>
             <p class="card-meta">Circular Economy Venture</p>
           </article>
           <article class="card" data-aos="fade-up" data-aos-delay="200">
@@ -192,13 +192,17 @@
             </figure>
 
             <div class="chapter" data-aos="fade-up">
-              <p class="chapter-label">The library</p>
-              <p>A selection of the workflows, shown as they're structured. Choose one to read it.</p>
+              <p class="chapter-label">Sample workflows</p>
+              <p>Generalized sample workflows that show how each analyst task is structured. Choose one to read it.</p>
             </div>
 
             <!-- Workflow viewer -->
-            <div class="workflow" data-aos="fade-up" data-aos-delay="100">
-              <div class="wf-tabs" role="tablist" aria-label="AI workflows" data-tabs="workflows"></div>
+            <p class="disclaimer" data-aos="fade-up" data-aos-delay="100">
+              <span class="disclaimer-label">Note:</span> The following modules are generalized sample workflows demonstrating methodology. All proprietary internal documents, prompts, and strategic frameworks have been omitted for confidentiality.
+            </p>
+
+            <div class="workflow" data-aos="fade-up" data-aos-delay="150">
+              <div class="wf-tabs" role="tablist" aria-label="Sample AI workflows" data-tabs="workflows"></div>
               <div class="wf-view">
                 <div class="wf-toolbar">
                   <span id="wf-filename" class="truncate text-xs text-neutral-500">prompt.md</span>
@@ -330,7 +334,7 @@
               <li class="skill-pill">SBTN Planetary Boundaries</li>
               <li class="skill-pill">EPR &amp; Material Compliance</li>
               <li class="skill-pill">Statutory Landscape Scanning</li>
-              <li class="skill-pill">Extended Producer Responsibility</li>
+              <li class="skill-pill">Regulatory Harmonization Analysis</li>
             </ul>
           </div>
           <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
