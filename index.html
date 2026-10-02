@@ -52,6 +52,7 @@
         <li><a class="nav-link" href="#caa">Featured</a></li>
         <li><a class="nav-link" href="#philosophy">Philosophy</a></li>
         <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
       </ul>
       <a href="#contact" class="pill-link">Contact</a>
     </nav>
@@ -61,26 +62,46 @@
 
     <!-- ================= HERO ================= -->
     <section id="top" class="flex min-h-[100svh] items-center">
-      <div class="mx-auto w-full max-w-6xl px-4 pb-24 pt-40 sm:px-8">
-        <p class="pill" data-aos="fade-up">Corporate ESG · Supply Chain · Regulatory Strategy</p>
+      <div class="mx-auto w-full max-w-6xl px-4 pb-24 pt-36 sm:px-8">
+        <div class="grid grid-cols-1 items-center gap-14 lg:grid-cols-[7fr_5fr] lg:gap-16">
+          <!-- Headline + intro -->
+          <div>
+            <p class="pill" data-aos="fade-up">Corporate ESG · Supply Chain · Regulatory Strategy</p>
 
-        <h1 class="display mt-10 max-w-5xl text-white" data-aos="fade-up" data-aos-delay="150">
-          Bridging the gap between <em class="accent">sustainability performance</em> and corporate ROI.
-        </h1>
+            <h1 class="display mt-10 text-white" data-aos="fade-up" data-aos-delay="150">
+              Bridging the gap between <em class="accent">sustainability performance</em> and corporate ROI.
+            </h1>
 
-        <p class="mt-10 max-w-2xl text-lg leading-loose text-neutral-300 sm:text-xl" data-aos="fade-up" data-aos-delay="300">
-          I design frameworks that transform environmental data into clear, strategic business decisions.
-        </p>
+            <p class="mt-8 max-w-xl text-lg leading-loose text-neutral-300" data-aos="fade-up" data-aos-delay="300">
+              I design frameworks that transform environmental data into clear, strategic business decisions.
+            </p>
 
-        <div class="mt-14 flex flex-wrap items-center gap-6" data-aos="fade-up" data-aos-delay="450">
-          <a href="#caa" class="btn-primary">View featured work</a>
-          <a href="#philosophy" class="text-link">Read my approach <span aria-hidden="true">→</span></a>
+            <div class="mt-12 flex flex-wrap items-center gap-6" data-aos="fade-up" data-aos-delay="450">
+              <a href="#caa" class="btn-primary">View featured work</a>
+              <a href="#philosophy" class="text-link">Read my approach <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <!-- Portrait -->
+          <div class="mx-auto w-full max-w-sm lg:max-w-none" data-aos="fade-up" data-aos-delay="300">
+            <div class="portrait relative aspect-[4/5] overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950">
+              <img
+                src="assets/profile.jpg"
+                alt="Portrait of Sophia Zuchetto"
+                class="h-full w-full object-cover"
+                width="800" height="1000"
+                onerror="this.remove()"
+              />
+              <!-- Shown until assets/profile.jpg exists -->
+              <div class="portrait-fallback" aria-hidden="true">SZ</div>
+            </div>
+          </div>
         </div>
 
         <!-- By the numbers -->
         <dl class="mt-24 grid gap-10 border-t border-white/10 pt-12 sm:grid-cols-3 sm:gap-6">
           <div data-aos="fade-up" data-aos-delay="100">
-            <dd class="figure">4</dd>
+            <dd class="figure">3</dd>
             <dt class="figure-label">State regulatory regimes analyzed across EPR and organics law</dt>
           </div>
           <div data-aos="fade-up" data-aos-delay="250">
@@ -88,8 +109,8 @@
             <dt class="figure-label">Global supply chain actors assessed for emissions and lifecycle impact</dt>
           </div>
           <div data-aos="fade-up" data-aos-delay="400">
-            <dd class="figure">1</dd>
-            <dt class="figure-label">Leading AI framework for reproducible regulatory extraction</dt>
+            <dd class="figure">4</dd>
+            <dt class="figure-label">AI-Automated Workflows engineered for repeatable analyst tasks</dt>
           </div>
         </dl>
       </div>
@@ -281,6 +302,45 @@
             <p class="eyebrow">Education</p>
             <p class="mt-5 font-serif text-3xl font-medium text-white">B.S. Economics, Minor in Sustainability Studies</p>
             <p class="mt-3 text-sm text-neutral-500">Santa Clara University · GPA 3.65</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================= CORE SKILLS ================= -->
+    <section id="skills" class="section">
+      <div class="mx-auto max-w-6xl px-4 sm:px-8">
+        <p class="eyebrow" data-aos="fade-up">Skills</p>
+        <h2 class="heading mt-5 text-white" data-aos="fade-up" data-aos-delay="100">Core skills.</h2>
+
+        <div class="mt-14 grid grid-cols-1 gap-x-10 gap-y-12 border-t border-white/10 pt-12 md:grid-cols-3">
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="0">
+            <h3 class="skill-heading">Data &amp; Analytics</h3>
+            <ul class="mt-6 flex flex-wrap gap-2.5">
+              <li class="skill-pill">Python (Data Presentation)</li>
+              <li class="skill-pill">Quantitative Data Analysis</li>
+              <li class="skill-pill">GHG Emissions Accounting</li>
+              <li class="skill-pill">Lifecycle Assessment (LCA)</li>
+              <li class="skill-pill">Excel Modeling</li>
+            </ul>
+          </div>
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="skill-heading">Regulatory &amp; Strategy</h3>
+            <ul class="mt-6 flex flex-wrap gap-2.5">
+              <li class="skill-pill">CSRD Frameworks</li>
+              <li class="skill-pill">SBTN Planetary Boundaries</li>
+              <li class="skill-pill">EPR &amp; Material Compliance</li>
+              <li class="skill-pill">Statutory Landscape Scanning</li>
+              <li class="skill-pill">Extended Producer Responsibility</li>
+            </ul>
+          </div>
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="skill-heading">Workflows &amp; Automation</h3>
+            <ul class="mt-6 flex flex-wrap gap-2.5">
+              <li class="skill-pill">Generative AI Workflow Design</li>
+              <li class="skill-pill">Vetted Prompt Engineering</li>
+              <li class="skill-pill">System Prompt Evaluation</li>
+              <li class="skill-pill">Workflow Error-Checking</li>
+            </ul>
           </div>
         </div>
       </div>
