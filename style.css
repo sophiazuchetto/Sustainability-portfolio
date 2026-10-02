@@ -1,0 +1,20 @@
+/* Custom styles that complement Tailwind utilities */
+
+:root {
+  --color-brand: #047857;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Visual check that style.css is linked: hides the fallback text and shows a confirmation */
+.custom-css-check {
+  font-size: 0;
+}
+
+.custom-css-check::after {
+  content: "Custom CSS is working.";
+  font-size: 0.875rem;
+  color: var(--color-brand);
+}
