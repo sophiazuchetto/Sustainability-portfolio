@@ -60,15 +60,14 @@
     <!-- ================= HERO: magazine feature ================= -->
     <section id="top" class="relative">
       <!-- Cinematic wave video: slides and scales with scroll -->
-      <div class="hero-video absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none opacity-40" aria-hidden="true">
-        <video id="hero-video" class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto" poster="assets/wave-poster.jpg">
+      <div class="hero-video absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none opacity-60" aria-hidden="true">
+        <!-- Blue tone and blur are baked into the footage (Safari-safe: no CSS filters on the video) -->
+        <video id="hero-video" class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto" disablepictureinpicture disableremoteplayback poster="assets/wave-poster.jpg">
           <source src="assets/wave.mp4" type="video/mp4" />
           <source src="assets/wave.webm" type="video/webm" />
         </video>
-        <!-- Cool blue tone: recolours the footage while keeping its light and shadow -->
-        <div class="hero-video-tint absolute inset-0"></div>
-        <!-- Soft frosted layer so the footage melts into the page -->
-        <div class="hero-video-veil absolute inset-0 backdrop-blur-md"></div>
+        <!-- Soft light veil so the footage melts into the page -->
+        <div class="hero-video-veil absolute inset-0"></div>
       </div>
       <div class="ambient" aria-hidden="true">
         <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[150px] glow-hero-a"></span>

@@ -565,25 +565,21 @@ p.chapter-label {
   .is-entering { animation: none; }
 }
 
-/* Hero text over the 40% video: darker steps for readable contrast */
-#top .eyebrow { color: var(--slate-700); }
-#top .accent { color: var(--slate-600); }
+/* Hero text over the 60% video: darker steps keep readable contrast
+   even where the darkest water passes behind the text               */
+#top .eyebrow { color: #1e293b; }   /* slate-800 */
+#top .accent { color: var(--slate-700); }
 
-/* ---------- Hero video ---------- */
+/* ---------- Hero video ----------
+   Grayscale, blue tone and blur are baked into assets/wave.mp4, so the
+   video needs no CSS filter, blend mode or backdrop-filter. Safari renders
+   video on its own layer and can drop or freeze it under those effects.  */
 .hero-video video {
   display: block;
   will-change: transform;
-  /* Drain the footage's warm gold so the blue tint reads cleanly */
-  filter: grayscale(1) brightness(1.06) contrast(1.08);
 }
-/* Cool steel-blue tone over the footage */
-.hero-video-tint {
-  background: #4a74b0;
-  mix-blend-mode: color;
-}
-/* Frosted veil over the footage (blur comes from backdrop-blur-md) */
 .hero-video-veil {
-  background: linear-gradient(180deg, rgba(248, 250, 252, 0.08), rgba(248, 250, 252, 0.28));
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.10), rgba(248, 250, 252, 0.30));
 }
 
 /* ---------- Sustainability ROI dashboard ---------- */
