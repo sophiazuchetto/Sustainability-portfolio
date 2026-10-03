@@ -58,22 +58,25 @@
   <main id="main" class="overflow-x-clip">
 
     <!-- ================= HERO: magazine feature ================= -->
-    <section id="top" class="relative">
-      <!-- Cinematic wave video: slides and scales with scroll -->
-      <div class="hero-video absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none opacity-60" aria-hidden="true">
-        <!-- Blue tone and blur are baked into the footage (Safari-safe: no CSS filters on the video) -->
-        <video id="hero-video" class="w-full h-full object-cover" autoplay loop muted playsinline preload="auto" disablepictureinpicture disableremoteplayback poster="assets/wave-poster.jpg">
+    <section id="top" class="relative isolate bg-slate-50">
+      <!-- Layer z-0: plain video, no CSS filters on the element itself -->
+      <div class="hero-media absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <video id="hero-video" class="absolute inset-0 w-full h-full object-cover opacity-60" autoplay loop muted playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback poster="assets/wave-poster.jpg">
           <source src="assets/wave.mp4" type="video/mp4" />
           <source src="assets/wave.webm" type="video/webm" />
         </video>
-        <!-- Soft light veil so the footage melts into the page -->
-        <div class="hero-video-veil absolute inset-0"></div>
       </div>
+
+      <!-- Layer z-10: blur, blue tint and light veil, each a separate sibling
+           of the video so the blend mode can see the footage beneath it -->
+      <div class="absolute inset-0 z-10 pointer-events-none backdrop-blur-md" aria-hidden="true"></div>
+      <div class="absolute inset-0 z-10 pointer-events-none bg-[#4a74b0] mix-blend-color" aria-hidden="true"></div>
+      <div class="hero-video-veil absolute inset-0 z-10 pointer-events-none" aria-hidden="true"></div>
       <div class="ambient" aria-hidden="true">
         <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[150px] glow-hero-a"></span>
         <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[120px] glow-hero-b"></span>
       </div>
-      <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-20 pt-10 md:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-20 lg:pb-28 lg:pt-16">
+      <div class="relative z-20 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-20 pt-10 md:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-20 lg:pb-28 lg:pt-16">
         <!-- Text column -->
         <div class="min-w-0">
           <p class="eyebrow" data-aos="fade-up">Corporate ESG · Supply Chain · Regulatory Strategy</p>
@@ -112,7 +115,7 @@
       </div>
 
       <!-- By the numbers -->
-      <div class="relative z-10 mx-auto max-w-7xl px-6 pb-24 md:px-12">
+      <div class="relative z-20 mx-auto max-w-7xl px-6 pb-24 md:px-12">
         <dl class="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
           <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="0">
             <dd class="figure">4</dd>

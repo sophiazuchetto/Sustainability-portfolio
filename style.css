@@ -571,10 +571,10 @@ p.chapter-label {
 #top .accent { color: var(--slate-700); }
 
 /* ---------- Hero video ----------
-   Grayscale, blue tone and blur are baked into assets/wave.mp4, so the
-   video needs no CSS filter, blend mode or backdrop-filter. Safari renders
-   video on its own layer and can drop or freeze it under those effects.  */
-.hero-video video {
+   Stacking: plain <video> at z-0 (no CSS filters on it), then separate
+   blur, tint and veil layers at z-10, then hero content at z-20. The
+   section is isolated so the tint's blend mode stays inside the hero.  */
+#hero-video {
   display: block;
   will-change: transform;
 }
