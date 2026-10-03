@@ -569,6 +569,13 @@ p.chapter-label {
 .hero-video video {
   display: block;
   will-change: transform;
+  /* Drain the footage's warm gold so the blue tint reads cleanly */
+  filter: grayscale(1) brightness(1.06) contrast(1.08);
+}
+/* Cool steel-blue tone over the footage */
+.hero-video-tint {
+  background: #4a74b0;
+  mix-blend-mode: color;
 }
 /* Frosted veil over the footage (blur comes from backdrop-blur-md) */
 .hero-video-veil {
