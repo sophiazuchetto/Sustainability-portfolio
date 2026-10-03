@@ -565,8 +565,15 @@ p.chapter-label {
   .is-entering { animation: none; }
 }
 
-/* ---------- Hero wave ---------- */
-.hero-wave svg { display: block; }
+/* ---------- Hero video ---------- */
+.hero-video video {
+  display: block;
+  will-change: transform;
+}
+/* Frosted veil over the footage (blur comes from backdrop-blur-md) */
+.hero-video-veil {
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.08), rgba(248, 250, 252, 0.28));
+}
 
 /* ---------- Sustainability ROI dashboard ---------- */
 .roi { padding: 40px; }
