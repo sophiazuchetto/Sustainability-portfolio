@@ -565,8 +565,8 @@ p.chapter-label {
   .is-entering { animation: none; }
 }
 
-/* Hero text over the 30% video: one step darker for readable contrast */
-#top .eyebrow,
+/* Hero text over the 40% video: darker steps for readable contrast */
+#top .eyebrow { color: var(--slate-700); }
 #top .accent { color: var(--slate-600); }
 
 /* ---------- Hero video ---------- */
