@@ -1,0 +1,695 @@
+/* =========================================================
+   Sustainability & Corporate ROI: borderless editorial theme
+   Frosted slate-50 canvas, layered "cloud" surfaces,
+   slate-950 type with slate-500 and blue-600 accents.
+   Tailwind handles layout utilities; AOS handles scroll motion.
+   ========================================================= */
+
+:root {
+  --canvas: #f8fafc;          /* slate-50, frosted ice-white */
+  --strip: #f1f5f9;           /* slate-100 for layout strips */
+  --cloud: #FFFFFF;
+
+  --ink: #020617;             /* slate-950 */
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+
+  --blue: #2563eb;            /* blue-600 */
+  --blue-soft: rgba(37, 99, 235, 0.08);
+
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  background: var(--canvas);
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+::selection { background: rgba(37, 99, 235, 0.14); color: var(--ink); }
+
+/* Keyboard focus ring (accessibility; not a decorative border) */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -56px;
+  z-index: 60;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 500;
+  transition: top 0.3s var(--ease);
+}
+.skip-link:focus { top: 14px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: rgba(248, 250, 252, 0.82);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-link:hover { color: var(--blue); }
+
+/* ---------- Layout strips ----------
+   Alternate sections sit on a soft slate-100 band that fades in and
+   out at its edges, so sections blend instead of being ruled off.  */
+.strip {
+  background: linear-gradient(
+    180deg,
+    rgba(241, 245, 249, 0) 0%,
+    var(--strip) 14%,
+    var(--strip) 86%,
+    rgba(241, 245, 249, 0) 100%
+  );
+}
+
+/* ---------- Ambient glows ----------
+   Large, very soft light shapes behind the content (blur and opacity
+   come from Tailwind classes on each shape). Each sits above its
+   section's background band but below the content (z-10).         */
+.ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.ambient > span { display: block; }
+
+/* Hero: steel blue behind the portrait and the headline */
+.glow-hero-a { width: 46rem; height: 40rem; top: -6rem; right: -12rem; }
+.glow-hero-b { width: 34rem; height: 28rem; top: 18rem; left: -14rem; }
+
+/* Core competency dashboard: mint radiating behind the cards */
+.glow-mint-a { width: 44rem; height: 30rem; top: 30%; left: 4%; }
+.glow-mint-b { width: 36rem; height: 26rem; top: 45%; right: -6rem; }
+
+/* Sample workflows (lower part of the featured section): mint */
+.glow-workflows { width: 44rem; height: 36rem; bottom: 2rem; right: -8rem; }
+
+/* Experience: steel blue behind the case study cards */
+.glow-exp-a { width: 48rem; height: 34rem; top: 18%; left: -10rem; }
+.glow-exp-b { width: 38rem; height: 30rem; bottom: 4rem; right: -10rem; }
+
+@media (max-width: 640px) {
+  .ambient > span { max-width: 120vw; }
+}
+
+/* ---------- Type ---------- */
+.eyebrow {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+
+.name-title {
+  font-family: var(--font-serif);
+  font-size: clamp(54px, 8.6vw, 116px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.lede {
+  max-width: 36rem;
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 600;
+  line-height: 1.18;
+  color: var(--ink);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 4.4vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+/* Accent phrases: soft steel blue */
+.accent {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--slate-500);
+}
+
+/* ---------- Buttons (filled, no outlines) ---------- */
+.btn-dark,
+.btn-soft {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.35s var(--ease), color 0.35s, box-shadow 0.35s var(--ease);
+}
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-dark:hover { background: var(--blue); box-shadow: 0 14px 30px -14px rgba(37, 99, 235, 0.5); }
+.btn-soft {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 10px 30px -14px rgba(15, 23, 42, 0.12);
+}
+.btn-soft:hover { color: var(--blue); }
+.btn-sm { padding: 10px 20px; font-size: 11px; }
+
+.text-link {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: rgba(51, 65, 85, 0.3);
+  text-underline-offset: 6px;
+  transition: color 0.3s, text-decoration-color 0.3s;
+}
+.text-link:hover { color: var(--blue); text-decoration-color: var(--blue); }
+
+/* ---------- Hero portrait ---------- */
+.portrait-wrap { position: relative; }
+/* Soft organic glow behind the photo instead of a frame */
+.portrait-halo {
+  position: absolute;
+  inset: 8% -10% -8% 12%;
+  border-radius: 45% 55% 50% 50% / 50% 45% 55% 50%;
+  background:
+    radial-gradient(60% 60% at 30% 30%, rgba(37, 99, 235, 0.12), transparent 70%),
+    radial-gradient(60% 60% at 75% 70%, rgba(51, 65, 85, 0.12), transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+.portrait img {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+.portrait-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-serif);
+  font-size: 64px;
+  font-style: italic;
+  font-weight: 600;
+  color: rgba(51, 65, 85, 0.25);
+}
+
+/* ---------- Cloud surfaces ----------
+   Finish comes from the Tailwind classes on each block
+   (bg-white/90 backdrop-blur-xl, diffused shadow, rounded-3xl).   */
+.cloud { position: relative; }
+
+/* ---------- By the numbers ---------- */
+.figure {
+  font-family: var(--font-serif);
+  font-size: clamp(60px, 6.4vw, 84px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--blue);
+}
+.figure-label {
+  margin-top: 12px;
+  max-width: 280px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--slate-500);
+}
+
+/* ---------- Expertise ---------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pill {
+  display: inline-flex;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(51, 65, 85, 0.07);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+.pill-accent { background: var(--blue-soft); color: var(--blue); }
+
+.card-title {
+  margin-top: 24px;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--ink);
+}
+.card-body {
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.card-meta {
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+
+/* ---------- CAA story ---------- */
+.story {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 44px;
+}
+.chapter p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+.chapter p + p { margin-top: 16px; }
+p.chapter-label {
+  margin-bottom: 12px;
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--slate-500);
+}
+
+.feature { padding: 40px 36px; }
+.feature-figure {
+  font-family: var(--font-serif);
+  font-size: clamp(84px, 10vw, 120px);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--ink);
+}
+.feature figcaption {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+@media (max-width: 640px) { .feature { padding: 30px 24px; } }
+
+.disclaimer {
+  padding: 16px 20px;
+  border-radius: 1.25rem;
+  background: rgba(51, 65, 85, 0.05);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--slate-600);
+}
+.disclaimer-label { font-weight: 500; color: var(--ink); }
+
+/* ---------- Workflow viewer ---------- */
+.workflow { overflow: hidden; }
+.wf-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 16px 16px 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.wf-tabs::-webkit-scrollbar { display: none; }
+.wf-tab {
+  flex-shrink: 0;
+  padding: 9px 17px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(51, 65, 85, 0.06);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--slate-500);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.wf-tab:hover { background: rgba(51, 65, 85, 0.1); }
+.wf-tab[aria-selected="true"] { background: var(--ink); color: #fff; }
+.wf-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px 0 26px;
+}
+.copy-btn {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(51, 65, 85, 0.06);
+  font: inherit;
+  font-size: 12px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.copy-btn:hover { background: rgba(51, 65, 85, 0.1); }
+.copy-btn.is-copied { background: var(--ink); color: #fff; }
+.prompt {
+  max-height: 420px;
+  margin: 0;
+  padding: 16px 26px 30px;
+  overflow: auto;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--slate-600);
+  white-space: pre-wrap;
+  word-break: break-word;
+  scrollbar-color: rgba(51, 65, 85, 0.2) transparent;
+}
+.is-entering { animation: soft-in 0.6s var(--ease) both; }
+@keyframes soft-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Philosophy ---------- */
+.principles {
+  display: grid;
+  gap: 44px;
+  list-style: none;
+  padding: 0;
+}
+.principle {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 32px;
+}
+.principle-num {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--slate-500);
+}
+.principle h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--ink);
+}
+.principle p {
+  margin-top: 14px;
+  max-width: 680px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+@media (max-width: 640px) {
+  .principle { grid-template-columns: 1fr; gap: 6px; }
+}
+
+/* ---------- Experience: case study cards ---------- */
+.case {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.case-media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  padding: 28px;
+}
+.case-media-1 { background: radial-gradient(120% 90% at 20% 0%, rgba(255,255,255,0.18), transparent 55%), linear-gradient(165deg, #64748b, #1e293b); }  /* slate */
+.case-media-2 { background: radial-gradient(120% 90% at 80% 0%, rgba(255,255,255,0.22), transparent 55%), linear-gradient(165deg, #7d8ea3, #334155); }  /* slate blue */
+.case-media-3 { background: radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.16), transparent 55%), linear-gradient(165deg, #3b5b8f, #1e293b); }  /* steel blue */
+
+.case-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.case-media:has(.case-img)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(2, 6, 23, 0.32);
+}
+.case-org {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  text-wrap: balance;
+}
+.case-text { padding: 22px 14px 18px; }
+
+.role-date {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+.role-title {
+  margin-top: 8px;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--ink);
+}
+.role-body {
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+/* ---------- Core skills ---------- */
+.skill-heading {
+  font-family: var(--font-serif);
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.skill-pill {
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 8px 20px -12px rgba(15, 23, 42, 0.12);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink);
+  transition: color 0.3s;
+}
+.skill-pill:hover { color: var(--blue); }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .is-entering { animation: none; }
+}
+
+/* Hero text over the 60% video: darker steps keep readable contrast
+   even where the darkest water passes behind the text               */
+#top .eyebrow { color: #1e293b; }   /* slate-800 */
+#top .accent { color: var(--slate-700); }
+
+/* ---------- Hero video ----------
+   Stacking: plain <video> at z-0 (no CSS filters on it), then separate
+   blur, tint and veil layers at z-10, then hero content at z-20. The
+   section is isolated so the tint's blend mode stays inside the hero.  */
+#hero-video {
+  display: block;
+  will-change: transform;
+}
+.hero-video-veil {
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.10), rgba(248, 250, 252, 0.30));
+}
+
+/* ---------- Sustainability ROI dashboard ---------- */
+.roi { padding: 40px; }
+@media (max-width: 640px) { .roi { padding: 28px 22px; } }
+
+.roi-title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--ink);
+}
+.roi-note {
+  max-width: 34rem;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--slate-500);
+}
+
+.roi-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.roi-tab {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(51, 65, 85, 0.06);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.roi-tab:hover { background: rgba(51, 65, 85, 0.11); }
+.roi-tab[aria-selected="true"] { background: var(--ink); color: #fff; }
+
+.roi-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+.roi-kpi-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+.roi-kpi {
+  margin-top: 6px;
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.roi-kpi-hero { font-size: 46px; color: var(--blue); }
+
+.roi-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--ink);
+}
+.roi-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.roi-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.roi-swatch-cost { background: #3a5a94; }
+.roi-swatch-savings { background: #10a37f; }
+
+.roi-chart-wrap {
+  position: relative;
+  height: 340px;
+}
+@media (max-width: 640px) { .roi-chart-wrap { height: 280px; } }
+
+/* ---------- SweetAlert2 toast ---------- */
+.swal2-container .sz-toast {
+  padding: 12px 18px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 24px 48px -18px rgba(2, 6, 23, 0.55) !important;
+  font-family: var(--font-sans);
+}
+.swal2-container .sz-toast-title {
+  font-size: 13.5px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em;
+}
+.swal2-container .sz-toast-bar { background: rgba(52, 211, 153, 0.6) !important; }
+.sz-toast-in { animation: sz-toast-in 0.45s var(--ease) both; }
+.sz-toast-out { animation: sz-toast-out 0.3s ease-in both; }
+@keyframes sz-toast-in {
+  from { opacity: 0; transform: translateX(120%); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes sz-toast-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateX(120%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sz-toast-in, .sz-toast-out { animation: none; }
+}

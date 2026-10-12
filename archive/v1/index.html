@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-50">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sophia Zuchetto bridges sustainability performance and corporate ROI, designing frameworks that turn environmental data into strategic business decisions." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#f8fafc" />
+  <title>Sophia Zuchetto · Sustainability &amp; Corporate ROI</title>
+
+  <!-- Fonts: Cormorant Garamond for display, Inter for body, JetBrains Mono for prompt text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <!-- AOS: Animate On Scroll -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <!-- Lenis: smooth wheel scrolling -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'ui-serif', 'Georgia', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 font-sans font-light text-slate-950 antialiased">
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ================= NAV ================= -->
+  <header class="site-header sticky top-0 z-50">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5 md:px-12" aria-label="Primary">
+      <a href="#top" class="brand">Sophia Zuchetto</a>
+      <ul class="hidden flex-1 items-center justify-center gap-10 lg:flex">
+        <li><a class="nav-link" href="#expertise">Expertise</a></li>
+        <li><a class="nav-link" href="#caa">Featured</a></li>
+        <li><a class="nav-link" href="#philosophy">Philosophy</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+      </ul>
+      <a href="#contact" class="btn-dark btn-sm">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main" class="overflow-x-clip">
+
+    <!-- ================= HERO: magazine feature ================= -->
+    <section id="top" class="relative isolate bg-slate-50">
+      <!-- Layer z-0: plain video, no CSS filters on the element itself -->
+      <div class="hero-media absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <video id="hero-video" class="absolute inset-0 w-full h-full object-cover opacity-60" autoplay loop muted playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback poster="../../assets/wave-poster.jpg">
+          <source src="../../assets/wave.mp4" type="video/mp4" />
+          <source src="../../assets/wave.webm" type="video/webm" />
+        </video>
+      </div>
+
+      <!-- Layer z-10: blur, blue tint and light veil, each a separate sibling
+           of the video so the blend mode can see the footage beneath it -->
+      <div class="absolute inset-0 z-10 pointer-events-none backdrop-blur-md" aria-hidden="true"></div>
+      <div class="absolute inset-0 z-10 pointer-events-none bg-[#4a74b0] mix-blend-color" aria-hidden="true"></div>
+      <div class="hero-video-veil absolute inset-0 z-10 pointer-events-none" aria-hidden="true"></div>
+      <div class="ambient" aria-hidden="true">
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[150px] glow-hero-a"></span>
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[120px] glow-hero-b"></span>
+      </div>
+      <div class="relative z-20 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-20 pt-10 md:px-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-20 lg:pb-28 lg:pt-16">
+        <!-- Text column -->
+        <div class="min-w-0">
+          <p class="eyebrow" data-aos="fade-up">Corporate ESG · Supply Chain · Regulatory Strategy</p>
+
+          <p class="name-title mt-8" data-aos="fade-up" data-aos-delay="100">Sophia Zuchetto</p>
+
+          <h1 class="lede mt-10" data-aos="fade-up" data-aos-delay="200">
+            Bridging the gap between <em class="accent">sustainability performance</em> and corporate ROI.
+          </h1>
+
+          <p class="mt-6 max-w-xl text-[17px] leading-relaxed text-slate-950" data-aos="fade-up" data-aos-delay="300">
+            I design frameworks that transform environmental data into clear, strategic business decisions.
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center gap-6" data-aos="fade-up" data-aos-delay="400">
+            <a href="#caa" class="btn-dark">View featured work</a>
+            <a href="#philosophy" class="text-link">Read my approach <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <!-- Portrait: tall, soft-edged, no frame -->
+        <div class="portrait-wrap order-first mx-auto w-full max-w-[17rem] sm:max-w-xs lg:order-none lg:mx-0 lg:max-w-none" data-aos="fade-up" data-aos-delay="250">
+          <div class="portrait-halo" aria-hidden="true"></div>
+          <div class="portrait relative aspect-[3/4] overflow-hidden rounded-[2.5rem] bg-slate-100 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.03)]">
+            <img
+              src="../../assets/profile.jpg"
+              alt="Portrait of Sophia Zuchetto"
+              class="h-full w-full object-cover object-[50%_25%]"
+              width="975" height="1366"
+              onerror="this.remove()"
+            />
+            <!-- Shown until assets/profile.jpg exists -->
+            <div class="portrait-fallback" aria-hidden="true">SZ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- By the numbers -->
+      <div class="relative z-20 mx-auto max-w-7xl px-6 pb-24 md:px-12">
+        <dl class="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="0">
+            <dd class="figure">4</dd>
+            <dt class="figure-label">State regulatory regimes analyzed across EPR and organics law</dt>
+          </div>
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+            <dd class="figure">20+</dd>
+            <dt class="figure-label">Global supply chain actors assessed for emissions and lifecycle impact</dt>
+          </div>
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
+            <dd class="figure">12+</dd>
+            <dt class="figure-label">AI-Automated Workflows engineered for repeatable analyst tasks</dt>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= EXPERTISE GRID ================= -->
+    <section id="expertise" class="strip relative">
+      <div class="ambient" aria-hidden="true">
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-[#bbf7d6] blur-[150px] glow-mint-a"></span>
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-[#bbf7d6] blur-[120px] glow-mint-b"></span>
+      </div>
+      <div class="relative z-10 mx-auto max-w-7xl px-6 py-28 md:px-12">
+        <p class="eyebrow" data-aos="fade-up">Expertise</p>
+        <h2 class="heading mt-5 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
+          The frameworks behind <em class="accent">every recommendation.</em>
+        </h2>
+
+        <div class="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <article class="card cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="0">
+            <span class="pill pill-accent">Certified</span>
+            <h3 class="card-title">CSRD Fundamentals</h3>
+            <p class="card-body">Double materiality, ESRS structure and value-chain disclosure under the EU Corporate Sustainability Reporting Directive.</p>
+            <p class="card-meta">CSRD Institute · 2025</p>
+          </article>
+          <article class="card cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+            <span class="pill">Applied</span>
+            <h3 class="card-title">SBTN Boundaries</h3>
+            <p class="card-body">An impact methodology grounded in SBTN planetary boundaries, translated into investment-grade metrics tied to ROI.</p>
+            <p class="card-meta">Circular Economy Venture</p>
+          </article>
+          <article class="card cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
+            <span class="pill">Applied</span>
+            <h3 class="card-title">GHG &amp; Lifecycle Analysis</h3>
+            <p class="card-body">Emissions and lifecycle data synthesized across global textile supply chains into a framework linking impact to financial viability.</p>
+            <p class="card-meta">20+ supply chain actors</p>
+          </article>
+          <article class="card cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8" data-aos="fade-up" data-aos-delay="300">
+            <span class="pill">Applied</span>
+            <h3 class="card-title">EPR &amp; Material Compliance</h3>
+            <p class="card-body">Statutory obligations, ecomodulation structures and covered materials mapped across states with pinpoint citations.</p>
+            <p class="card-meta">Circular Action Alliance</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED: CAA ================= -->
+    <section id="caa" class="relative">
+      <div class="ambient" aria-hidden="true">
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-[#bbf7d6] blur-[150px] glow-workflows"></span>
+      </div>
+      <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 py-28 md:px-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
+        <div>
+          <div class="lg:sticky lg:top-28">
+            <p class="eyebrow" data-aos="fade-up">Featured · Circular Action Alliance</p>
+            <h2 class="heading mt-5" data-aos="fade-up" data-aos-delay="100">
+              From a hand-built analysis to a framework <em class="accent">leadership adopted.</em>
+            </h2>
+            <p class="mt-6 text-sm text-slate-500" data-aos="fade-up" data-aos-delay="200">EPR Regulatory Analysis · Summer 2026</p>
+          </div>
+        </div>
+
+        <div class="story">
+          <div class="chapter" data-aos="fade-up">
+            <p class="chapter-label">The challenge</p>
+            <p>Regulatory extraction sits at the foundation of every EPR program decision, and it is slow, high-stakes and easy to get wrong. A single misread obligation can carry through into contracts, fee structures and facility plans.</p>
+          </div>
+
+          <div class="chapter" data-aos="fade-up" data-aos-delay="100">
+            <p class="chapter-label">The approach</p>
+            <p>I began with the analyses I had already produced by hand: statutory citation extraction, needs assessment synthesis, public comment analysis and stakeholder mapping. I took each one apart into its underlying reasoning, then rebuilt it as a reproducible AI prompt that returns the same traceable, citation-backed output every time.</p>
+            <p>Every prompt was validated by working backward from my finished manual work and checking each output against its source document. Only what held up entered the library.</p>
+          </div>
+
+          <!-- Executive presentation highlight -->
+          <figure class="feature cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up" data-aos-delay="150">
+            <p class="chapter-label">The presentation</p>
+            <div class="mt-5 flex flex-wrap items-end gap-x-5 gap-y-1">
+              <span class="feature-figure">20+</span>
+              <span class="pb-2 font-serif text-2xl font-semibold italic text-slate-500 sm:text-3xl">senior leaders &amp; program managers</span>
+            </div>
+            <figcaption class="mt-6">
+              I then brought the framework to the people who would use it. I presented the methodology at an executive level to more than twenty senior company leaders and program managers, walking them through how each prompt was built, how it was verified, and how to apply it to new jurisdictions with confidence. The result was a shared, trusted method in place of one analyst's expertise.
+            </figcaption>
+          </figure>
+
+          <div class="chapter" data-aos="fade-up">
+            <p class="chapter-label">Sample workflows</p>
+            <p>Generalized sample workflows that show how each analyst task is structured. Choose one to read it.</p>
+          </div>
+
+          <!-- Workflow viewer -->
+          <p class="disclaimer" data-aos="fade-up" data-aos-delay="100">
+            <span class="disclaimer-label">Note:</span> The following modules are generalized sample workflows demonstrating methodology. All proprietary internal documents, prompts, and strategic frameworks have been omitted for confidentiality.
+          </p>
+
+          <div class="workflow cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up" data-aos-delay="150">
+            <div class="wf-tabs" role="tablist" aria-label="Sample AI workflows" data-tabs="workflows"></div>
+            <div class="wf-view">
+              <div class="wf-toolbar">
+                <span id="wf-filename" class="truncate text-xs text-slate-500">prompt.md</span>
+                <button id="copy-btn" type="button" class="copy-btn">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V6a3 3 0 0 1 3-3h9"/></svg>
+                  <span id="copy-label">Copy to clipboard</span>
+                </button>
+              </div>
+              <div id="wf-panels"></div>
+              <p id="copy-status" class="sr-only" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PHILOSOPHY ================= -->
+    <section id="philosophy" class="strip">
+      <div class="mx-auto max-w-7xl px-6 py-28 md:px-12">
+        <p class="eyebrow" data-aos="fade-up">How I think &amp; work</p>
+        <h2 class="heading mt-5 max-w-3xl" data-aos="fade-up" data-aos-delay="100">
+          Sustainability is an <em class="accent">economic strategy,</em> not an act of charity.
+        </h2>
+
+        <ol class="principles mt-14">
+          <li class="principle" data-aos="fade-up">
+            <span class="principle-num">i.</span>
+            <div>
+              <h3>Goodwill is fragile. Strategy endures.</h3>
+              <p>When sustainability is treated as goodwill, it lives in a cost center and depends on good intentions, so it is often the first budget reconsidered in a difficult quarter. Programs framed only as "the right thing to do" are easy to praise and just as easy to set aside.</p>
+            </div>
+          </li>
+          <li class="principle" data-aos="fade-up" data-aos-delay="100">
+            <span class="principle-num">ii.</span>
+            <div>
+              <h3>Every impact has a cost. Make it visible.</h3>
+              <p>Material waste is margin leakage. EPR fees and ecomodulation put a price on packaging decisions. Supplier emissions surface as regulatory exposure and cost of capital. Once the impact is priced, sustainability stops being a values debate and becomes a line item worth improving.</p>
+            </div>
+          </li>
+          <li class="principle" data-aos="fade-up" data-aos-delay="100">
+            <span class="principle-num">iii.</span>
+            <div>
+              <h3>Credibility is built at the source.</h3>
+              <p>An economic case is only as strong as its least certain figure. I trace every number to its source, every requirement to its pinpoint citation, and every AI output to a document I can open. Audit-ready is not a final step; it is how the work is built.</p>
+            </div>
+          </li>
+          <li class="principle" data-aos="fade-up" data-aos-delay="100">
+            <span class="principle-num">iv.</span>
+            <div>
+              <h3>Speak the language of the decision.</h3>
+              <p>Analysis only matters once it reaches the people who decide. I translate science, statute and supply chain data into ROI, risk and timelines, the terms that finance leaders, operators and program heads already use.</p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Sustainability ROI dashboard -->
+        <div id="roi" class="roi cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl mt-20" data-aos="fade-up">
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <div class="max-w-2xl">
+              <p class="eyebrow">Sustainability ROI Dashboard</p>
+              <h3 class="roi-title mt-4">Where sustainability pays back.</h3>
+              <p class="roi-note mt-3">Illustrative scenario model for a hypothetical mid-size consumer goods company. Figures are modeled estimates for demonstration, not client results.</p>
+            </div>
+            <div class="roi-tabs" role="tablist" aria-label="Strategic choices">
+              <button type="button" role="tab" id="roi-tab-epr" aria-controls="roi-panel" aria-selected="true" tabindex="0" class="roi-tab" data-scenario="epr">EPR Material Ecomodulation</button>
+              <button type="button" role="tab" id="roi-tab-scope3" aria-controls="roi-panel" aria-selected="false" tabindex="-1" class="roi-tab" data-scenario="scope3">Scope 3 Logistics Audit</button>
+              <button type="button" role="tab" id="roi-tab-circ" aria-controls="roi-panel" aria-selected="false" tabindex="-1" class="roi-tab" data-scenario="circ">Resource Circularity</button>
+            </div>
+          </div>
+
+          <div id="roi-panel" role="tabpanel" aria-labelledby="roi-tab-epr" class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,17rem)_minmax(0,1fr)]">
+            <!-- Headline figures -->
+            <div class="flex flex-col">
+              <p id="roi-desc" class="roi-desc"></p>
+              <dl class="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 lg:grid-cols-1">
+                <div>
+                  <dt class="roi-kpi-label">Net margin protection</dt>
+                  <dd id="roi-net" class="roi-kpi roi-kpi-hero">–</dd>
+                </div>
+                <div>
+                  <dt class="roi-kpi-label">Payback</dt>
+                  <dd id="roi-payback" class="roi-kpi">–</dd>
+                </div>
+                <div>
+                  <dt class="roi-kpi-label">5-year implementation cost</dt>
+                  <dd id="roi-cost" class="roi-kpi">–</dd>
+                </div>
+                <div>
+                  <dt class="roi-kpi-label">5-year projected core savings</dt>
+                  <dd id="roi-savings" class="roi-kpi">–</dd>
+                </div>
+              </dl>
+            </div>
+
+            <!-- Chart -->
+            <div class="min-w-0">
+              <div class="roi-legend" aria-hidden="true">
+                <span><i class="roi-swatch roi-swatch-cost"></i>Implementation Cost</span>
+                <span><i class="roi-swatch roi-swatch-savings"></i>Projected Core Savings</span>
+              </div>
+              <div class="roi-chart-wrap">
+                <canvas id="roi-chart" role="img" aria-label="Grouped bar chart of implementation cost versus projected core savings over a five-year horizon"></canvas>
+              </div>
+              <table class="sr-only">
+                <caption id="roi-table-caption">Implementation cost vs. projected core savings, $ millions</caption>
+                <thead><tr><th scope="col">Year</th><th scope="col">Implementation Cost</th><th scope="col">Projected Core Savings</th></tr></thead>
+                <tbody id="roi-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE (CASE STUDIES) & CREDENTIALS ================= -->
+    <section id="experience" class="relative">
+      <div class="ambient" aria-hidden="true">
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[150px] glow-exp-a"></span>
+        <span class="pointer-events-none absolute rounded-full opacity-40 bg-blue-200 blur-[120px] glow-exp-b"></span>
+      </div>
+      <div class="relative z-10 mx-auto max-w-7xl px-6 py-28 md:px-12">
+        <p class="eyebrow" data-aos="fade-up">Experience</p>
+        <h2 class="heading mt-5" data-aos="fade-up" data-aos-delay="100">Selected roles.</h2>
+
+        <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <article class="case cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up">
+            <div class="case-media case-media-1">
+              <!-- Optional: add assets/case-caa.jpg to show a photo here -->
+              <img src="../../assets/case-caa.jpg" alt="" class="case-img" onerror="this.remove()" />
+              <p class="case-org">Circular Action Alliance</p>
+            </div>
+            <div class="case-text">
+              <p class="role-date">2026</p>
+              <h3 class="role-title">EPR Regulatory Analysis Intern</h3>
+              <p class="role-body">Multi-state landscape scan of organics mandates, ecomodulation and covered entities, with a harmonization analysis across organics, EPR and climate planning to inform program design.</p>
+            </div>
+          </article>
+          <article class="case cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+            <div class="case-media case-media-2">
+              <!-- Optional: add assets/case-scu.jpg to show a photo here -->
+              <img src="../../assets/case-scu.jpg" alt="" class="case-img" onerror="this.remove()" />
+              <p class="case-org">Sustainable Business Institute, Santa Clara University</p>
+            </div>
+            <div class="case-text">
+              <p class="role-date">2025 – 26</p>
+              <h3 class="role-title">EPR &amp; Sustainability Policy Research Scholar</h3>
+              <p class="role-body">Co-authored an HBS-style white paper on AI energy demand, infrastructure investment and climate commitments; coordinated three research cohorts and presented at the SCU LSB Symposium.</p>
+            </div>
+          </article>
+          <article class="case cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="case-media case-media-3">
+              <!-- Optional: add assets/case-venture.jpg to show a photo here -->
+              <img src="../../assets/case-venture.jpg" alt="" class="case-img" onerror="this.remove()" />
+              <p class="case-org">Bronco Venture Accelerator, Cohort 7</p>
+            </div>
+            <div class="case-text">
+              <p class="role-date">2025</p>
+              <h3 class="role-title">Founder, Circular Economy Venture</h3>
+              <p class="role-body">Built an impact methodology linking environmental performance to ROI, and conducted 15+ industry interviews on supply chain financing and sustainable infrastructure investment.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8 sm:p-10" data-aos="fade-up">
+            <p class="eyebrow">Certification</p>
+            <p class="mt-5 font-serif text-3xl font-bold text-slate-950">CSRD Fundamentals Certification</p>
+            <p class="mt-3 text-sm text-slate-500">CSRD Institute · October 2025</p>
+          </div>
+          <div class="cloud bg-white/80 backdrop-blur-md shadow-[0_30px_60px_-15px_rgba(15,23,42,0.06)] rounded-3xl p-8 sm:p-10" data-aos="fade-up" data-aos-delay="100">
+            <p class="eyebrow">Education</p>
+            <p class="mt-5 font-serif text-3xl font-semibold text-slate-950">B.S. Economics, Minor in Sustainability Studies</p>
+            <p class="mt-3 text-sm text-slate-500">Santa Clara University · GPA 3.65</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CORE SKILLS ================= -->
+    <section id="skills" class="strip">
+      <div class="mx-auto max-w-7xl px-6 py-28 md:px-12">
+        <p class="eyebrow" data-aos="fade-up">Skills</p>
+        <h2 class="heading mt-5" data-aos="fade-up" data-aos-delay="100">Core skills.</h2>
+
+        <div class="mt-14 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
+          <div data-aos="fade-up" data-aos-delay="0">
+            <h3 class="skill-heading">Data &amp; Analytics</h3>
+            <ul class="mt-6 flex flex-wrap gap-2">
+              <li class="skill-pill">Python (Data Presentation)</li>
+              <li class="skill-pill">Quantitative Data Analysis</li>
+              <li class="skill-pill">GHG Emissions Accounting</li>
+              <li class="skill-pill">Lifecycle Assessment (LCA)</li>
+              <li class="skill-pill">Excel Modeling</li>
+            </ul>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h3 class="skill-heading">Regulatory &amp; Strategy</h3>
+            <ul class="mt-6 flex flex-wrap gap-2">
+              <li class="skill-pill">CSRD Frameworks</li>
+              <li class="skill-pill">SBTN Planetary Boundaries</li>
+              <li class="skill-pill">EPR &amp; Material Compliance</li>
+              <li class="skill-pill">Statutory Landscape Scanning</li>
+              <li class="skill-pill">Regulatory Harmonization Analysis</li>
+            </ul>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h3 class="skill-heading">Workflows &amp; Automation</h3>
+            <ul class="mt-6 flex flex-wrap gap-2">
+              <li class="skill-pill">Generative AI Workflow Design</li>
+              <li class="skill-pill">Vetted Prompt Engineering</li>
+              <li class="skill-pill">System Prompt Evaluation</li>
+              <li class="skill-pill">Workflow Error-Checking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= CONTACT ================= -->
+  <footer id="contact">
+    <div class="mx-auto max-w-7xl px-6 py-28 md:px-12" data-aos="fade-up">
+      <p class="eyebrow">Contact</p>
+      <h2 class="heading mt-5 max-w-3xl">Let's make the sustainable decision <em class="accent">the strategic one.</em></h2>
+      <p class="mt-6 max-w-xl leading-relaxed text-slate-950">Open to corporate ESG, supplier sustainability, material compliance and EPR reporting roles.</p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="mailto:szuchetto@scu.edu" class="btn-dark">szuchetto@scu.edu</a>
+        <a href="https://www.linkedin.com/in/sophia-zuchetto" target="_blank" rel="noopener" class="btn-soft">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="mx-auto flex max-w-7xl flex-col justify-between gap-2 px-6 pb-10 text-xs uppercase tracking-[0.14em] text-slate-500 sm:flex-row md:px-12">
+      <span>© <span id="year">2026</span> Sophia Zuchetto</span>
+      <span>Santa Clara, California</span>
+    </div>
+  </footer>
+
+  <!-- Plugin suite -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    /* ---------- Workflow library ---------- */
+    const WORKFLOWS = [
+      {
+        id: 'citation',
+        title: 'Statutory Citation Extraction',
+        file: 'statutory-citation-extraction.md',
+        prompt: `ROLE
+You are a regulatory research analyst supporting an Extended Producer
+Responsibility (EPR) program team.
+
+TASK
+From the statute or regulation text below, extract every requirement
+related to: [TOPIC, e.g. organics diversion, disposal bans,
+food service ware].
+
+FOR EACH REQUIREMENT, RETURN
+  - Requirement     one-sentence plain-language summary
+  - Obligated party who must comply
+  - Covered scope   materials and entities covered
+  - Timing          effective date or phase-in schedule
+  - Citation        pinpoint section and subsection
+  - Source excerpt  the exact sentence that supports the summary
+
+RULES
+  1. Use ONLY the text provided. Do not draw on outside knowledge.
+  2. If a field is not stated, write "Not specified". Never infer.
+  3. Flag any requirement that cross-references another statute.
+  4. Quote excerpts verbatim so each claim can be traced to source.
+
+OUTPUT
+A table ordered by citation, followed by a list of flagged
+cross-references.
+
+SOURCE TEXT
+"""
+[PASTE STATUTE OR REGULATION TEXT]
+"""`,
+      },
+      {
+        id: 'needs',
+        title: 'Needs Assessment Synthesis',
+        file: 'needs-assessment-synthesis.md',
+        prompt: `ROLE
+You are an analyst synthesizing a state needs assessment for a
+program planning team.
+
+TASK
+Extract the quantitative findings, stated requirements, and
+recommendations from the document below.
+
+RETURN THREE SECTIONS
+  A. Quantitative findings
+     Metric | Value | Unit | Year | Geography | Page / section
+  B. Requirements or gaps identified
+     Gap | Who it affects | Page / section
+  C. Recommendations
+     Recommendation | Responsible party | Priority (if stated) | Page / section
+
+RULES
+  1. Reproduce every figure exactly as written. No rounding, no
+     unit conversion.
+  2. Every row must carry a page or section reference.
+  3. Distinguish measured data from projections or estimates.
+  4. Do not summarize beyond what the document states.
+
+FINAL CHECK
+List any figures that appear more than once with different values.
+
+DOCUMENT
+"""
+[PASTE NEEDS ASSESSMENT TEXT]
+"""`,
+      },
+      {
+        id: 'comments',
+        title: 'Public Comment Analysis',
+        file: 'public-comment-analysis.md',
+        prompt: `ROLE
+You are a policy analyst reviewing the public comment record for a
+proposed rule or program plan.
+
+TASK
+Categorize the comments below by theme and stakeholder position.
+
+FOR EACH THEME, RETURN
+  - Theme            short label
+  - Commenters       names / organizations and stakeholder type
+                     (producer, hauler, processor, local government,
+                     NGO, resident)
+  - Position         support / oppose / conditional / neutral
+  - Core argument    one to two sentences
+  - Representative   verbatim quote with comment ID
+    quote
+
+RULES
+  1. Attribute every claim to a specific comment ID.
+  2. Keep commenters' positions in their own terms; do not
+     characterize intent.
+  3. Note where stakeholder types disagree on the same provision.
+
+OUTPUT
+A theme table, then a short list of provisions with the most
+contested positions.
+
+COMMENT RECORD
+"""
+[PASTE COMMENTS WITH IDs]
+"""`,
+      },
+      {
+        id: 'stakeholders',
+        title: 'Stakeholder Mapping',
+        file: 'stakeholder-mapping.md',
+        prompt: `ROLE
+You are a sustainability analyst mapping stakeholders for a
+supply chain or EPR program decision.
+
+TASK
+Using only the source material below, identify every organization
+or role relevant to: [DECISION OR PROGRAM].
+
+FOR EACH STAKEHOLDER, RETURN
+  - Name / role
+  - Category        regulator, obligated producer, supplier, service
+                    provider, community, investor, other
+  - Interest        what they need from the outcome
+  - Influence       high / medium / low, with the reason stated
+                    in the source
+  - Source          document and section
+
+RULES
+  1. Do not add stakeholders who are not named in the sources.
+  2. If influence is not supported by the text, mark it
+     "Unassessed".
+  3. Flag relationships between stakeholders (funding, contracts,
+     oversight).
+
+OUTPUT
+A stakeholder table, then a brief note on the two or three
+relationships most likely to shape the decision.
+
+SOURCES
+"""
+[PASTE SOURCE MATERIAL]
+"""`,
+      },
+    ];
+
+    const wfTabs = document.querySelector('[data-tabs="workflows"]');
+    const wfPanels = document.getElementById('wf-panels');
+    const filename = document.getElementById('wf-filename');
+
+    WORKFLOWS.forEach((wf, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'wf-tab';
+      btn.id = `wf-tab-${wf.id}`;
+      btn.textContent = wf.title;
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-controls', `wf-panel-${wf.id}`);
+      btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+      btn.tabIndex = i === 0 ? 0 : -1;
+      wfTabs.appendChild(btn);
+
+      const panel = document.createElement('div');
+      panel.id = `wf-panel-${wf.id}`;
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', btn.id);
+      panel.tabIndex = 0;
+      panel.dataset.file = wf.file;
+      panel.hidden = i !== 0;
+      const pre = document.createElement('pre');
+      pre.className = 'prompt';
+      pre.setAttribute('data-lenis-prevent', '');
+      pre.textContent = wf.prompt;
+      panel.appendChild(pre);
+      wfPanels.appendChild(panel);
+    });
+
+    const tabs = [...wfTabs.querySelectorAll('[role="tab"]')];
+    const activePanel = () => wfPanels.querySelector('[role="tabpanel"]:not([hidden])');
+
+    function select(tab) {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute('aria-controls'));
+        panel.hidden = !on;
+        if (on) {
+          panel.classList.remove('is-entering');
+          void panel.offsetWidth; // restart the fade
+          panel.classList.add('is-entering');
+        }
+      });
+      filename.textContent = activePanel().dataset.file;
+      resetCopy();
+    }
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(tab));
+      tab.addEventListener('keydown', (e) => {
+        const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        let next = null;
+        if (step) next = tabs[(i + step + tabs.length) % tabs.length];
+        if (e.key === 'Home') next = tabs[0];
+        if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) { e.preventDefault(); next.focus(); select(next); }
+      });
+    });
+    filename.textContent = activePanel().dataset.file;
+
+    /* ---------- Copy to clipboard ---------- */
+    const copyBtn = document.getElementById('copy-btn');
+    const copyLabel = document.getElementById('copy-label');
+    const copyStatus = document.getElementById('copy-status');
+    let copyTimer;
+
+    function resetCopy() {
+      clearTimeout(copyTimer);
+      copyBtn.classList.remove('is-copied');
+      copyLabel.textContent = 'Copy to clipboard';
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch { ok = false; }
+        ta.remove();
+        return ok;
+      }
+    }
+
+    // SweetAlert2 toast: slides in from the bottom-right corner
+    const Toast = window.Swal
+      ? Swal.mixin({
+          toast: true,
+          position: 'bottom-end',
+          showConfirmButton: false,
+          timer: 2600,
+          timerProgressBar: true,
+          background: '#0f172a',
+          color: '#f8fafc',
+          iconColor: '#34d399',
+          customClass: { popup: 'sz-toast', title: 'sz-toast-title', timerProgressBar: 'sz-toast-bar' },
+          showClass: { popup: 'sz-toast-in' },
+          hideClass: { popup: 'sz-toast-out' },
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          },
+        })
+      : null;
+
+    copyBtn.addEventListener('click', async () => {
+      const ok = await copyText(activePanel().querySelector('.prompt').textContent);
+      if (Toast) {
+        Toast.fire(ok
+          ? { icon: 'success', title: 'Workflow Prompt Copied to Clipboard' }
+          : { icon: 'error', iconColor: '#fca5a5', title: 'Copy failed. Select the text to copy manually.' });
+        return;
+      }
+      // Fallback if SweetAlert2 did not load
+      copyBtn.classList.toggle('is-copied', ok);
+      copyLabel.textContent = ok ? 'Copied' : 'Copy failed';
+      copyStatus.textContent = ok ? 'Prompt copied to clipboard.' : 'Copy failed. Select the text to copy manually.';
+      clearTimeout(copyTimer);
+      copyTimer = setTimeout(resetCopy, 2200);
+    });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasGsap = !!(window.gsap && window.ScrollTrigger);
+    if (hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+    /* ---------- Lenis smooth scrolling ---------- */
+    if (window.Lenis && !reduceMotion) {
+      const lenis = new Lenis({
+        lerp: 0.09,
+        smoothWheel: true,
+        anchors: { offset: -80 },   // in-page links glide to their section
+      });
+      if (hasGsap) {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+      } else {
+        const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
+        requestAnimationFrame(raf);
+      }
+    }
+
+    /* ---------- Hero video swoosh (GSAP ScrollTrigger) ----------
+       The video starts slightly enlarged so it can slide sideways without
+       exposing its edges. Scrolling through the hero glides it left and
+       eases it larger; scrub ties the motion to the wheel or trackpad.
+       By design this plays for every visitor, including those with the
+       Reduce Motion setting on.                                          */
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+      // Start playback explicitly. If the browser blocks autoplay (for
+      // example iPhone Low Power Mode), start on the first interaction.
+      heroVideo.muted = true;
+      heroVideo.play().catch(() => {
+        const kick = () => {
+          heroVideo.play().catch(() => {});
+          ['scroll', 'touchstart', 'pointerdown', 'keydown'].forEach((ev) => window.removeEventListener(ev, kick));
+        };
+        ['scroll', 'touchstart', 'pointerdown', 'keydown'].forEach((ev) => window.addEventListener(ev, kick, { passive: true }));
+      });
+
+      // Swoosh: scale gives 15-22% spare width on each side, so the
+      // ±10% slide never exposes the video's edges.
+      if (hasGsap) {
+        gsap.set(heroVideo, { scale: 1.3, xPercent: 10, transformOrigin: '50% 50%' });
+        gsap.timeline({
+          scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: 1 },
+        }).to(heroVideo, { xPercent: -10, scale: 1.45, ease: 'none' });
+      }
+    }
+
+    /* ---------- Sustainability ROI dashboard (Chart.js) ----------
+       Illustrative scenario figures, $ millions per year.            */
+    const ROI = {
+      epr: {
+        desc: 'Redesign packaging toward lower-fee material categories under state EPR ecomodulation schedules, cutting producer fees and virgin material spend.',
+        cost: [1.2, 0.6, 0.4, 0.3, 0.3],
+        savings: [0.4, 1.3, 2.1, 2.6, 2.9],
+      },
+      scope3: {
+        desc: 'Audit inbound and outbound freight emissions to consolidate lanes and shift modes, lowering fuel and carrier costs while sharpening Scope 3 reporting.',
+        cost: [0.9, 0.5, 0.3, 0.3, 0.2],
+        savings: [0.3, 0.9, 1.5, 1.9, 2.2],
+      },
+      circ: {
+        desc: 'Recover, refurbish and reuse materials and products to reduce input costs, disposal fees and exposure to commodity price swings.',
+        cost: [2.4, 1.1, 0.6, 0.5, 0.4],
+        savings: [0.2, 1.4, 2.8, 3.9, 4.7],
+      },
+    };
+    const YEARS = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
+    const COST_COLOR = '#3a5a94';     // slate-navy (validated with emerald for CVD separation)
+    const SAVINGS_COLOR = '#10a37f';  // emerald
+    const money = (v) => '$' + v.toFixed(1) + 'M';
+    const sum = (a) => a.reduce((x, y) => x + y, 0);
+
+    function payback(cost, savings) {
+      let c = 0, s = 0;
+      for (let i = 0; i < cost.length; i++) {
+        c += cost[i]; s += savings[i];
+        if (s >= c) return 'Year ' + (i + 1);
+      }
+      return 'Beyond Year 5';
+    }
+
+    let roiChart = null;
+    function renderROI(key) {
+      const d = ROI[key];
+      document.getElementById('roi-desc').textContent = d.desc;
+      document.getElementById('roi-net').textContent = money(sum(d.savings) - sum(d.cost));
+      document.getElementById('roi-payback').textContent = payback(d.cost, d.savings);
+      document.getElementById('roi-cost').textContent = money(sum(d.cost));
+      document.getElementById('roi-savings').textContent = money(sum(d.savings));
+      document.getElementById('roi-table-body').innerHTML = YEARS
+        .map((y, i) => `<tr><th scope="row">${y}</th><td>${money(d.cost[i])}</td><td>${money(d.savings[i])}</td></tr>`)
+        .join('');
+
+      if (!window.Chart) return;
+      if (roiChart) {
+        roiChart.data.datasets[0].data = d.cost;
+        roiChart.data.datasets[1].data = d.savings;
+        roiChart.update();
+        return;
+      }
+      const bar = { borderRadius: 4, borderSkipped: 'bottom', maxBarThickness: 34, borderWidth: 0 };
+      roiChart = new Chart(document.getElementById('roi-chart'), {
+        type: 'bar',
+        data: {
+          labels: YEARS,
+          datasets: [
+            { label: 'Implementation Cost', data: d.cost, backgroundColor: COST_COLOR, hoverBackgroundColor: '#2f4b7d', ...bar },
+            { label: 'Projected Core Savings', data: d.savings, backgroundColor: SAVINGS_COLOR, hoverBackgroundColor: '#0c8a6b', ...bar },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: reduceMotion ? 0 : 700, easing: 'easeOutQuart' },
+          datasets: { bar: { categoryPercentage: 0.62, barPercentage: 0.86 } },
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { display: false },   // custom legend above the chart
+            tooltip: {
+              backgroundColor: '#0f172a',
+              titleColor: '#f8fafc',
+              bodyColor: '#e2e8f0',
+              padding: 12,
+              cornerRadius: 10,
+              boxPadding: 4,
+              usePointStyle: true,
+              titleFont: { family: 'Inter', weight: '500' },
+              bodyFont: { family: 'Inter' },
+              callbacks: { label: (c) => ` ${c.dataset.label}: ${money(c.parsed.y)}` },
+            },
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              border: { display: false },
+              ticks: { color: '#64748b', font: { family: 'Inter', size: 12 } },
+            },
+            y: {
+              beginAtZero: true,
+              border: { display: false },
+              grid: { color: 'rgba(15, 23, 42, 0.06)' },
+              ticks: { color: '#64748b', font: { family: 'Inter', size: 12 }, callback: (v) => '$' + v + 'M', maxTicksLimit: 6 },
+            },
+          },
+        },
+      });
+    }
+
+    const roiTabs = [...document.querySelectorAll('.roi-tab')];
+    function selectROI(tab) {
+      roiTabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+      });
+      document.getElementById('roi-panel').setAttribute('aria-labelledby', tab.id);
+      renderROI(tab.dataset.scenario);
+    }
+    roiTabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => selectROI(tab));
+      tab.addEventListener('keydown', (e) => {
+        const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+        if (!step) return;
+        e.preventDefault();
+        const next = roiTabs[(i + step + roiTabs.length) % roiTabs.length];
+        next.focus();
+        selectROI(next);
+      });
+    });
+    renderROI('epr');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ---------- AOS ---------- */
+    if (window.AOS) {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-out',
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      });
+    } else {
+      // If the AOS script fails to load, make sure nothing stays hidden
+      document.querySelectorAll('[data-aos]').forEach((el) => el.removeAttribute('data-aos'));
+    }
+  </script>
+</body>
+</html>
