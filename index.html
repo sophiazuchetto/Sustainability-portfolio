@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-slate-50">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sophia Zuchetto · Sustainability, Strategy &amp; Regulatory Analysis</title>
   <meta name="description" content="Sophia Zuchetto: economics student at Santa Clara University bridging sustainability performance and corporate ROI through EPR and regulatory analysis, ESG frameworks, data analysis and validated AI workflows." />
-  <meta name="theme-color" content="#f8fafc" />
+  <meta name="theme-color" content="#f7f8fa" />
 
   <!-- Link previews (LinkedIn, email, messages) -->
   <meta property="og:type" content="website" />
@@ -14,40 +14,708 @@
   <meta property="og:description" content="Bridging the gap between sustainability performance and corporate ROI." />
   <meta property="og:image" content="https://sophiazuchetto.com/assets/profile.jpg" />
   <meta name="twitter:card" content="summary" />
+  <style>
+/* =========================================================
+   Sophia Zuchetto · personal site
+   Plain static CSS, no framework. Design tokens are under :root.
+   Page rhythm: paper → white panels → blue-tint band (work)
+   → deep navy band (approach) → paper → contact panel.
+   ========================================================= */
 
-  <!-- Fonts: Inter for everything, JetBrains Mono for prompt text -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("assets/fonts/instrument-sans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
 
-  <!-- Plugins -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css" />
+:root {
+  --paper: #f5f7fa;        /* page background */
+  --surface: #ffffff;      /* panels */
+  --tint: #e9eff6;         /* blue-grey band behind Selected work */
+  --navy: #15233f;         /* dark band behind How I think */
+  --ink: #121a2b;          /* headings */
+  --text: #3b4658;         /* body copy */
+  --muted: #6b7688;        /* dates, notes */
+  --line: rgba(18, 26, 43, 0.09);
+  --line-strong: rgba(18, 26, 43, 0.16);
+  --steel: #3d6aa8;        /* main accent, matches the wave's tint */
+  --steel-soft: rgba(61, 106, 168, 0.1);
+  --euc: #2f8a6f;          /* secondary accent: results and savings */
 
-  <!-- Tailwind CSS (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
-          },
-        },
-      },
-    };
-  </script>
+  --radius-lg: 16px;       /* section-level panels */
+  --radius: 12px;          /* cards inside sections */
+  --radius-sm: 8px;        /* buttons, inner tiles */
+  --shadow: 0 1px 2px rgba(18, 26, 43, 0.04), 0 10px 28px -18px rgba(18, 26, 43, 0.18);
+  --shadow-hover: 0 1px 2px rgba(18, 26, 43, 0.05), 0 16px 32px -18px rgba(18, 26, 43, 0.26);
 
-  <link rel="stylesheet" href="style.css" />
+  --font: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --header-h: 56px;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--paper); }
+body, h1, h2, h3, p, ul, ol, dl, dd, figure, pre { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, video, svg, canvas { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: rgba(61, 106, 168, 0.18); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--steel); outline-offset: 2px; border-radius: 6px; }
+
+.skip-link {
+  position: absolute; left: 16px; top: -56px; z-index: 100;
+  padding: 8px 14px; border-radius: 6px;
+  background: var(--ink); color: #fff; font-size: 14px; text-decoration: none;
+  transition: top 0.2s var(--ease);
+}
+.skip-link:focus { top: 12px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+@media (max-width: 640px) { .container { padding: 0 16px; } }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.chevron {
+  flex-shrink: 0; width: 7px; height: 7px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.3s var(--ease);
+}
+[aria-expanded="true"] .chevron { transform: translateY(1px) rotate(-135deg); }
+
+.chip {
+  display: inline-flex; align-items: center;
+  padding: 1px 8px; border-radius: 999px;
+  background: var(--steel-soft); color: var(--steel);
+  font-size: 12px; font-weight: 500;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(245, 247, 250, 0.8);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+.site-header.is-scrolled,
+.site-header.menu-open { background: rgba(245, 247, 250, 0.94); box-shadow: 0 1px 0 var(--line); }
+
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--header-h); }
+.brand { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+
+.nav-links { display: none; align-items: center; gap: 26px; }
+@media (min-width: 860px) { .nav-links { display: flex; } }
+.nav-link { position: relative; padding: 4px 0; font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1.5px;
+  background: var(--ink); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+.nav-link:hover, .nav-link.is-active { color: var(--ink); }
+.nav-link:hover::after, .nav-link.is-active::after { transform: scaleX(1); }
+
+.menu-btn {
+  display: inline-grid; place-content: center; gap: 5px;
+  width: 36px; height: 36px; margin-right: -8px;
+  border: 0; border-radius: 8px; background: transparent; cursor: pointer;
+}
+.menu-btn span { display: block; width: 18px; height: 1.5px; border-radius: 2px; background: var(--ink); transition: transform 0.25s var(--ease); }
+.menu-btn[aria-expanded="true"] span:first-child { transform: translateY(3.25px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:last-child { transform: translateY(-3.25px) rotate(-45deg); }
+@media (min-width: 860px) { .menu-btn { display: none; } }
+
+.mobile-menu {
+  display: flex; flex-direction: column; padding: 0 16px 12px;
+  opacity: 0; transform: translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s var(--ease);
+}
+.mobile-menu.is-open { opacity: 1; transform: none; }
+.mobile-menu[hidden] { display: none; }
+@media (min-width: 860px) { .mobile-menu { display: none; } }
+.mobile-menu a { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; }
+.mobile-menu a:last-child { border-bottom: 0; }
+
+/* ---------- Buttons: slight lift, soft sheen, press ---------- */
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  height: 38px; padding: 0 16px;
+  overflow: hidden; isolation: isolate;
+  border: 1px solid transparent; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 500; line-height: 1;
+  text-decoration: none; white-space: nowrap; cursor: pointer;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s, border-color 0.2s, color 0.2s;
+}
+.btn::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.22) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 0.7s var(--ease);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px -8px rgba(18, 26, 43, 0.4); }
+.btn:hover::after { transform: translateX(120%); }
+.btn:active { transform: translateY(0) scale(0.98); box-shadow: none; transition-duration: 0.08s; }
+
+.btn-dark { background: var(--navy); color: #fff; }
+.btn-dark:hover { background: #1f3156; }
+.btn-light { background: var(--surface); border-color: var(--line-strong); color: var(--ink); }
+.btn-light::after { background: linear-gradient(110deg, transparent 35%, rgba(61, 106, 168, 0.1) 50%, transparent 65%); }
+.btn-light:hover { border-color: rgba(18, 26, 43, 0.26); }
+.btn-icon { width: 38px; padding: 0; background: var(--surface); border-color: var(--line-strong); color: var(--ink); }
+.btn-icon:hover { color: #0a66c2; }
+.btn-sm { height: 30px; padding: 0 11px; font-size: 12.5px; border-radius: 7px; }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; isolation: isolate; overflow: hidden; background: var(--paper); }
+.hero-media { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+#hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(8%) scale(1.25);
+  transition: opacity 1.4s ease;
+  will-change: transform;
+}
+#hero-video.is-playing { opacity: 0.6; }
+
+/* Blur, tint and veil sit above the video as siblings */
+.hero-layer { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.hero-blur { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.hero-tint { background: #4a74b0; mix-blend-mode: color; }
+.hero-veil {
+  background:
+    linear-gradient(180deg, transparent 62%, var(--paper) 100%),
+    linear-gradient(90deg, rgba(245, 247, 250, 0.66) 0%, rgba(245, 247, 250, 0.36) 55%, rgba(245, 247, 250, 0.12) 100%);
+}
+
+.hero-grid {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: minmax(0, 1fr) 220px;
+  align-items: center; gap: 48px;
+  padding-top: 56px; padding-bottom: 64px;
+}
+.hero-label { font-size: 14px; font-weight: 500; color: #2b3546; }
+.hero-name {
+  margin-top: 6px;
+  font-size: clamp(36px, 4.6vw, 52px);
+  font-weight: 600; line-height: 1.04; letter-spacing: -0.032em;
+  color: var(--ink);
+}
+.hero-lede {
+  margin-top: 14px; max-width: 32rem;
+  font-size: clamp(17px, 1.7vw, 20px);
+  font-weight: 500; line-height: 1.4; letter-spacing: -0.012em;
+  color: var(--ink);
+}
+.hero-blurb { margin-top: 8px; max-width: 33rem; font-size: 15px; line-height: 1.6; color: #273142; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 24px; }
+
+.portrait {
+  justify-self: end; width: 100%;
+  aspect-ratio: 4 / 5; overflow: hidden;
+  border-radius: var(--radius);
+  background: #e3e8ef;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.55), 0 22px 44px -24px rgba(18, 26, 43, 0.5);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; transition: transform 0.6s var(--ease); }
+.portrait:hover img { transform: scale(1.03); }
+
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 20px; padding-top: 24px; padding-bottom: 40px; }
+  .portrait { order: -1; justify-self: start; width: 104px; border-radius: 10px; }
+}
+
+/* ---------- Highlights: one panel, four figures ---------- */
+.stats {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.stat { position: relative; display: flex; flex-direction: column; padding: 20px 22px; }
+.stat + .stat { border-left: 1px solid var(--line); }
+.stat dd {
+  order: -1;
+  font-size: 30px; font-weight: 600; line-height: 1; letter-spacing: -0.03em;
+  color: var(--steel); font-variant-numeric: tabular-nums;
+}
+.stat dt { margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--text); }
+@media (max-width: 760px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat { padding: 16px; }
+  .stat + .stat { border-left: 0; }
+  .stat:nth-child(even) { border-left: 1px solid var(--line); }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .stat dd { font-size: 26px; }
+}
+
+/* ---------- Sections ---------- */
+.section { padding: 64px 0; }
+.highlights + .section { padding-top: 56px; }
+.section-last { padding-top: 8px; padding-bottom: 56px; }
+.section-title {
+  margin-bottom: 20px;
+  font-size: 26px; font-weight: 600; line-height: 1.15; letter-spacing: -0.025em;
+  color: var(--ink);
+}
+@media (max-width: 640px) {
+  .section { padding: 44px 0; }
+  .highlights + .section { padding-top: 40px; }
+  .section-title { font-size: 22px; margin-bottom: 16px; }
+}
+
+/* ---------- Experience: timeline of roles + education sidebar ---------- */
+.exp-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; align-items: stretch; }
+@media (max-width: 900px) { .exp-grid { grid-template-columns: 1fr; } }
+
+.timeline { position: relative; display: flex; flex-direction: column; gap: 12px; padding-left: 26px; }
+/* Roles share any spare height so the last card ends level with the sidebar */
+.timeline > .role { flex: 1 0 auto; }
+.timeline::before {
+  content: ""; position: absolute; left: 5px; top: 26px; bottom: 26px;
+  width: 1.5px; background: var(--line-strong);
+}
+.role {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.25s var(--ease), border-color 0.25s;
+}
+.role::before {
+  content: ""; position: absolute; left: -26px; top: 21px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--paper); border: 2px solid var(--steel);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+/* The role the line has just reached lights up; its dot sends out one soft pulse */
+.role.is-active {
+  border-color: rgba(61, 106, 168, 0.45);
+  box-shadow: 0 0 0 4px rgba(61, 106, 168, 0.08), var(--shadow-hover);
+}
+.role.is-active .role-title { color: var(--steel); }
+.role-title { transition: color 0.3s; }
+.role::after {
+  content: ""; position: absolute; left: -26px; top: 21px;
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 2px solid var(--steel);
+  opacity: 0; pointer-events: none;
+}
+.role.is-reached::after { animation: dot-pulse 0.9s var(--ease) 1; }
+@keyframes dot-pulse {
+  from { opacity: 0.7; transform: scale(1); }
+  to { opacity: 0; transform: scale(2.6); }
+}
+@media (max-width: 640px) { .role::after { left: -21px; width: 10px; height: 10px; } }
+/* A role's dot fills in once the blue line reaches it */
+.role.is-reached::before, html:not(.js) .role::before { background: var(--steel); box-shadow: 0 0 0 4px rgba(61, 106, 168, 0.14); }
+.role:hover { box-shadow: var(--shadow-hover); border-color: var(--line-strong); }
+
+.role-toggle {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto 10px; align-items: start; gap: 20px;
+  width: 100%; padding: 16px 20px;
+  border: 0; border-radius: var(--radius); background: transparent;
+  text-align: left; cursor: pointer;
+}
+.role-main { display: flex; flex-direction: column; min-width: 0; }
+.role-title { font-size: 16px; font-weight: 600; letter-spacing: -0.012em; color: var(--ink); }
+.role-org { font-size: 14px; font-weight: 500; color: var(--steel); }
+.role-summary { margin-top: 6px; font-size: 14px; color: var(--text); }
+.role-meta { display: flex; flex-direction: column; align-items: flex-end; padding-top: 2px; text-align: right; }
+.role-date { font-size: 13px; font-weight: 500; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.role-place { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.role-toggle > .chevron { margin-top: 8px; color: var(--muted); }
+@media (max-width: 640px) {
+  .timeline { padding-left: 20px; }
+  .timeline::before, .timeline-fill { left: 3px; }
+  .role::before { left: -21px; width: 10px; height: 10px; }
+  .role-toggle { grid-template-columns: minmax(0, 1fr) 10px; gap: 4px 12px; padding: 14px 16px; }
+  .role-meta { grid-column: 1; grid-row: 1; flex-direction: row; gap: 8px; align-items: baseline; text-align: left; }
+  .role-main { grid-column: 1; grid-row: 2; }
+  .role-toggle > .chevron { grid-column: 2; grid-row: 1 / 3; align-self: center; margin: 0; }
+  .role-date, .role-place { font-size: 12px; }
+}
+
+/* Dropdown panels: height animates with a grid-rows transition */
+.role-panel, .drawer-panel {
+  display: grid; grid-template-rows: 0fr; opacity: 0;
+  transition: grid-template-rows 0.3s var(--ease), opacity 0.25s;
+}
+.role-panel.is-open, .drawer-panel.is-open { grid-template-rows: 1fr; opacity: 1; }
+.role-panel[hidden], .drawer-panel[hidden] { display: none; }
+.role-panel > div, .drawer-panel > div { min-height: 0; overflow: hidden; }
+.role-panel > div { padding: 0 20px; }
+.role-panel > div::after { content: ""; display: block; height: 18px; }
+@media (max-width: 640px) { .role-panel > div { padding: 0 16px; } }
+
+.bullets { display: grid; gap: 8px; padding-top: 14px; border-top: 1px solid var(--line); }
+.bullets li { position: relative; padding-left: 16px; font-size: 14px; line-height: 1.6; color: var(--text); }
+.bullets li::before {
+  content: ""; position: absolute; left: 2px; top: 0.66em;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--steel); opacity: 0.55;
+}
+.bullets strong { font-weight: 600; color: var(--ink); }
+
+/* Sidebar matches the timeline's height; once a role is opened it sticks while scrolling instead */
+.exp-aside { display: flex; flex-direction: column; gap: 12px; }
+.exp-aside > .side-card:last-child { flex: 1 0 auto; }
+.exp-grid:has(.role-toggle[aria-expanded="true"]) .exp-aside { align-self: start; position: sticky; top: calc(var(--header-h) + 16px); }
+@media (max-width: 900px) {
+  .exp-aside { display: grid; grid-template-columns: 1fr 1fr; }
+  .exp-grid:has(.role-toggle[aria-expanded="true"]) .exp-aside { position: static; }
+}
+@media (max-width: 640px) { .exp-aside { grid-template-columns: 1fr; } }
+.side-card { padding: 16px 18px; border-radius: var(--radius); }
+.side-title { margin-bottom: 8px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.edu-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.edu-title { font-size: 15px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+.edu-sub { font-size: 13.5px; color: var(--ink); }
+.edu-meta { font-size: 13px; color: var(--text); }
+.edu-date { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.edu-note { margin-top: 6px; font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+.edu-minor { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+.edu-minor .edu-title { font-size: 14px; }
+
+/* ---------- Scroll reveals (Experience). Only active when JS has run. ---------- */
+.js .reveal {
+  opacity: 0; translate: 0 18px;
+  transition: opacity 0.6s var(--ease) var(--d, 0ms), translate 0.7s var(--ease) var(--d, 0ms), box-shadow 0.25s var(--ease), border-color 0.25s;
+}
+.js .reveal.is-visible { opacity: 1; translate: 0 0; }
+.js .reveal-side { opacity: 0; translate: 28px 0; transition: opacity 0.7s var(--ease) 0.25s, translate 0.8s var(--ease) 0.25s; }
+.js .reveal-side.is-visible { opacity: 1; translate: 0 0; }
+/* Stacked layout: slide up instead of in from the right, so the panel never sits past the screen edge */
+@media (max-width: 900px) { .js .reveal-side { translate: 0 16px; } }
+
+/* ---------- Pinned Experience section ----------
+   The inner block sticks below the header while the spacer scrolls past;
+   JS turns this off (.no-pin) on phones, short windows and Reduce Motion. */
+.exp-sticky { position: sticky; top: calc(var(--header-h) + 24px); }
+.exp-spacer { height: 75vh; }
+.exp-section.no-pin .exp-sticky, html:not(.js) .exp-sticky { position: static; }
+.exp-section.no-pin .exp-spacer, html:not(.js) .exp-spacer { display: none; }
+
+/* Blue progress line over the grey track; --fill (0 to 1) is set by JS */
+.timeline-fill {
+  position: absolute; left: 5px; top: 26px; bottom: 26px; width: 1.5px;
+  background: var(--steel);
+  transform: scaleY(var(--fill, 0)); transform-origin: top;
+  transition: transform 0.15s linear;
+}
+html:not(.js) .timeline-fill { transform: none; }
+
+/* ---------- Selected work: blue-tint band with one case study panel ---------- */
+.section-tint { position: relative; isolation: isolate; overflow: hidden; background: var(--tint); }
+/* The hero's wave, recolored blue and softened, fading out at the top and bottom of the band */
+.section-tint::before {
+  content: ""; position: absolute; inset: -130px -24px; z-index: -1;
+  transform: translate3d(0, var(--par, 0px), 0);  /* parallax, set by JS */
+  background: url("assets/wave-poster.jpg") center 65% / cover no-repeat;
+  filter: grayscale(1) sepia(1) hue-rotate(178deg) saturate(2.8) brightness(1.08) blur(5px);
+  opacity: 0.42;
+}
+/* Fixed fade at the band's top and bottom edges (stays put while the wave drifts) */
+.section-tint::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, var(--tint) 0%, rgba(233, 239, 246, 0) 30%, rgba(233, 239, 246, 0) 78%, var(--tint) 100%);
+}
+.case { overflow: hidden; }
+.section-tint .case {
+  background: rgba(255, 255, 255, 0.62);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  backdrop-filter: blur(22px) saturate(1.4);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 24px 48px -26px rgba(18, 26, 43, 0.35);
+}
+.case-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.case-head { padding: 28px; background: rgba(255, 255, 255, 0.45); border-right: 1px solid var(--line); }
+.case-org { font-size: 13.5px; font-weight: 500; color: var(--steel); }
+.case-title { margin-top: 6px; font-size: 22px; font-weight: 600; line-height: 1.25; letter-spacing: -0.022em; color: var(--ink); }
+.case-built { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); }
+.case-built-title { font-size: 13px; color: var(--muted); }
+.case-built ul { display: grid; gap: 6px; margin-top: 10px; }
+.case-built li { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--ink); }
+.case-built li::before {
+  content: ""; flex-shrink: 0; width: 16px; height: 16px; border-radius: 5px;
+  background: var(--steel-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%233d6aa8' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat;
+}
+
+.case-story { padding: 12px 28px; }
+.case-story > div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; padding: 16px 0; }
+.case-story > div + div { border-top: 1px solid var(--line); }
+.case-story dt { padding-top: 1px; font-size: 13.5px; font-weight: 600; color: var(--steel); }
+.case-story dd { font-size: 14.5px; line-height: 1.6; color: var(--text); }
+.case-story .is-result dt { color: var(--euc); }
+.case-story .is-result dd { font-size: 15px; font-weight: 500; color: var(--ink); }
+@media (max-width: 860px) {
+  .case-grid { grid-template-columns: 1fr; }
+  .case-head { border-right: 0; border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 640px) {
+  .case-head { padding: 20px 18px; }
+  .case-title { font-size: 19px; }
+  .case-story { padding: 4px 18px; }
+  .case-story > div { grid-template-columns: 1fr; gap: 2px; padding: 14px 0; }
+}
+
+.case-drawers { padding: 0 28px 8px; border-top: 1px solid var(--line); }
+.case-drawers .drawer:first-child { border-top: 0; }
+@media (max-width: 640px) { .case-drawers { padding: 0 18px 6px; } }
+.drawer { border-top: 1px solid var(--line); }
+.drawer-toggle {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; padding: 13px 0;
+  border: 0; background: transparent; text-align: left; cursor: pointer;
+  color: var(--ink);
+}
+.drawer-toggle > span:first-child { font-size: 14px; font-weight: 600; transition: color 0.2s; }
+.drawer-toggle:hover > span:first-child { color: var(--steel); }
+.drawer-hint { font-size: 13px; color: var(--muted); }
+.drawer-toggle .chevron { margin-left: auto; color: var(--muted); }
+.drawer:last-child .drawer-panel > div::after { content: ""; display: block; height: 4px; }
+.case-drawers .drawer-panel > div::after { content: ""; display: block; height: 14px; }
+@media (max-width: 520px) { .drawer-hint { display: none; } }
+
+.case-full { display: grid; gap: 10px; max-width: 46rem; }
+.case-full p { font-size: 14px; line-height: 1.65; color: var(--text); }
+.case-full strong { font-weight: 600; color: var(--ink); }
+
+.note { font-size: 13px; line-height: 1.55; color: var(--muted); }
+
+.workflow { margin-top: 10px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.wf-bar { display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 4px; border-bottom: 1px solid var(--line); background: var(--paper); }
+.wf-tabs { display: flex; gap: 2px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.wf-tabs::-webkit-scrollbar { display: none; }
+.wf-tab {
+  flex-shrink: 0; padding: 5px 10px;
+  border: 0; border-radius: 6px; background: transparent;
+  font-size: 12.5px; color: var(--muted); cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.wf-tab:hover { color: var(--ink); }
+.wf-tab[aria-selected="true"] { background: var(--steel-soft); color: var(--steel); font-weight: 500; }
+.prompt {
+  max-height: 300px; padding: 12px 16px 16px; overflow: auto;
+  font-family: var(--mono); font-size: 12px; line-height: 1.65; color: #334155;
+  white-space: pre-wrap; word-break: break-word;
+}
+
+/* ---------- How I think: deep navy band ---------- */
+.section-dark { position: relative; isolation: isolate; overflow: hidden; background: var(--navy); color: rgba(255, 255, 255, 0.78); }
+.section-dark::before {
+  content: ""; position: absolute; inset: -140px 0; z-index: -1;
+  transform: translate3d(0, var(--par, 0px), 0);  /* parallax, set by JS */
+  background: url("assets/wave-poster.jpg") center 70% / cover no-repeat;
+  filter: grayscale(1);
+  opacity: 0.2; mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(180deg, transparent 25%, #000 85%);
+  mask-image: linear-gradient(180deg, transparent 25%, #000 85%);
+}
+.section-dark .section-title { margin-bottom: 14px; font-size: 14px; font-weight: 500; letter-spacing: 0; color: rgba(255, 255, 255, 0.6); }
+.approach-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: start; }
+.thesis {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 500; line-height: 1.15; letter-spacing: -0.03em;
+  color: #fff;
+}
+.principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+.principles li { padding: 16px 0; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.principles li:nth-child(-n+2) { padding-top: 0; border-top: 0; }
+.principles h3 { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: #fff; }
+.principles p { margin-top: 4px; font-size: 14px; line-height: 1.55; color: rgba(255, 255, 255, 0.72); }
+@media (max-width: 860px) {
+  .approach-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 640px) {
+  .principles { grid-template-columns: 1fr; }
+  .principles li:nth-child(2) { padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+}
+
+.roi-card {
+  margin-top: 36px; padding: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 28px 56px -30px rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.75);
+}
+.roi-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 24px; }
+.roi-title { font-size: 18px; font-weight: 600; letter-spacing: -0.015em; color: #fff; }
+.roi-sub { max-width: 34rem; font-size: 12.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.55); }
+
+.roi-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+.roi-opt {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 14px 16px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.04); color: #fff;
+  text-align: left; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s var(--ease);
+}
+.roi-opt::after {
+  content: ""; position: absolute; top: 18px; right: 16px;
+  width: 7px; height: 7px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.5); border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+  transform: rotate(45deg); transition: transform 0.3s var(--ease);
+}
+.roi-opt:hover { border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.08); transform: translateY(-1px); }
+.roi-opt[aria-pressed="true"] { border-color: #7fa6dc; background: rgba(127, 166, 220, 0.12); box-shadow: inset 0 0 0 1px #7fa6dc; }
+.roi-opt[aria-pressed="true"]::after { transform: translateY(3px) rotate(-135deg); border-color: #a9c4ea; }
+.opt-name { padding-right: 20px; font-size: 13.5px; font-weight: 600; color: #fff; }
+.opt-value { margin-top: 10px; font-size: 26px; font-weight: 600; line-height: 1; letter-spacing: -0.03em; color: #5fd0a6; font-variant-numeric: tabular-nums; }
+.opt-meta { margin-top: 5px; font-size: 12.5px; color: rgba(255, 255, 255, 0.55); }
+
+.roi-card .drawer-panel > div::before { content: ""; display: block; height: 20px; }
+.roi-body { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 28px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.12); }
+.roi-desc { font-size: 13.5px; line-height: 1.6; color: rgba(255, 255, 255, 0.75); }
+.roi-kpis { display: grid; gap: 12px; margin-top: 16px; }
+.roi-kpis dt { font-size: 12px; line-height: 1.35; color: rgba(255, 255, 255, 0.55); }
+.roi-kpis dd { margin-top: 2px; font-size: 17px; font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; }
+.roi-legend { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 6px; font-size: 12.5px; color: rgba(255, 255, 255, 0.75); }
+.roi-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; }
+.sw-cost { background: #7fa6dc; }
+.sw-savings { background: #4fc39a; }
+.roi-chart-wrap { position: relative; height: 230px; }
+@media (max-width: 760px) {
+  .roi-card { padding: 18px 16px; }
+  .roi-options { grid-template-columns: 1fr; gap: 8px; }
+  .roi-opt { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: 12px; padding: 12px 14px; }
+  .roi-opt::after { top: 50%; margin-top: -5px; }
+  .opt-name { grid-column: 1; }
+  .opt-value { grid-column: 2; grid-row: 1 / 3; align-self: center; margin: 0 22px 0 0; font-size: 20px; }
+  .opt-meta { grid-column: 1; margin-top: 1px; }
+  .roi-body { grid-template-columns: 1fr; gap: 14px; }
+  .roi-kpis { grid-template-columns: 1fr 1fr; }
+  .roi-chart-wrap { height: 200px; }
+}
+
+/* ---------- Skills: one panel, three columns ---------- */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: hidden; }
+.skill-col { padding: 22px 24px; }
+.skill-col + .skill-col { border-left: 1px solid var(--line); }
+.skill-col h3 { display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.skill-col h3::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--steel); }
+.skill-col:nth-child(2) h3::before { background: var(--euc); }
+.skill-col:nth-child(3) h3::before { background: var(--navy); }
+.skill-col ul { display: grid; gap: 6px; margin-top: 12px; }
+.skill-col li { font-size: 14px; color: var(--text); }
+@media (max-width: 760px) {
+  .skills { grid-template-columns: 1fr; }
+  .skill-col { padding: 18px; }
+  .skill-col + .skill-col { border-left: 0; border-top: 1px solid var(--line); }
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); align-items: center; gap: 48px;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.75);
+}
+/* A faint echo of the hero wave on the right side */
+.contact::before {
+  content: ""; position: absolute; inset: -70px 0; z-index: -1;
+  transform: translate3d(0, var(--par, 0px), 0);  /* parallax, set by JS */
+  background: url("assets/wave-poster.jpg") right center / cover no-repeat;
+  opacity: 0.22; mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(90deg, transparent 25%, #000 95%);
+  mask-image: linear-gradient(90deg, transparent 25%, #000 95%);
+}
+.contact-title { font-size: 30px; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; color: #fff; }
+.contact-text { max-width: 30rem; margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, 0.72); }
+.contact-copy .btn { margin-top: 22px; }
+.btn-white { background: #fff; color: var(--navy); }
+.btn-white::after { background: linear-gradient(110deg, transparent 35%, rgba(61, 106, 168, 0.14) 50%, transparent 65%); }
+.btn-white:hover { background: #f1f5fb; box-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.6); }
+
+.contact-list {
+  border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.contact-list li { display: grid; grid-template-columns: 78px minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 54px; padding: 10px 16px; }
+.contact-list li + li { border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.cl-label { font-size: 12.5px; color: rgba(255, 255, 255, 0.55); }
+.cl-value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14.5px; font-weight: 500; color: #fff; text-decoration: none; }
+a.cl-value:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, 0.4); }
+.cl-action {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 28px; padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 7px;
+  background: transparent; color: rgba(255, 255, 255, 0.85);
+  font-size: 12.5px; text-decoration: none; cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.cl-action:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.32); color: #fff; }
+@media (max-width: 860px) {
+  .contact { grid-template-columns: 1fr; gap: 24px; padding: 26px 20px; }
+  .contact-title { font-size: 24px; }
+  .contact::before { -webkit-mask-image: linear-gradient(180deg, transparent 30%, #000 100%); mask-image: linear-gradient(180deg, transparent 30%, #000 100%); }
+}
+@media (max-width: 420px) {
+  .contact-list li { grid-template-columns: minmax(0, 1fr) auto; row-gap: 0; }
+  .cl-label { grid-column: 1 / -1; }
+}
+
+.footer { padding: 0 0 32px; }
+.footer-row {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px;
+  padding-top: 16px; border-top: 1px solid var(--line);
+  font-size: 13px; color: var(--muted);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .reveal-side { opacity: 1; translate: none; transition: none; }
+  .timeline-fill { transition: none; }
+  .role.is-reached::after { animation: none; }
+  .btn, .btn::after, .roi-opt, .role, .role::before, .role-panel, .drawer-panel, .portrait img, .mobile-menu, .nav-link::after { transition: none !important; }
+  .btn:hover { transform: none; }
+}
+
+</style>
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-slate-50 font-sans text-slate-950 antialiased">
+<body>
 
   <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- ================= HEADER ================= -->
   <header class="site-header" id="site-header">
-    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
     <nav class="container nav" aria-label="Primary">
       <a href="#top" class="brand">Sophia Zuchetto</a>
 
@@ -56,17 +724,14 @@
         <li><a class="nav-link" href="#work">Work</a></li>
         <li><a class="nav-link" href="#approach">Approach</a></li>
         <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-dark btn-sm">Contact</a>
-        <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-          <span></span><span></span>
-        </button>
-      </div>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
     </nav>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu" hidden>
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
@@ -80,382 +745,380 @@
 
     <!-- ================= HERO (the only section with the video) ================= -->
     <section id="top" class="hero">
-      <!-- z-0: plain video, no CSS filters on the element -->
+      <!-- Layer 0: plain video, no CSS filters on the element (Safari can freeze filtered video) -->
       <div class="hero-media" aria-hidden="true">
         <video id="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback poster="assets/wave-poster.jpg">
           <source src="assets/wave.mp4" type="video/mp4" />
           <source src="assets/wave.webm" type="video/webm" />
         </video>
       </div>
-      <!-- z-10: blur, steel-blue tint and light veil, each a sibling of the video -->
-      <div class="hero-layer backdrop-blur-md" aria-hidden="true"></div>
+      <!-- Layer 1: blur, steel-blue tint and light veil, each a sibling of the video -->
+      <div class="hero-layer hero-blur" aria-hidden="true"></div>
       <div class="hero-layer hero-tint" aria-hidden="true"></div>
       <div class="hero-layer hero-veil" aria-hidden="true"></div>
 
-      <!-- z-20: content -->
+      <!-- Layer 2: content -->
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="hero-label" data-aos="fade-up"><span class="dot" aria-hidden="true"></span>Economics, Santa Clara University</p>
-
-          <h1 class="hero-name" data-aos="fade-up" data-aos-delay="60">Sophia Zuchetto</h1>
-
-          <p class="hero-lede" data-aos="fade-up" data-aos-delay="120">
-            Bridging the gap between <span class="accent">sustainability performance</span> and corporate ROI.
-          </p>
-
-          <p class="hero-blurb" data-aos="fade-up" data-aos-delay="180">
+          <p class="hero-label">Economics at Santa Clara University</p>
+          <h1 class="hero-name">Sophia Zuchetto</h1>
+          <p class="hero-lede">Bridging the gap between sustainability performance and corporate ROI.</p>
+          <p class="hero-blurb">
             I design frameworks that transform environmental data into clear, strategic business decisions,
             drawing on economics, regulatory research and validated AI workflows.
           </p>
-
-          <ul class="focus-list" aria-label="Focus areas" data-aos="fade-up" data-aos-delay="220">
-            <li>ESG &amp; sustainability strategy</li>
-            <li>EPR &amp; regulatory compliance</li>
-            <li>Corporate governance</li>
-            <li>Business strategy</li>
-          </ul>
-
-          <div class="hero-actions" data-aos="fade-up" data-aos-delay="260">
-            <a href="#experience" class="btn btn-dark">View experience</a>
-            <a href="#contact" class="btn btn-light">Get in touch</a>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-dark">Get in touch</a>
+            <a href="#experience" class="btn btn-light">View experience</a>
             <a href="https://www.linkedin.com/in/sophia-zuchetto" target="_blank" rel="noopener" class="btn btn-icon" aria-label="LinkedIn profile (opens in a new tab)">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
             </a>
           </div>
         </div>
 
-        <div class="hero-photo" data-aos="fade-up" data-aos-delay="120">
-          <div class="portrait">
-            <img src="assets/profile.jpg" alt="Portrait of Sophia Zuchetto" width="975" height="1366" onerror="this.remove()" />
-            <div class="portrait-fallback" aria-hidden="true">SZ</div>
-          </div>
+        <div class="portrait">
+          <img src="assets/profile.jpg" alt="Portrait of Sophia Zuchetto" width="975" height="1366" onerror="this.remove()" />
         </div>
       </div>
     </section>
 
     <!-- ================= HIGHLIGHTS ================= -->
-    <section class="section section-tight" aria-labelledby="highlights-title">
+    <section class="highlights" aria-label="Highlights">
       <div class="container">
-        <h2 id="highlights-title" class="sr-only">Highlights</h2>
         <dl class="stats">
-          <div class="stat" data-aos="fade-up">
-            <dd class="stat-value" data-count="4">4</dd>
-            <dt class="stat-label">State regulatory regimes analyzed across EPR and organics law</dt>
+          <div class="stat">
+            <dt>State regulatory regimes analyzed across EPR and organics law</dt>
+            <dd>4</dd>
           </div>
-          <div class="stat" data-aos="fade-up" data-aos-delay="60">
-            <dd class="stat-value" data-count="20" data-suffix="+">20+</dd>
-            <dt class="stat-label">Global supply chain actors assessed for emissions and lifecycle impact</dt>
+          <div class="stat">
+            <dt>Global supply chain actors assessed for emissions and lifecycle impact</dt>
+            <dd>20+</dd>
           </div>
-          <div class="stat" data-aos="fade-up" data-aos-delay="120">
-            <dd class="stat-value" data-count="20" data-suffix="+">20+</dd>
-            <dt class="stat-label">Senior leaders &amp; program managers trained on a new AI methodology</dt>
+          <div class="stat">
+            <dt>Senior leaders &amp; program managers trained on a new AI methodology</dt>
+            <dd>20+</dd>
           </div>
-          <div class="stat" data-aos="fade-up" data-aos-delay="180">
-            <dd class="stat-value" data-count="12" data-suffix="+">12+</dd>
-            <dt class="stat-label">AI-Automated Workflows engineered for repeatable analyst tasks</dt>
+          <div class="stat">
+            <dt>AI-automated workflows engineered for repeatable analyst tasks</dt>
+            <dd>12+</dd>
           </div>
         </dl>
       </div>
     </section>
 
     <!-- ================= EXPERIENCE ================= -->
-    <section id="experience" class="section">
+    <!-- On larger screens this section pins in place while the timeline fills and the
+         roles appear; the spacer below it is the scroll distance that drives that. -->
+    <section id="experience" class="section exp-section">
+      <div class="exp-sticky">
       <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <p class="kicker">Experience</p>
-          <h2 class="section-title">Where I've applied it</h2>
-          <p class="section-sub">Regulatory analysis, policy research and venture building across sustainability and business strategy. Open a role for the details.</p>
-        </div>
+        <h2 class="section-title">Experience</h2>
 
-        <div class="roles">
-          <!-- Role: CAA -->
-          <article class="role" data-aos="fade-up">
-            <button type="button" class="role-toggle" aria-expanded="true" aria-controls="role-caa">
-              <span class="role-main">
-                <span class="role-title">EPR Regulatory Analysis Intern</span>
-                <span class="role-org">Circular Action Alliance (CAA) · Remote</span>
-                <span class="role-summary">Statutory research, multi-state landscape analysis and AI workflow design to inform EPR program planning.</span>
-              </span>
-              <span class="role-meta">
-                <span class="role-date">May – Aug 2026</span>
+        <div class="exp-grid">
+          <!-- Roles, newest first. The rail on the left is the timeline. -->
+          <div class="timeline">
+            <span class="timeline-fill" aria-hidden="true"></span>
+            <!-- Role: CAA -->
+            <article class="role reveal" style="--d: 0ms">
+              <button type="button" class="role-toggle" aria-expanded="false" aria-controls="role-caa">
+                <span class="role-main">
+                  <span class="role-title">EPR Regulatory Analysis Intern</span>
+                  <span class="role-org">Circular Action Alliance (CAA)</span>
+                  <span class="role-summary">Statutory research, multi-state landscape analysis and AI workflow design to inform EPR program planning.</span>
+                </span>
+                <span class="role-meta">
+                  <span class="role-date">May – Aug 2026</span>
+                  <span class="role-place">Remote</span>
+                </span>
                 <span class="chevron" aria-hidden="true"></span>
-              </span>
-            </button>
-            <div class="role-panel" id="role-caa">
-              <div class="role-panel-inner">
-                <ul class="bullets">
-                  <li>Researched state and local organics regulations across Maryland, Minnesota and Washington (mandatory organics diversion, collection requirements, disposal bans, food service ware bans and education mandates), documenting each requirement with <strong>pinpoint statutory citations</strong> so program teams could trace any claim to its exact source.</li>
-                  <li>Built a multi-state landscape scan comparing statutory obligations, <strong>ecomodulation structures</strong>, and covered materials and entities, analyzing where organics mandates constrain, enable or complicate EPR program design, contracting structures and facility operations.</li>
-                  <li>Authored a regulatory analysis of <strong>harmonization opportunities</strong> between organics legislation, EPR and climate action planning across Maryland, Minnesota and Maine to inform CAA program planning decisions.</li>
-                  <li>Extracted quantitative findings, requirements and recommendations from lengthy state needs assessments and public comment records, verifying every figure against the source document before it entered the analysis.</li>
-                  <li>Designed a library of <strong>12+ vetted, reusable AI workflows</strong> (statutory citation extraction, needs assessment synthesis, public comment analysis, stakeholder mapping), validated by working backward from hand-built analysis and error-checking every output against source.</li>
-                  <li>Presented the methodology at an executive level and trained <strong>20+ senior company leaders and program managers</strong> to adopt it.</li>
-                </ul>
-                <ul class="tags" aria-label="Topics">
-                  <li>EPR</li><li>Organics policy</li><li>Statutory research</li><li>Ecomodulation</li><li>AI workflows</li>
-                </ul>
+              </button>
+              <div class="role-panel" id="role-caa" hidden>
+                <div>
+                  <ul class="bullets">
+                    <li>Researched state and local organics regulations across Maryland, Minnesota and Washington (mandatory organics diversion, collection requirements, disposal bans, food service ware bans and education mandates), documenting each requirement with <strong>pinpoint statutory citations</strong> so program teams could trace any claim to its exact source.</li>
+                    <li>Built a multi-state landscape scan comparing statutory obligations, <strong>ecomodulation structures</strong>, and covered materials and entities, analyzing where organics mandates constrain, enable or complicate EPR program design, contracting structures and facility operations.</li>
+                    <li>Authored a regulatory analysis of <strong>harmonization opportunities</strong> between organics legislation, EPR and climate action planning across Maryland, Minnesota and Maine to inform CAA program planning decisions.</li>
+                    <li>Extracted quantitative findings, requirements and recommendations from lengthy state needs assessments and public comment records, verifying every figure against the source document before it entered the analysis.</li>
+                    <li>Designed a library of <strong>12+ vetted, reusable AI workflows</strong> (statutory citation extraction, needs assessment synthesis, public comment analysis, stakeholder mapping), validated by working backward from hand-built analysis and error-checking every output against source.</li>
+                    <li>Presented the methodology at an executive level and trained <strong>20+ senior company leaders and program managers</strong> to adopt it.</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Role: SCU research -->
-          <article class="role" data-aos="fade-up">
-            <button type="button" class="role-toggle" aria-expanded="false" aria-controls="role-scu">
-              <span class="role-main">
-                <span class="role-title">EPR &amp; Sustainability Policy Research Scholar</span>
-                <span class="role-org">Sustainable Business Institute, Santa Clara University</span>
-                <span class="role-summary">HBS-style policy white paper on AI energy demand, infrastructure investment and climate commitments.</span>
-              </span>
-              <span class="role-meta">
-                <span class="role-date">Dec 2025 – Jun 2026</span>
+            <!-- Role: SCU research -->
+            <article class="role reveal" style="--d: 120ms">
+              <button type="button" class="role-toggle" aria-expanded="false" aria-controls="role-scu">
+                <span class="role-main">
+                  <span class="role-title">EPR &amp; Sustainability Policy Research Scholar</span>
+                  <span class="role-org">Sustainable Business Institute, Santa Clara University</span>
+                  <span class="role-summary">HBS-style policy white paper on AI energy demand, infrastructure investment and climate commitments.</span>
+                </span>
+                <span class="role-meta">
+                  <span class="role-date">Dec 2025 – Jun 2026</span>
+                  <span class="role-place">Santa Clara, CA</span>
+                </span>
                 <span class="chevron" aria-hidden="true"></span>
-              </span>
-            </button>
-            <div class="role-panel" id="role-scu" hidden>
-              <div class="role-panel-inner">
-                <ul class="bullets">
-                  <li>Co-authored an <strong>HBS-style policy white paper</strong> examining the intersection of AI energy demand, infrastructure investment and climate commitments, synthesizing complex regulatory frameworks into actionable recommendations for utility leaders and policymakers.</li>
-                  <li>Led cross-team coordination across <strong>three research cohorts</strong>, developing standardized analytical frameworks that ensure rigor and consistency in policy synthesis.</li>
-                  <li>Presented research findings at the <strong>SCU LSB Symposium</strong> and developed educational tools to help future students navigate sustainability–technology policy tensions.</li>
-                </ul>
-                <ul class="tags" aria-label="Topics">
-                  <li>Policy research</li><li>White paper writing</li><li>Energy &amp; climate</li><li>Utilities</li>
-                </ul>
+              </button>
+              <div class="role-panel" id="role-scu" hidden>
+                <div>
+                  <ul class="bullets">
+                    <li>Co-authored an <strong>HBS-style policy white paper</strong> examining the intersection of AI energy demand, infrastructure investment and climate commitments, synthesizing complex regulatory frameworks into actionable recommendations for utility leaders and policymakers.</li>
+                    <li>Led cross-team coordination across <strong>three research cohorts</strong>, developing standardized analytical frameworks that ensure rigor and consistency in policy synthesis.</li>
+                    <li>Presented research findings at the <strong>SCU LSB Symposium</strong> and developed educational tools to help future students navigate sustainability–technology policy tensions.</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Role: Venture -->
-          <article class="role" data-aos="fade-up">
-            <button type="button" class="role-toggle" aria-expanded="false" aria-controls="role-venture">
-              <span class="role-main">
-                <span class="role-title">Founder, Circular Economy Venture</span>
-                <span class="role-org">Bronco Venture Accelerator, Cohort 7 · Santa Clara University</span>
-                <span class="role-summary">Circular textile venture linking environmental performance to investment-grade metrics and ROI.</span>
-              </span>
-              <span class="role-meta">
-                <span class="role-date">Apr – Dec 2025</span>
+            <!-- Role: Venture -->
+            <article class="role reveal" style="--d: 240ms">
+              <button type="button" class="role-toggle" aria-expanded="false" aria-controls="role-venture">
+                <span class="role-main">
+                  <span class="role-title">Founder, Circular Economy Venture</span>
+                  <span class="role-org">Bronco Venture Accelerator, Cohort 7, Santa Clara University</span>
+                  <span class="role-summary">Circular textile venture linking environmental performance to investment-grade metrics and ROI.</span>
+                </span>
+                <span class="role-meta">
+                  <span class="role-date">Apr – Dec 2025</span>
+                  <span class="role-place">Santa Clara, CA</span>
+                </span>
                 <span class="chevron" aria-hidden="true"></span>
-              </span>
-            </button>
-            <div class="role-panel" id="role-venture" hidden>
-              <div class="role-panel-inner">
-                <ul class="bullets">
-                  <li>Led development of an environmental impact assessment methodology grounded in <strong>SBTN planetary boundaries</strong>, translating sustainability science into investment-grade metrics that link environmental performance to ROI.</li>
-                  <li>Synthesized <strong>GHG emissions data and lifecycle assessments</strong> across 20+ global textile supply chain actors into a stakeholder-facing framework linking sustainability metrics to financial viability.</li>
-                  <li>Conducted <strong>15+ interviews</strong> with industry leaders on market structure, supply chain financing and barriers to sustainable infrastructure investment.</li>
-                  <li>Analyzed the competitor landscape with environmental finance and impact measurement frameworks, and built data visualizations communicating complex systems dynamics to non-technical audiences.</li>
-                </ul>
-                <ul class="tags" aria-label="Topics">
-                  <li>Circular economy</li><li>Impact measurement</li><li>GHG &amp; LCA</li><li>Environmental finance</li>
-                </ul>
+              </button>
+              <div class="role-panel" id="role-venture" hidden>
+                <div>
+                  <ul class="bullets">
+                    <li>Led development of an environmental impact assessment methodology grounded in <strong>SBTN planetary boundaries</strong>, translating sustainability science into investment-grade metrics that link environmental performance to ROI.</li>
+                    <li>Synthesized <strong>GHG emissions data and lifecycle assessments</strong> across 20+ global textile supply chain actors into a stakeholder-facing framework linking sustainability metrics to financial viability.</li>
+                    <li>Conducted <strong>15+ interviews</strong> with industry leaders on market structure, supply chain financing and barriers to sustainable infrastructure investment.</li>
+                    <li>Analyzed the competitor landscape with environmental finance and impact measurement frameworks, and built data visualizations communicating complex systems dynamics to non-technical audiences.</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Education & certification -->
-        <div class="edu-grid">
-          <div class="card edu" data-aos="fade-up">
-            <p class="card-kicker">Education</p>
-            <p class="edu-title">B.S. Economics, Minor in Sustainability Studies</p>
-            <p class="edu-meta">Santa Clara University · Sep 2024 – Present · GPA 3.65</p>
-            <p class="edu-note">Coursework: Environmental Economics, Public Finance, Cost-Benefit Analysis, Business Strategy, Data Analysis &amp; Visualization</p>
-            <p class="edu-meta edu-meta-secondary">The American School in Switzerland (TASIS), Lugano · High School Diploma · GPA 3.9</p>
+            </article>
           </div>
-          <div class="card edu" data-aos="fade-up" data-aos-delay="60">
-            <p class="card-kicker">Certification</p>
-            <p class="edu-title">CSRD Fundamentals Certification</p>
-            <p class="edu-meta">CSRD Institute · October 2025</p>
-            <p class="edu-note">EU Corporate Sustainability Reporting Directive: double materiality, ESRS structure and value-chain disclosure.</p>
-          </div>
+
+          <!-- Education & certification -->
+          <aside class="exp-aside reveal-side">
+            <div class="panel side-card">
+              <h3 class="side-title">Education</h3>
+              <div class="edu">
+                <div class="edu-row">
+                  <p class="edu-title">B.S. Economics</p>
+                  <span class="chip">GPA 3.65</span>
+                </div>
+                <p class="edu-sub">Minor in Sustainability Studies</p>
+                <p class="edu-meta">Santa Clara University, Sep 2024 – Present</p>
+                <p class="edu-note">Coursework: Environmental Economics, Public Finance, Cost-Benefit Analysis, Business Strategy, Data Analysis &amp; Visualization</p>
+              </div>
+              <div class="edu edu-minor">
+                <div class="edu-row">
+                  <p class="edu-title">High School Diploma</p>
+                  <span class="chip">GPA 3.9</span>
+                </div>
+                <p class="edu-meta">The American School in Switzerland (TASIS), Lugano</p>
+              </div>
+            </div>
+
+            <div class="panel side-card">
+              <h3 class="side-title">Certification</h3>
+              <div class="edu">
+                <div class="edu-row">
+                  <p class="edu-title">CSRD Fundamentals</p>
+                  <span class="edu-date">Oct 2025</span>
+                </div>
+                <p class="edu-meta">CSRD Institute</p>
+                <p class="edu-note">EU Corporate Sustainability Reporting Directive: double materiality, ESRS structure and value-chain disclosure.</p>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
+      </div>
+      <div class="exp-spacer" aria-hidden="true"></div>
     </section>
 
-    <!-- ================= SELECTED WORK ================= -->
-    <section id="work" class="section section-alt">
+    <!-- ================= FEATURED WORK ================= -->
+    <section id="work" class="section section-tint">
       <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <p class="kicker">Selected work</p>
-          <h2 class="section-title">Projects and outcomes</h2>
-          <p class="section-sub">The problem, what I built, and what it changed.</p>
-        </div>
+        <h2 class="section-title">Featured work</h2>
 
-        <!-- Featured project -->
-        <article class="card feature" data-aos="fade-up">
-          <div class="feature-grid">
-            <div>
-              <p class="card-kicker">Featured · Circular Action Alliance · Summer 2026</p>
-              <h3 class="feature-title">From a hand-built analysis to a framework leadership adopted</h3>
-              <dl class="story" id="feature-story">
-                <div>
-                  <dt>The challenge</dt>
-                  <dd>Regulatory extraction sits at the foundation of every EPR program decision, and it is slow, high-stakes and easy to get wrong. A single misread obligation can carry through into contracts, fee structures and facility plans.</dd>
-                </div>
-                <div>
-                  <dt>The approach</dt>
-                  <dd>I began with the analyses I had already produced by hand: statutory citation extraction, needs assessment synthesis, public comment analysis and stakeholder mapping. I took each one apart into its underlying reasoning, then rebuilt it as a reproducible AI prompt that returns the same traceable, citation-backed output every time. Every prompt was validated by working backward from my finished manual work and checking each output against its source document. Only what held up entered the library.</dd>
-                </div>
-                <div>
-                  <dt>The presentation</dt>
-                  <dd>I then brought the framework to the people who would use it. I presented the methodology at an executive level to more than twenty senior company leaders and program managers, walking them through how each prompt was built, how it was verified, and how to apply it to new jurisdictions with confidence. The result was a shared, trusted method in place of one analyst's expertise.</dd>
-                </div>
-              </dl>
-              <button type="button" class="story-more" id="story-more" aria-expanded="false" aria-controls="feature-story">Read the full case study</button>
-            </div>
-            <aside class="feature-facts" aria-label="Project at a glance">
-              <div><span class="fact-value">20+</span><span class="fact-label">senior leaders &amp; program managers trained</span></div>
-              <div><span class="fact-value">12+</span><span class="fact-label">workflows in the vetted library</span></div>
-              <div><span class="fact-value">100%</span><span class="fact-label">of outputs checked against source documents</span></div>
-            </aside>
+        <article class="panel case">
+          <div class="case-grid">
+            <header class="case-head">
+              <p class="case-org">Circular Action Alliance, Summer 2026</p>
+              <h3 class="case-title">From a hand-built analysis to a framework leadership adopted</h3>
+              <div class="case-built">
+                <p class="case-built-title">The library includes workflows for</p>
+                <ul>
+                  <li>Statutory citation extraction</li>
+                  <li>Needs assessment synthesis</li>
+                  <li>Public comment analysis</li>
+                  <li>Stakeholder mapping</li>
+                </ul>
+              </div>
+            </header>
+
+            <!-- The three stages of the project, in order -->
+            <dl class="case-story">
+              <div>
+                <dt>Challenge</dt>
+                <dd>Regulatory extraction sits at the foundation of every EPR program decision, and it is slow, high-stakes and easy to get wrong.</dd>
+              </div>
+              <div>
+                <dt>Approach</dt>
+                <dd>I rebuilt my own hand-built analyses as reproducible AI prompts, then validated each one against my finished manual work and its source documents. Only what held up entered the library.</dd>
+              </div>
+              <div class="is-result">
+                <dt>Result</dt>
+                <dd>I presented the methodology to 20+ senior leaders and program managers. The result was a shared, trusted method in place of one analyst’s expertise.</dd>
+              </div>
+            </dl>
           </div>
 
-          <!-- Sample workflows (dropdown) -->
-          <div class="workflows">
-            <button type="button" class="drawer-toggle" aria-expanded="false" aria-controls="workflows-panel">
-              <span>Sample workflows</span>
-              <span class="drawer-hint">Generalized versions of four analyst tasks</span>
-              <span class="chevron" aria-hidden="true"></span>
-            </button>
-            <div class="drawer-panel" id="workflows-panel" hidden>
-              <div class="drawer-inner">
-                <p class="disclaimer">
-                  <span class="disclaimer-label">Note:</span> The following modules are generalized sample workflows demonstrating methodology. All proprietary internal documents, prompts, and strategic frameworks have been omitted for confidentiality.
-                </p>
-                <div class="workflow">
-                  <div class="wf-tabs" role="tablist" aria-label="Sample AI workflows" data-tabs="workflows"></div>
-                  <div class="wf-toolbar">
-                    <span id="wf-filename" class="wf-filename">prompt.md</span>
-                    <button id="copy-btn" type="button" class="btn btn-light btn-sm copy-btn">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V6a3 3 0 0 1 3-3h9"/></svg>
-                      <span id="copy-label">Copy to clipboard</span>
-                    </button>
+          <div class="case-drawers">
+            <!-- Full case study (dropdown) -->
+            <div class="drawer">
+              <button type="button" class="drawer-toggle" aria-expanded="false" aria-controls="case-panel">
+                <span>Full case study</span>
+                <span class="chevron" aria-hidden="true"></span>
+              </button>
+              <div class="drawer-panel" id="case-panel" hidden>
+                <div>
+                  <div class="case-full">
+                    <p><strong>The challenge.</strong> Regulatory extraction sits at the foundation of every EPR program decision, and it is slow, high-stakes and easy to get wrong. A single misread obligation can carry through into contracts, fee structures and facility plans.</p>
+                    <p><strong>The approach.</strong> I began with the analyses I had already produced by hand: statutory citation extraction, needs assessment synthesis, public comment analysis and stakeholder mapping. I took each one apart into its underlying reasoning, then rebuilt it as a reproducible AI prompt that returns the same traceable, citation-backed output every time. Every prompt was validated by working backward from my finished manual work and checking each output against its source document. Only what held up entered the library.</p>
+                    <p><strong>The presentation.</strong> I then brought the framework to the people who would use it. I presented the methodology at an executive level to more than twenty senior company leaders and program managers, walking them through how each prompt was built, how it was verified, and how to apply it to new jurisdictions with confidence. The result was a shared, trusted method in place of one analyst’s expertise.</p>
                   </div>
-                  <div id="wf-panels"></div>
-                  <p id="copy-status" class="sr-only" aria-live="polite"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sample workflows (dropdown) -->
+            <div class="drawer">
+              <button type="button" class="drawer-toggle" aria-expanded="false" aria-controls="workflows-panel">
+                <span>Sample workflows</span>
+                <span class="drawer-hint">Generalized versions of four analyst tasks</span>
+                <span class="chevron" aria-hidden="true"></span>
+              </button>
+              <div class="drawer-panel" id="workflows-panel" hidden>
+                <div>
+                  <p class="note">
+                    The following modules are generalized sample workflows demonstrating methodology. All proprietary internal documents, prompts, and strategic frameworks have been omitted for confidentiality.
+                  </p>
+                  <div class="workflow">
+                    <div class="wf-bar">
+                      <div class="wf-tabs" role="tablist" aria-label="Sample AI workflows" data-tabs="workflows"></div>
+                      <button id="copy-btn" type="button" class="btn btn-light btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V6a3 3 0 0 1 3-3h9"/></svg>
+                        <span id="copy-label">Copy</span>
+                      </button>
+                    </div>
+                    <div id="wf-panels"></div>
+                    <p id="copy-status" class="sr-only" aria-live="polite"></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </article>
-
-        <!-- Other projects -->
-        <div class="projects">
-          <article class="card project" data-aos="fade-up">
-            <p class="card-kicker">Regulatory analysis · CAA</p>
-            <h3 class="project-title">Multi-state EPR &amp; organics landscape scan</h3>
-            <p class="project-body">Compared statutory obligations, ecomodulation structures, and covered materials and entities across Maryland, Minnesota, Washington and Maine, then mapped harmonization opportunities between organics law, EPR and climate action planning.</p>
-            <p class="project-outcome">Informed CAA program planning decisions, with every requirement traceable to a pinpoint citation.</p>
-            <ul class="tags"><li>EPR</li><li>Ecomodulation</li><li>Harmonization</li></ul>
-          </article>
-
-          <article class="card project" data-aos="fade-up" data-aos-delay="60">
-            <p class="card-kicker">Policy research · Santa Clara University</p>
-            <h3 class="project-title">AI energy demand &amp; climate commitments white paper</h3>
-            <p class="project-body">Co-authored an HBS-style white paper on how AI energy demand and infrastructure investment collide with corporate and utility climate commitments, coordinating three research cohorts.</p>
-            <p class="project-outcome">Actionable recommendations for utility leaders and policymakers; presented at the SCU LSB Symposium.</p>
-            <ul class="tags"><li>Energy policy</li><li>Infrastructure</li><li>Climate commitments</li></ul>
-          </article>
-
-          <article class="card project" data-aos="fade-up" data-aos-delay="120">
-            <p class="card-kicker">Venture · Bronco Venture Accelerator</p>
-            <h3 class="project-title">Impact methodology for a circular textile venture</h3>
-            <p class="project-body">Built an environmental impact assessment grounded in SBTN planetary boundaries, synthesizing GHG and lifecycle data across 20+ supply chain actors and 15+ industry interviews.</p>
-            <p class="project-outcome">Investment-grade metrics linking environmental performance to ROI and financial viability.</p>
-            <ul class="tags"><li>SBTN</li><li>GHG &amp; LCA</li><li>Impact finance</li></ul>
-          </article>
-        </div>
       </div>
     </section>
 
-    <!-- ================= APPROACH ================= -->
-    <section id="approach" class="section">
+    <!-- ================= APPROACH (dark band) ================= -->
+    <section id="approach" class="section section-dark">
       <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <p class="kicker">How I think &amp; work</p>
-          <h2 class="section-title">Sustainability is an <span class="accent">economic strategy,</span> not an act of charity.</h2>
+        <div class="approach-grid">
+          <div class="approach-lead">
+            <h2 class="section-title">How I think</h2>
+            <p class="thesis">Sustainability is an economic strategy, not an act of charity.</p>
+          </div>
+
+          <ul class="principles">
+            <li>
+              <h3>Goodwill is fragile. Strategy endures.</h3>
+              <p>Programs framed only as “the right thing to do” are easy to praise and just as easy to set aside.</p>
+            </li>
+            <li>
+              <h3>Every impact has a cost. Make it visible.</h3>
+              <p>Once the impact is priced, sustainability stops being a values debate and becomes a line item worth improving.</p>
+            </li>
+            <li>
+              <h3>Credibility is built at the source.</h3>
+              <p>I trace every number to its source, every requirement to its pinpoint citation, and every AI output to a document I can open.</p>
+            </li>
+            <li>
+              <h3>Speak the language of the decision.</h3>
+              <p>I translate science, statute and supply chain data into ROI, risk and timelines, the terms that finance leaders, operators and program heads already use.</p>
+            </li>
+          </ul>
         </div>
 
-        <ol class="principles">
-          <li class="card principle" data-aos="fade-up">
-            <span class="principle-num">01</span>
-            <h3>Goodwill is fragile. Strategy endures.</h3>
-            <p>When sustainability is treated as goodwill, it lives in a cost center and depends on good intentions, so it is often the first budget reconsidered in a difficult quarter. Programs framed only as "the right thing to do" are easy to praise and just as easy to set aside.</p>
-          </li>
-          <li class="card principle" data-aos="fade-up" data-aos-delay="60">
-            <span class="principle-num">02</span>
-            <h3>Every impact has a cost. Make it visible.</h3>
-            <p>Material waste is margin leakage. EPR fees and ecomodulation put a price on packaging decisions. Supplier emissions surface as regulatory exposure and cost of capital. Once the impact is priced, sustainability stops being a values debate and becomes a line item worth improving.</p>
-          </li>
-          <li class="card principle" data-aos="fade-up">
-            <span class="principle-num">03</span>
-            <h3>Credibility is built at the source.</h3>
-            <p>An economic case is only as strong as its least certain figure. I trace every number to its source, every requirement to its pinpoint citation, and every AI output to a document I can open. Audit-ready is not a final step; it is how the work is built.</p>
-          </li>
-          <li class="card principle" data-aos="fade-up" data-aos-delay="60">
-            <span class="principle-num">04</span>
-            <h3>Speak the language of the decision.</h3>
-            <p>Analysis only matters once it reaches the people who decide. I translate science, statute and supply chain data into ROI, risk and timelines, the terms that finance leaders, operators and program heads already use.</p>
-          </li>
-        </ol>
-
-        <!-- Sustainability ROI dashboard -->
-        <div id="roi" class="card roi" data-aos="fade-up">
+        <!-- Sustainability ROI model: pick a strategy to open its chart (Chart.js loads on first open) -->
+        <div class="panel roi-card">
           <div class="roi-head">
-            <div>
-              <p class="card-kicker">Sustainability ROI Dashboard</p>
-              <h3 class="roi-title">Where sustainability pays back</h3>
-              <p class="roi-note">Illustrative scenario model for a hypothetical mid-size consumer goods company. Figures are modeled estimates for demonstration, not client results.</p>
-            </div>
-            <div class="seg" role="tablist" aria-label="Strategic choices">
-              <button type="button" role="tab" id="roi-tab-epr" aria-controls="roi-panel" aria-selected="true" tabindex="0" class="seg-btn" data-scenario="epr">EPR Material Ecomodulation</button>
-              <button type="button" role="tab" id="roi-tab-scope3" aria-controls="roi-panel" aria-selected="false" tabindex="-1" class="seg-btn" data-scenario="scope3">Scope 3 Logistics Audit</button>
-              <button type="button" role="tab" id="roi-tab-circ" aria-controls="roi-panel" aria-selected="false" tabindex="-1" class="seg-btn" data-scenario="circ">Resource Circularity</button>
-            </div>
+            <h3 class="roi-title">Where sustainability pays back</h3>
+            <p class="roi-sub">Illustrative scenario model for a hypothetical mid-size consumer goods company. Figures are modeled estimates for demonstration, not client results.</p>
           </div>
 
-          <div id="roi-panel" role="tabpanel" aria-labelledby="roi-tab-epr" class="roi-body">
-            <div class="roi-side">
-              <p id="roi-desc" class="roi-desc"></p>
-              <dl class="roi-kpis">
-                <div><dt>Net margin protection</dt><dd id="roi-net" class="kpi-hero">–</dd></div>
-                <div><dt>Payback</dt><dd id="roi-payback">–</dd></div>
-                <div><dt>5-year implementation cost</dt><dd id="roi-cost">–</dd></div>
-                <div><dt>5-year projected core savings</dt><dd id="roi-savings">–</dd></div>
-              </dl>
-            </div>
-            <div class="roi-chart-col">
-              <div class="roi-legend" aria-hidden="true">
-                <span><i class="sw sw-cost"></i>Implementation Cost</span>
-                <span><i class="sw sw-savings"></i>Projected Core Savings</span>
+          <div class="roi-options" role="group" aria-label="Strategic choices">
+            <button type="button" class="roi-opt" data-scenario="epr" aria-pressed="false" aria-controls="roi-drawer">
+              <span class="opt-name">EPR Material Ecomodulation</span>
+              <span class="opt-value" data-net></span>
+              <span class="opt-meta" data-payback></span>
+            </button>
+            <button type="button" class="roi-opt" data-scenario="scope3" aria-pressed="false" aria-controls="roi-drawer">
+              <span class="opt-name">Scope 3 Logistics Audit</span>
+              <span class="opt-value" data-net></span>
+              <span class="opt-meta" data-payback></span>
+            </button>
+            <button type="button" class="roi-opt" data-scenario="circ" aria-pressed="false" aria-controls="roi-drawer">
+              <span class="opt-name">Resource Circularity</span>
+              <span class="opt-value" data-net></span>
+              <span class="opt-meta" data-payback></span>
+            </button>
+          </div>
+
+          <div class="drawer-panel" id="roi-drawer" hidden>
+            <div>
+              <div class="roi-body">
+                <div>
+                  <p id="roi-desc" class="roi-desc"></p>
+                  <dl class="roi-kpis">
+                    <div><dt>5-year implementation cost</dt><dd id="roi-cost">–</dd></div>
+                    <div><dt>5-year projected core savings</dt><dd id="roi-savings">–</dd></div>
+                  </dl>
+                </div>
+                <div>
+                  <div class="roi-legend" aria-hidden="true">
+                    <span><i class="sw sw-cost"></i>Implementation cost</span>
+                    <span><i class="sw sw-savings"></i>Projected core savings</span>
+                  </div>
+                  <div class="roi-chart-wrap">
+                    <canvas id="roi-chart" role="img" aria-label="Grouped bar chart of implementation cost versus projected core savings over a five-year horizon"></canvas>
+                  </div>
+                  <div class="sr-only"><table>
+                    <caption>Implementation cost vs. projected core savings, $ millions</caption>
+                    <thead><tr><th scope="col">Year</th><th scope="col">Implementation Cost</th><th scope="col">Projected Core Savings</th></tr></thead>
+                    <tbody id="roi-table-body"></tbody>
+                  </table></div>
+                </div>
               </div>
-              <div class="roi-chart-wrap">
-                <canvas id="roi-chart" role="img" aria-label="Grouped bar chart of implementation cost versus projected core savings over a five-year horizon"></canvas>
-              </div>
-              <div class="sr-only"><table>
-                <caption>Implementation cost vs. projected core savings, $ millions</caption>
-                <thead><tr><th scope="col">Year</th><th scope="col">Implementation Cost</th><th scope="col">Projected Core Savings</th></tr></thead>
-                <tbody id="roi-table-body"></tbody>
-              </table></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= SKILLS & FRAMEWORKS ================= -->
-    <section id="skills" class="section section-alt">
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section">
       <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <p class="kicker">Skills &amp; frameworks</p>
-          <h2 class="section-title">The toolkit behind every recommendation</h2>
-        </div>
+        <h2 class="section-title">Skills</h2>
 
-        <div class="skills">
-          <div class="card skill-group" data-aos="fade-up">
-            <h3>Data &amp; Analytics</h3>
-            <ul class="pills">
+        <div class="panel skills">
+          <div class="skill-col">
+            <h3>Data &amp; analytics</h3>
+            <ul>
               <li>Python (Data Presentation)</li>
               <li>Quantitative Data Analysis</li>
               <li>GHG Emissions Accounting</li>
@@ -463,9 +1126,9 @@
               <li>Excel Modeling</li>
             </ul>
           </div>
-          <div class="card skill-group" data-aos="fade-up" data-aos-delay="60">
-            <h3>Regulatory &amp; Strategy</h3>
-            <ul class="pills">
+          <div class="skill-col">
+            <h3>Regulatory &amp; strategy</h3>
+            <ul>
               <li>CSRD Frameworks</li>
               <li>SBTN Planetary Boundaries</li>
               <li>EPR &amp; Material Compliance</li>
@@ -473,9 +1136,9 @@
               <li>Regulatory Harmonization Analysis</li>
             </ul>
           </div>
-          <div class="card skill-group" data-aos="fade-up" data-aos-delay="120">
-            <h3>Workflows &amp; Automation</h3>
-            <ul class="pills">
+          <div class="skill-col">
+            <h3>Workflows &amp; automation</h3>
+            <ul>
               <li>Generative AI Workflow Design</li>
               <li>Vetted Prompt Engineering</li>
               <li>System Prompt Evaluation</li>
@@ -483,86 +1146,57 @@
             </ul>
           </div>
         </div>
-
-        <div class="frameworks">
-          <div class="framework" data-aos="fade-up">
-            <div class="framework-head"><h3>CSRD Fundamentals</h3><span class="badge badge-blue">Certified</span></div>
-            <p>Double materiality, ESRS structure and value-chain disclosure under the EU Corporate Sustainability Reporting Directive.</p>
-          </div>
-          <div class="framework" data-aos="fade-up" data-aos-delay="60">
-            <div class="framework-head"><h3>SBTN Boundaries</h3><span class="badge">Applied</span></div>
-            <p>An impact methodology grounded in SBTN planetary boundaries, translated into investment-grade metrics tied to ROI.</p>
-          </div>
-          <div class="framework" data-aos="fade-up" data-aos-delay="120">
-            <div class="framework-head"><h3>GHG &amp; Lifecycle Analysis</h3><span class="badge">Applied</span></div>
-            <p>Emissions and lifecycle data synthesized across global textile supply chains into a framework linking impact to financial viability.</p>
-          </div>
-          <div class="framework" data-aos="fade-up" data-aos-delay="180">
-            <div class="framework-head"><h3>EPR &amp; Material Compliance</h3><span class="badge">Applied</span></div>
-            <p>Statutory obligations, ecomodulation structures and covered materials mapped across states with pinpoint citations.</p>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- ================= CONTACT ================= -->
-    <section id="contact" class="section">
+    <section id="contact" class="section section-last">
       <div class="container">
-        <div class="card contact" data-aos="fade-up">
-          <div>
-            <p class="kicker">Contact</p>
-            <h2 class="section-title">Let's make the sustainable decision <span class="accent">the strategic one.</span></h2>
-            <p class="section-sub">Open to internships and roles in corporate sustainability and ESG, business strategy, corporate governance and environmental compliance, and to conversations with founders building in climate and the circular economy.</p>
+        <div class="contact">
+          <div class="contact-copy">
+            <h2 class="contact-title">Get in touch</h2>
+            <p class="contact-text">Open to internships and roles in corporate sustainability and ESG, business strategy, corporate governance and environmental compliance, and to conversations with founders building in climate and the circular economy.</p>
+            <a href="mailto:szuchetto@scu.edu" class="btn btn-white">Email me</a>
           </div>
-          <div class="contact-actions">
-            <a href="mailto:szuchetto@scu.edu" class="btn btn-dark">Email me</a>
-            <button type="button" class="btn btn-light" id="copy-email" data-email="szuchetto@scu.edu">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V6a3 3 0 0 1 3-3h9"/></svg>
-              szuchetto@scu.edu
-            </button>
-            <a href="https://www.linkedin.com/in/sophia-zuchetto" target="_blank" rel="noopener" class="btn btn-light">LinkedIn ↗</a>
-          </div>
+
+          <ul class="contact-list">
+            <li>
+              <span class="cl-label">Email</span>
+              <a class="cl-value" href="mailto:szuchetto@scu.edu">szuchetto@scu.edu</a>
+              <button type="button" class="cl-action" id="copy-email" data-email="szuchetto@scu.edu" aria-label="Copy email address">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V6a3 3 0 0 1 3-3h9"/></svg>
+                <span id="copy-email-label">Copy</span>
+              </button>
+            </li>
+            <li>
+              <span class="cl-label">LinkedIn</span>
+              <a class="cl-value" href="https://www.linkedin.com/in/sophia-zuchetto" target="_blank" rel="noopener">in/sophia-zuchetto</a>
+              <a class="cl-action" href="https://www.linkedin.com/in/sophia-zuchetto" target="_blank" rel="noopener" aria-label="Open LinkedIn profile (opens in a new tab)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                <span>Open</span>
+              </a>
+            </li>
+            <li>
+              <span class="cl-label">Based in</span>
+              <span class="cl-value">Santa Clara, California</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-row">
-      <span>© <span id="year">2026</span> Sophia Zuchetto</span>
-      <span>Santa Clara, California</span>
+    <div class="container">
+      <div class="footer-row">
+        <span>© <span id="year">2026</span> Sophia Zuchetto</span>
+        <span>Santa Clara, California</span>
+      </div>
     </div>
   </footer>
 
-  <!-- Plugin suite -->
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25/dist/sweetalert2.all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const hasGsap = !!(window.gsap && window.ScrollTrigger);
-    if (hasGsap) gsap.registerPlugin(ScrollTrigger);
-
-    /* ---------- Toasts (SweetAlert2) ---------- */
-    const Toast = window.Swal
-      ? Swal.mixin({
-          toast: true,
-          position: 'bottom-end',
-          showConfirmButton: false,
-          timer: 2400,
-          timerProgressBar: true,
-          background: '#0f172a',
-          color: '#f8fafc',
-          iconColor: '#34d399',
-          customClass: { popup: 'sz-toast', title: 'sz-toast-title', timerProgressBar: 'sz-toast-bar' },
-          showClass: { popup: 'sz-toast-in' },
-          hideClass: { popup: 'sz-toast-out' },
-          didOpen: (t) => { t.addEventListener('mouseenter', Swal.stopTimer); t.addEventListener('mouseleave', Swal.resumeTimer); },
-        })
-      : null;
 
     async function copyText(text) {
       try {
@@ -583,30 +1217,24 @@
       }
     }
 
-    /* ---------- Smooth scrolling (Lenis) ---------- */
-    let lenis = null;
-    if (window.Lenis && !reduceMotion) {
-      lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-      if (hasGsap) {
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add((time) => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
-      } else {
-        const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
-        requestAnimationFrame(raf);
-      }
+    // Briefly swap a button's label (e.g. "Copied"), then restore it
+    function flashLabel(el, text) {
+      if (!el.dataset.original) el.dataset.original = el.textContent;
+      el.textContent = text;
+      clearTimeout(el._t);
+      el._t = setTimeout(() => { el.textContent = el.dataset.original; }, 1800);
     }
 
-    /* ---------- In-page links ----------
-       Scroll to an exact pixel position (element top minus the header),
-       which stays correct from any starting point.                       */
+    /* ---------- In-page links: scroll to the target minus the header ---------- */
+    const header = document.getElementById('site-header');
+    function docTop(el) { let y = 0; for (; el; el = el.offsetParent) y += el.offsetTop; return y; }
     function scrollToTarget(el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 68;
-      if (lenis) lenis.scrollTo(y);
-      else window.scrollTo({ top: y, behavior: reduceMotion ? 'auto' : 'smooth' });
+      finishExperience();
+      const y = docTop(el) - header.offsetHeight - 8;
+      window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion ? 'auto' : 'smooth' });
     }
     document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach((a) => {
-      if (a.closest('#mobile-menu')) return;   // handled with the menu below
+      if (a.closest('#mobile-menu')) return;
       a.addEventListener('click', (e) => {
         const target = document.querySelector(a.getAttribute('href'));
         if (!target) return;
@@ -616,15 +1244,8 @@
       });
     });
 
-    /* ---------- Header: shadow, progress bar, active section ---------- */
-    const header = document.getElementById('site-header');
-    const bar = document.getElementById('progress-bar');
-    function onScroll() {
-      const y = window.scrollY;
-      header.classList.toggle('is-scrolled', y > 8);
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
-    }
+    /* ---------- Header shadow and active section ---------- */
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
@@ -635,8 +1256,8 @@
           if (!e.isIntersecting) return;
           navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
         });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      ['experience', 'work', 'approach', 'skills'].forEach((id) => io.observe(document.getElementById(id)));
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      ['experience', 'work', 'approach', 'skills', 'contact'].forEach((id) => io.observe(document.getElementById(id)));
     }
 
     /* ---------- Mobile menu ---------- */
@@ -647,14 +1268,12 @@
       menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       header.classList.toggle('menu-open', open);
       if (open) { menu.hidden = false; requestAnimationFrame(() => menu.classList.add('is-open')); }
-      else { menu.classList.remove('is-open'); setTimeout(() => { if (menuBtn.getAttribute('aria-expanded') === 'false') menu.hidden = true; }, 220); }
+      else { menu.classList.remove('is-open'); setTimeout(() => { if (menuBtn.getAttribute('aria-expanded') === 'false') menu.hidden = true; }, 200); }
     }
     menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
-    // Close the menu first, then scroll, so the target isn't measured while
-    // the open menu is still adding height above the content
+    // Close the menu first, then scroll, so the open menu's height isn't counted
     menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', (e) => {
       e.preventDefault();
-      e.stopPropagation();
       menuBtn.setAttribute('aria-expanded', 'false');
       menuBtn.setAttribute('aria-label', 'Open menu');
       header.classList.remove('menu-open');
@@ -664,27 +1283,26 @@
       requestAnimationFrame(() => scrollToTarget(target));
     }));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
-    window.addEventListener('resize', () => { if (window.innerWidth >= 1024) setMenu(false); });
+    window.addEventListener('resize', () => { if (window.innerWidth >= 860) setMenu(false); });
 
-    /* ---------- Dropdowns (experience roles, sample workflows) ----------
-       Height animates via a CSS grid-rows transition; `hidden` is set after
+    /* ---------- Dropdowns (roles, case study, workflows, ROI) ----------
+       Height animates with a CSS grid-rows transition; `hidden` is set after
        closing so collapsed content is skipped by keyboard and screen readers. */
-    function setupDisclosure(btn) {
+    function setupDisclosure(btn, onOpen) {
       const panel = document.getElementById(btn.getAttribute('aria-controls'));
-      const sync = (open) => {
+      const set = (open) => {
         btn.setAttribute('aria-expanded', open);
         if (open) {
           panel.hidden = false;
           requestAnimationFrame(() => panel.classList.add('is-open'));
+          if (onOpen) onOpen();
         } else {
           panel.classList.remove('is-open');
-          setTimeout(() => { if (btn.getAttribute('aria-expanded') === 'false') panel.hidden = true; }, 320);
+          setTimeout(() => { if (btn.getAttribute('aria-expanded') === 'false') panel.hidden = true; }, 300);
         }
-        // Layout below shifted: let ScrollTrigger and AOS re-measure
-        setTimeout(() => { if (hasGsap) ScrollTrigger.refresh(); if (window.AOS) AOS.refresh(); if (lenis) lenis.resize(); }, 340);
       };
       if (btn.getAttribute('aria-expanded') === 'true') { panel.hidden = false; panel.classList.add('is-open'); }
-      btn.addEventListener('click', () => sync(btn.getAttribute('aria-expanded') !== 'true'));
+      btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
     }
     // Phones: start with every role collapsed so the page stays short
     if (window.matchMedia('(max-width: 640px)').matches) {
@@ -693,45 +1311,149 @@
         document.getElementById(b.getAttribute('aria-controls')).hidden = true;
       });
     }
-    document.querySelectorAll('.role-toggle, .drawer-toggle').forEach(setupDisclosure);
+    document.querySelectorAll('.role-toggle, .drawer-toggle').forEach((b) => setupDisclosure(b));
 
-    // Featured case study: on phones show the first part, expand on request
-    const story = document.getElementById('feature-story');
-    const storyMore = document.getElementById('story-more');
-    storyMore.addEventListener('click', () => {
-      const open = storyMore.getAttribute('aria-expanded') !== 'true';
-      storyMore.setAttribute('aria-expanded', open);
-      story.classList.toggle('is-expanded', open);
-      storyMore.textContent = open ? 'Show less' : 'Read the full case study';
-      setTimeout(() => { if (hasGsap) ScrollTrigger.refresh(); if (window.AOS) AOS.refresh(); if (lenis) lenis.resize(); }, 50);
-    });
+    /* ---------- Experience: pinned scroll with a filling timeline ----------
+       On screens where the whole section fits, it holds in place while you
+       scroll: all roles are visible, the blue line fills like a progress bar
+       and each role lights up in turn as the line reaches it. Elsewhere
+       (phones, short windows, Reduce Motion) the line still fills with
+       scroll, without pinning. It runs once: when the line is full the pin is
+       released for good. Opening a role or following any in-page link also
+       finishes it straight away.                                             */
+    const exp = document.getElementById('experience');
+    const expSticky = exp.querySelector('.exp-sticky');
+    const expSpacer = exp.querySelector('.exp-spacer');
+    const timeline = exp.querySelector('.timeline');
+    const roles = [...timeline.querySelectorAll('.role')];
+    const expAside = exp.querySelector('.exp-aside');
+    const PIN_GAP = 24;           // space between the header and the pinned section
+    let pinned = false;
+    let released = false;         // pin permanently off (a role was opened)
+    let fill = 0;                 // 0 to 1, only ever grows
 
-    /* ---------- Stat count-up ---------- */
-    const counters = document.querySelectorAll('[data-count]');
-    if (!reduceMotion && 'IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const el = e.target, end = +el.dataset.count, suffix = el.dataset.suffix || '';
-          const t0 = performance.now(), dur = 1100;
-          const tick = (t) => {
-            const p = Math.min((t - t0) / dur, 1);
-            el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suffix;
-            if (p < 1) requestAnimationFrame(tick);
-          };
-          el.textContent = '0' + suffix;
-          requestAnimationFrame(tick);
-          io.unobserve(el);
-        });
-      }, { threshold: 0.6 });
-      counters.forEach((c) => io.observe(c));
+    // Everything after Experience. While the section is pinned these are shifted up by the
+    // unused part of the spacer, so they stay put right below it instead of leaving a gap.
+    const afterExp = ['work', 'approach', 'skills', 'contact'].map((id) => document.getElementById(id)).concat(document.querySelector('.footer'));
+    let afterShift = 0;
+    function setAfterShift(px) {
+      px = Math.round(px);
+      if (px === afterShift) return;
+      afterShift = px;
+      afterExp.forEach((el) => { el.style.transform = px ? `translate3d(0, ${px}px, 0)` : ''; });
+    }
+
+    function setPinMode() {
+      const room = window.innerHeight - header.offsetHeight - PIN_GAP - 16;
+      pinned = !released && !reduceMotion && window.innerWidth > 900 && expSticky.offsetHeight <= room;
+      exp.classList.toggle('no-pin', !pinned);
+      if (!pinned) setAfterShift(0);
+    }
+
+    // The role the line most recently reached is highlighted; the highlight clears once the line is full
+    let activeTimer;
+    function paintTimeline() {
+      timeline.style.setProperty('--fill', fill);
+      const lineTop = 26, lineLen = timeline.offsetHeight - 52;
+      let active = -1;
+      roles.forEach((r, i) => {
+        const dot = r.offsetTop + 27 - lineTop;          // where this role's dot sits on the line
+        if (fill * lineLen >= dot - 1) { r.classList.add('is-reached', 'is-visible'); active = i; }
+      });
+      roles.forEach((r, i) => r.classList.toggle('is-active', i === active));
+      clearTimeout(activeTimer);
+      if (fill >= 1) activeTimer = setTimeout(() => roles.forEach((r) => r.classList.remove('is-active')), 1100);
+    }
+
+    function showAllExperience() {
+      fill = 1;
+      roles.forEach((r) => r.classList.add('is-visible'));
+      expAside.classList.add('is-visible');
+      paintTimeline();
+    }
+
+    function updateExperience() {
+      const vh = window.innerHeight;
+      const tl = timeline.getBoundingClientRect();
+      // The first role and the sidebar appear as the section comes into view
+      // All roles and the sidebar appear together as the section comes into view
+      if (tl.top < vh * 0.85) { roles.forEach((r) => r.classList.add('is-visible')); expAside.classList.add('is-visible'); }
+      let next;
+      if (pinned) {
+        const pinStart = header.offsetHeight + PIN_GAP + expSticky.offsetHeight;   // spacer top at the moment the pin begins
+        const travel = expSpacer.offsetHeight;
+        const p = Math.min(Math.max((pinStart - expSpacer.getBoundingClientRect().top) / travel, 0), 1);
+        setAfterShift(-travel * (1 - p));
+        next = p / 0.85;                                  // finish a little before the pin ends, for a short beat
+      } else {
+        next = (vh * 0.62 - (tl.top + 26)) / (tl.height - 52);
+      }
+      if (fill >= 1) return;
+      next = Math.min(Math.max(next, 0), 1);
+      if (next > fill) { fill = next; paintTimeline(); }
+      // One-time effect: once the line is full, unpin for good so it never catches again
+      if (fill >= 1) releasePin();
+    }
+
+    function finishExperience() { showAllExperience(); releasePin(); }
+
+    function releasePin() {
+      if (released) return;
+      released = true;
+      const before = expSticky.getBoundingClientRect().top;
+      setPinMode();
+      const after = expSticky.getBoundingClientRect().top;
+      window.scrollTo({ top: window.scrollY + (after - before), behavior: 'instant' });
+    }
+
+    setPinMode();
+    updateExperience();
+    let expTicking = false;
+    window.addEventListener('scroll', () => {
+      if (expTicking) return;
+      expTicking = true;
+      requestAnimationFrame(() => { updateExperience(); expTicking = false; });
+    }, { passive: true });
+    window.addEventListener('resize', () => { setPinMode(); updateExperience(); });
+    window.addEventListener('load', () => { setPinMode(); updateExperience(); });
+    // Opening a role: show the whole timeline and stop pinning, keeping the view where it is
+    roles.forEach((r) => r.querySelector('.role-toggle').addEventListener('click', finishExperience));
+    // Arriving on a #link: skip the effect and land on the section
+    if (/^#(experience|work|approach|skills|contact)$/.test(location.hash)) {
+      finishExperience();
+      window.addEventListener('load', () => window.scrollTo({ top: docTop(document.querySelector(location.hash)) - header.offsetHeight - 8, behavior: 'instant' }));
+    }
+
+    /* ---------- Parallax on the wave backgrounds ----------
+       The textures in the Featured work band, the How I think band and the
+       contact panel drift a little slower than the page. Skipped for Reduce Motion. */
+    const parallaxEls = [['.section-tint', 0.12], ['.section-dark', 0.12], ['.contact', 0.08]]
+      .map(([sel, k]) => [document.querySelector(sel), k]).filter(([el]) => el);
+    function updateParallax() {
+      const vh = window.innerHeight;
+      parallaxEls.forEach(([el, k]) => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        el.style.setProperty('--par', ((vh / 2 - (r.top + r.height / 2)) * k).toFixed(1) + 'px');
+      });
+    }
+    if (!reduceMotion) {
+      let parTicking = false;
+      window.addEventListener('scroll', () => {
+        if (parTicking) return;
+        parTicking = true;
+        requestAnimationFrame(() => { updateParallax(); parTicking = false; });
+      }, { passive: true });
+      window.addEventListener('resize', updateParallax);
+      updateParallax();
     }
 
     /* ---------- Hero video ----------
-       The file loops seamlessly (its ending dissolves into its opening), and
-       it fades in once playback starts. Plays for every visitor, including
-       those with Reduce Motion on (site owner's choice).                     */
+       The file loops seamlessly (its ending dissolves into its opening) and
+       fades in once playback starts. Plays for every visitor, including those
+       with Reduce Motion on (site owner's choice).                           */
     const heroVideo = document.getElementById('hero-video');
+    const hero = document.getElementById('top');
     if (heroVideo) {
       heroVideo.addEventListener('playing', () => heroVideo.classList.add('is-playing'), { once: true });
       heroVideo.muted = true;
@@ -745,14 +1467,17 @@
       // If playback never starts (e.g. data saver), still reveal the poster
       setTimeout(() => heroVideo.classList.add('is-playing'), 2500);
 
-      // Swoosh: the video starts enlarged so the ±8% slide never shows its edges
-      if (hasGsap) {
-        gsap.set(heroVideo, { scale: 1.25, xPercent: 8, transformOrigin: '50% 50%' });
-        gsap.to(heroVideo, {
-          xPercent: -8, scale: 1.38, ease: 'none',
-          scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: 1 },
-        });
-      }
+      // Gentle drift as the hero scrolls away. The video starts enlarged so its edges never show.
+      let ticking = false;
+      const drift = () => {
+        const p = Math.min(Math.max(window.scrollY / hero.offsetHeight, 0), 1);
+        heroVideo.style.transform = `translateX(${8 - 16 * p}%) scale(${1.25 + 0.13 * p})`;
+        ticking = false;
+      };
+      drift();
+      window.addEventListener('scroll', () => {
+        if (!ticking && window.scrollY < hero.offsetHeight + 50) { ticking = true; requestAnimationFrame(drift); }
+      }, { passive: true });
     }
 
     /* ---------- Sample workflows ---------- */
@@ -760,7 +1485,6 @@
       {
         id: 'citation',
         title: 'Statutory Citation Extraction',
-        file: 'statutory-citation-extraction.md',
         prompt: `ROLE
 You are a regulatory research analyst supporting an Extended Producer
 Responsibility (EPR) program team.
@@ -796,7 +1520,6 @@ SOURCE TEXT
       {
         id: 'needs',
         title: 'Needs Assessment Synthesis',
-        file: 'needs-assessment-synthesis.md',
         prompt: `ROLE
 You are an analyst synthesizing a state needs assessment for a
 program planning team.
@@ -831,7 +1554,6 @@ DOCUMENT
       {
         id: 'comments',
         title: 'Public Comment Analysis',
-        file: 'public-comment-analysis.md',
         prompt: `ROLE
 You are a policy analyst reviewing the public comment record for a
 proposed rule or program plan.
@@ -867,7 +1589,6 @@ COMMENT RECORD
       {
         id: 'stakeholders',
         title: 'Stakeholder Mapping',
-        file: 'stakeholder-mapping.md',
         prompt: `ROLE
 You are a sustainability analyst mapping stakeholders for a
 supply chain or EPR program decision.
@@ -905,8 +1626,6 @@ SOURCES
 
     const wfTabs = document.querySelector('[data-tabs="workflows"]');
     const wfPanels = document.getElementById('wf-panels');
-    const filename = document.getElementById('wf-filename');
-
     WORKFLOWS.forEach((wf, i) => {
       const btn = document.createElement('button');
       btn.type = 'button';
@@ -924,11 +1643,9 @@ SOURCES
       panel.setAttribute('role', 'tabpanel');
       panel.setAttribute('aria-labelledby', btn.id);
       panel.tabIndex = 0;
-      panel.dataset.file = wf.file;
       panel.hidden = i !== 0;
       const pre = document.createElement('pre');
       pre.className = 'prompt';
-      pre.setAttribute('data-lenis-prevent', '');
       pre.textContent = wf.prompt;
       panel.appendChild(pre);
       wfPanels.appendChild(panel);
@@ -941,11 +1658,8 @@ SOURCES
         const on = t === tab;
         t.setAttribute('aria-selected', on);
         t.tabIndex = on ? 0 : -1;
-        const panel = document.getElementById(t.getAttribute('aria-controls'));
-        panel.hidden = !on;
-        if (on) { panel.classList.remove('is-entering'); void panel.offsetWidth; panel.classList.add('is-entering'); }
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
       });
-      filename.textContent = activePanel().dataset.file;
     }
     tabs.forEach((tab, i) => {
       tab.addEventListener('click', () => selectTab(tab));
@@ -958,35 +1672,26 @@ SOURCES
         if (next) { e.preventDefault(); next.focus(); selectTab(next); }
       });
     });
-    filename.textContent = activePanel().dataset.file;
 
-    const copyBtn = document.getElementById('copy-btn');
     const copyLabel = document.getElementById('copy-label');
     const copyStatus = document.getElementById('copy-status');
-    let copyTimer;
-    copyBtn.addEventListener('click', async () => {
+    document.getElementById('copy-btn').addEventListener('click', async () => {
       const ok = await copyText(activePanel().querySelector('.prompt').textContent);
-      if (Toast) {
-        Toast.fire(ok
-          ? { icon: 'success', title: 'Workflow Prompt Copied to Clipboard' }
-          : { icon: 'error', iconColor: '#fca5a5', title: 'Copy failed. Select the text to copy manually.' });
-        return;
-      }
-      copyLabel.textContent = ok ? 'Copied' : 'Copy failed';
+      flashLabel(copyLabel, ok ? 'Copied' : 'Copy failed');
       copyStatus.textContent = ok ? 'Prompt copied to clipboard.' : 'Copy failed. Select the text to copy manually.';
-      clearTimeout(copyTimer);
-      copyTimer = setTimeout(() => { copyLabel.textContent = 'Copy to clipboard'; }, 2200);
     });
 
     /* ---------- Copy email ---------- */
     const emailBtn = document.getElementById('copy-email');
+    const emailLabel = document.getElementById('copy-email-label');
     emailBtn.addEventListener('click', async () => {
       const ok = await copyText(emailBtn.dataset.email);
-      if (Toast) Toast.fire(ok ? { icon: 'success', title: 'Email address copied' } : { icon: 'error', iconColor: '#fca5a5', title: 'Copy failed' });
+      flashLabel(emailLabel, ok ? 'Copied to clipboard' : 'Copy failed');
     });
 
-    /* ---------- Sustainability ROI dashboard (Chart.js) ----------
-       Illustrative scenario figures, $ millions per year.            */
+    /* ---------- Sustainability ROI model ----------
+       Illustrative scenario figures, $ millions per year. Chart.js is
+       self-hosted and only loaded the first time the dropdown opens.  */
     const ROI = {
       epr: {
         desc: 'Redesign packaging toward lower-fee material categories under state EPR ecomodulation schedules, cutting producer fees and virgin material spend.',
@@ -1005,8 +1710,8 @@ SOURCES
       },
     };
     const YEARS = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
-    const COST_COLOR = '#3a5a94';     // slate-navy (validated with emerald for CVD separation)
-    const SAVINGS_COLOR = '#10a37f';  // emerald
+    const COST_COLOR = '#7fa6dc';
+    const SAVINGS_COLOR = '#4fc39a';
     const money = (v) => '$' + v.toFixed(1) + 'M';
     const sum = (a) => a.reduce((x, y) => x + y, 0);
     function payback(cost, savings) {
@@ -1021,8 +1726,6 @@ SOURCES
       roiKey = key;
       const d = ROI[key];
       document.getElementById('roi-desc').textContent = d.desc;
-      document.getElementById('roi-net').textContent = money(sum(d.savings) - sum(d.cost));
-      document.getElementById('roi-payback').textContent = payback(d.cost, d.savings);
       document.getElementById('roi-cost').textContent = money(sum(d.cost));
       document.getElementById('roi-savings').textContent = money(sum(d.savings));
       document.getElementById('roi-table-body').innerHTML = YEARS
@@ -1035,78 +1738,77 @@ SOURCES
     function buildChart() {
       if (!window.Chart || roiChart) return;
       const d = ROI[roiKey];
-      const bar = { borderRadius: 4, borderSkipped: 'bottom', maxBarThickness: 28, borderWidth: 0 };
+      const bar = { borderRadius: 3, borderSkipped: 'bottom', maxBarThickness: 26, borderWidth: 0 };
+      const font = { family: 'Instrument Sans, system-ui, sans-serif', size: 11 };
       roiChart = new Chart(document.getElementById('roi-chart'), {
         type: 'bar',
         data: {
           labels: YEARS,
           datasets: [
-            { label: 'Implementation Cost', data: d.cost, backgroundColor: COST_COLOR, hoverBackgroundColor: '#2f4b7d', ...bar },
-            { label: 'Projected Core Savings', data: d.savings, backgroundColor: SAVINGS_COLOR, hoverBackgroundColor: '#0c8a6b', ...bar },
+            { label: 'Implementation cost', data: d.cost, backgroundColor: COST_COLOR, ...bar },
+            { label: 'Projected core savings', data: d.savings, backgroundColor: SAVINGS_COLOR, ...bar },
           ],
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          animation: { duration: reduceMotion ? 0 : 700, easing: 'easeOutQuart' },
+          animation: { duration: reduceMotion ? 0 : 600, easing: 'easeOutQuart' },
           datasets: { bar: { categoryPercentage: 0.62, barPercentage: 0.86 } },
           interaction: { mode: 'index', intersect: false },
           plugins: {
             legend: { display: false },
             tooltip: {
-              backgroundColor: '#0f172a', titleColor: '#f8fafc', bodyColor: '#e2e8f0',
-              padding: 10, cornerRadius: 8, boxPadding: 4, usePointStyle: true,
-              titleFont: { family: 'Inter', weight: '600' }, bodyFont: { family: 'Inter' },
+              backgroundColor: '#0f172a', padding: 9, cornerRadius: 6, boxPadding: 4, usePointStyle: true,
+              titleFont: { ...font, weight: '600' }, bodyFont: font,
               callbacks: { label: (c) => ` ${c.dataset.label}: ${money(c.parsed.y)}` },
             },
           },
           scales: {
-            x: { grid: { display: false }, border: { display: false }, ticks: { color: '#64748b', font: { family: 'Inter', size: 11 } } },
+            x: { grid: { display: false }, border: { display: false }, ticks: { color: 'rgba(255, 255, 255, 0.6)', font } },
             y: {
-              beginAtZero: true, border: { display: false }, grid: { color: 'rgba(15, 23, 42, 0.06)' },
-              ticks: { color: '#64748b', font: { family: 'Inter', size: 11 }, callback: (v) => '$' + v + 'M', maxTicksLimit: 6 },
+              beginAtZero: true, border: { display: false }, grid: { color: 'rgba(255, 255, 255, 0.08)' },
+              ticks: { color: 'rgba(255, 255, 255, 0.6)', font, callback: (v) => '$' + v + 'M', maxTicksLimit: 6 },
             },
           },
         },
       });
     }
-    // Build the chart when it scrolls into view, so its bars animate in
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        if (entries.some((e) => e.isIntersecting)) { buildChart(); io.disconnect(); }
-      }, { rootMargin: '0px 0px -15% 0px' });
-      io.observe(document.getElementById('roi-chart'));
-    } else {
-      buildChart();
+    let chartLoading = false;
+    function loadChart() {
+      if (window.Chart) { setTimeout(buildChart, 120); return; }
+      if (chartLoading) return;
+      chartLoading = true;
+      const s = document.createElement('script');
+      s.src = 'assets/vendor/chart-4.5.1.min.js';
+      s.onload = () => setTimeout(buildChart, 60);
+      document.head.appendChild(s);
     }
-
-    const roiTabs = [...document.querySelectorAll('.seg-btn')];
-    function selectROI(tab) {
-      roiTabs.forEach((t) => { const on = t === tab; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
-      document.getElementById('roi-panel').setAttribute('aria-labelledby', tab.id);
-      renderROI(tab.dataset.scenario);
-    }
-    roiTabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => selectROI(tab));
-      tab.addEventListener('keydown', (e) => {
-        const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
-        if (!step) return;
-        e.preventDefault();
-        const next = roiTabs[(i + step + roiTabs.length) % roiTabs.length];
-        next.focus();
-        selectROI(next);
-      });
+    // Each option shows its headline numbers; choosing one opens the chart, choosing it again closes it
+    const roiOpts = [...document.querySelectorAll('.roi-opt')];
+    const roiDrawer = document.getElementById('roi-drawer');
+    roiOpts.forEach((opt) => {
+      const d = ROI[opt.dataset.scenario];
+      const pb = payback(d.cost, d.savings);
+      opt.querySelector('[data-net]').textContent = money(sum(d.savings) - sum(d.cost));
+      opt.querySelector('[data-payback]').textContent = 'net over 5 years, payback ' + (pb.startsWith('Year') ? 'in ' + pb : pb.toLowerCase());
     });
+    function setROI(opt) {
+      const closing = opt.getAttribute('aria-pressed') === 'true';
+      roiOpts.forEach((o) => o.setAttribute('aria-pressed', !closing && o === opt));
+      if (closing) {
+        roiDrawer.classList.remove('is-open');
+        setTimeout(() => { if (!roiOpts.some((o) => o.getAttribute('aria-pressed') === 'true')) roiDrawer.hidden = true; }, 300);
+        return;
+      }
+      renderROI(opt.dataset.scenario);
+      roiDrawer.hidden = false;
+      requestAnimationFrame(() => roiDrawer.classList.add('is-open'));
+      loadChart();
+    }
+    roiOpts.forEach((opt) => opt.addEventListener('click', () => setROI(opt)));
     renderROI('epr');
 
-    /* ---------- Footer year & scroll reveals ---------- */
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    if (window.AOS) {
-      AOS.init({ duration: 600, once: true, easing: 'ease-out-cubic', offset: 40, disable: reduceMotion });
-    } else {
-      document.querySelectorAll('[data-aos]').forEach((el) => el.removeAttribute('data-aos'));
-    }
   </script>
 </body>
 </html>
